@@ -1,9 +1,14 @@
 <?php
 require('../../../koneksi.php');
 
-// if (!isset($_SESSION['login_admin'])) {
-//   header("location: ../login.php");
-// }
+if (!isset($_SESSION['login_admin_kelurahan'])) {
+  header("location: ../../login.php");
+}
+$get_id_session = $_SESSION['get_id_kelurahan'];
+$query_header_akun = mysqli_query($conn, "SELECT * FROM tb_akun_kelurahan WHERE id_akun_kelurahan = '$get_id_session'");
+$get_data_akun = mysqli_fetch_assoc($query_header_akun);
+$nama_header = $get_data_akun['nama_akun_kelurahan'];
+$kelurahan_header = $get_data_akun['kelurahan_akun_kelurahan'];
 
 ?>
 
@@ -79,7 +84,7 @@ require('../../../koneksi.php');
     <a href="/pelaporan-sampah/kelurahan/admin/index.php" class="brand-link">
       <img src="/pelaporan-sampah/assets/dist/img/AdminLTELogo.png" alt="Logo Kabupaten Soppeng" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">Kel Mangasa</span>
+      <span class="brand-text font-weight-light">Kel <?= $kelurahan_header ?></span>
     </a>
 
     <!-- Sidebar -->
@@ -90,7 +95,7 @@ require('../../../koneksi.php');
           <img src="/pelaporan-sampah/assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Admin</a>
+          <a href="#" class="d-block"><?= $nama_header ?></a>
           <a href="#"<i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -121,6 +126,15 @@ require('../../../koneksi.php');
               </p>
             </a>
           </li>
+          
+          <li class="nav-item">
+            <a href="/pelaporan-sampah/kelurahan/admin/masyarakat/data.php" class="nav-link">
+              <i class="nav-icon fa fa-user-plus"></i>
+              <p>
+                Data Masyarakat
+              </p>
+            </a>
+          </li>
 
 
           <li class="nav-item">
@@ -142,7 +156,7 @@ require('../../../koneksi.php');
           </li>
 
           <li class="nav-item">
-            <a class="nav-link"  href="/pelaporan-sampah/logout.php?logout=true&for=login_admin" role="button">
+            <a class="nav-link"  href="/pelaporan-sampah/kelurahan/logout.php?logout=true&for=login_admin_kelurahan" role="button">
               <i class="nav-icon fa fa-power-off"></i>
               <p>
                 Logout
