@@ -9,21 +9,24 @@ function plugins() { ?>
 require('../../../koneksi.php');
 
 // SUBMIT ADMIN
-if (isset($_POST['submit_admin'])) {
-	$nama_admin = $_POST['nama_admin'];
-	$username = $_POST['username'];
-	$kelurahan = $_POST['kelurahan'];
-	$password = password_hash($username, PASSWORD_DEFAULT);
-	$status_admin = "Aktif";
+if (isset($_POST['submit_masyarakat'])) {
+	$nik_masyarakat = $_POST['nik_masyarakat'];
+	$nama_masyarakat = $_POST['nama_masyarakat'];
+	$alamat_masyarakat = $_POST['alamat_masyarakat'];
+	$telpon_masyarakat = $_POST['telpon_masyarakat'];
+	$usia_masyarakat = $_POST['usia_masyarakat'];
+	$kelurahan_masyarakat = $_POST['kelurahan_masyarakat'];
+	$password = password_hash($nik_masyarakat, PASSWORD_DEFAULT);
+	$status_masyarakat = "Aktif";
 
 	// SET FOTO
-	$foto = $_FILES['foto_admin']['name'];
+	$foto = $_FILES['foto_masyarakat']['name'];
 	$ext = pathinfo($foto, PATHINFO_EXTENSION);
 	$nama_foto = "image_".time().".".$ext;
-    $file_tmp = $_FILES['foto_admin']['tmp_name'];
+    $file_tmp = $_FILES['foto_masyarakat']['tmp_name'];
 
     // TAMBAH DATA
-	$query= "INSERT INTO tb_akun_kelurahan VALUES (NULL, '$nama_admin', '$username', '$password', '$nama_foto','$kelurahan', '$status_admin')";
+	$query= "INSERT INTO tb_masyarakat VALUES (NULL, '$nik_masyarakat', '$nama_masyarakat', '$alamat_masyarakat', '$telpon_masyarakat','$usia_masyarakat', '$kelurahan_masyarakat', '-', '$password', '$nama_foto', '$status_masyarakat', '-')";
 	mysqli_query($conn, $query);
 	if (mysqli_affected_rows($conn) > 0) {
 		move_uploaded_file($file_tmp, 'foto/'.$nama_foto);
@@ -32,7 +35,7 @@ if (isset($_POST['submit_admin'])) {
 			$(document).ready(function() {
 				swal({
 					title: 'Berhasil',
-					text: 'Data Admin Kelurahan Berhasil ditambah!',
+					text: 'Data Masyarakat Berhasil ditambah!',
 					icon: 'success'
 				}).then((data) => {
 					location.href = 'data.php';
@@ -72,7 +75,7 @@ if (isset($_POST['edit_admin'])) {
 			$(document).ready(function() {
 				swal({
 					title: 'Berhasil',
-					text: 'Data Admin Kelurahan berhasil diubah',
+					text: 'Data Masyarakat berhasil diubah',
 					icon: 'success'
 				}).then((data) => {
 					location.href = 'data.php';
@@ -84,10 +87,10 @@ if (isset($_POST['edit_admin'])) {
 
 
 // HAPUS ADMIN
-if (isset($_GET['hapus_admin'])) {
-	$id_admin = $_GET['id_admin'];
+if (isset($_GET['hapus_masyarakat'])) {
+	$id_masyarakat = $_GET['id_masyarakat'];
 
-	$query = "DELETE FROM tb_akun_kelurahan WHERE id_akun_kelurahan = '$id_admin'";
+	$query = "DELETE FROM tb_masyarakat WHERE id_masyarakat = '$id_masyarakat'";
 	mysqli_query($conn, $query);
 	if (mysqli_affected_rows($conn) > 0) {
 		plugins(); ?>
@@ -95,7 +98,7 @@ if (isset($_GET['hapus_admin'])) {
 			$(document).ready(function() {
 				swal({
 					title: 'Berhasil Dihapus',
-					text: 'Data Admin Kelurahan berhasil dihapus',
+					text: 'Data Masyarakat berhasil dihapus',
 					icon: 'success'
 				}).then((data) => {
 					location.href = 'data.php';
