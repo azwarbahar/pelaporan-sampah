@@ -63,7 +63,8 @@ $masyarakat = mysqli_query($conn, "SELECT * FROM tb_masyarakat WHERE kelurahan_m
                       }
                     ?>
                     <td style="text-align:center">
-                        <a href="edit.php?id_masyarakat=<?= $dta['id_masyarakat'] ?>" type="button" class="btn btn-secondary"><i class="fa fa-edit"></i></a>
+                        <a href="detail.php?id_masyarakat=<?= $dta['id_masyarakat'] ?>" type="button" class="btn btn-secondary"><i class="fa fa-eye"></i></a>
+                        <a href="edit.php?id_masyarakat=<?= $dta['id_masyarakat'] ?>" type="button" class="btn btn-warning"><i class="fa fa-edit"></i></a>
                         <a href="#" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger<?= $dta['id_masyarakat'] ?>" ><i class="fa fa-trash"></i></a>
                     </td>
                   </tr>

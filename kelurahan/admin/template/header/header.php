@@ -118,14 +118,14 @@ $kelurahan_header = $get_data_akun['kelurahan_akun_kelurahan'];
           <!-- <li class="nav-header">Setting</li> -->
 
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="/pelaporan-sampah/kelurahan/admin/mahasiswa/data.php" class="nav-link">
               <i class="nav-icon fa fa-database"></i>
               <p>
                 Master Data
               </p>
             </a>
-          </li>
+          </li> -->
           
           <li class="nav-item">
             <a href="/pelaporan-sampah/kelurahan/admin/masyarakat/data.php" class="nav-link">

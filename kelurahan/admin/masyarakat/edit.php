@@ -2,8 +2,8 @@
 require_once '../template/header/header.php';
 
 
-$id_admin = $_GET['id_admin'];
-$result = mysqli_query($conn, "SELECT * FROM tb_akun_kelurahan WHERE id_akun_kelurahan = '$id_admin'");
+$id_masyarakat = $_GET['id_masyarakat'];
+$result = mysqli_query($conn, "SELECT * FROM tb_masyarakat WHERE id_masyarakat = '$id_masyarakat'");
 $dta = mysqli_fetch_assoc($result);
 
 
@@ -17,12 +17,12 @@ $dta = mysqli_fetch_assoc($result);
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">User Admin</h1>
+            <h1 class="m-0 text-dark">Data Masyarakat</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/pelaporan-sampah/kelurahan/admin/">Home</a></li>
-              <li class="breadcrumb-item"><a href="/pelaporan-sampah/kelurahan/admin/user/data.php">User Admin</a></li>
+              <li class="breadcrumb-item"><a href="/pelaporan-sampah/kelurahan/admin/masyarakat/data.php">Data Masyarakat</a></li>
               <li class="breadcrumb-item active">Edit</li>
             </ol>
           </div><!-- /.col -->
@@ -39,7 +39,7 @@ $dta = mysqli_fetch_assoc($result);
         <div class="col-md-10">
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">Edit User Admin</h3>
+              <h3 class="card-title">Edit Data Masyarakat</h3>
 
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -47,23 +47,37 @@ $dta = mysqli_fetch_assoc($result);
               </div>
             </div>
             <form method="POST" action="controller.php" enctype="multipart/form-data">
+
             <div class="card-body">
               <div class="form-group">
+                <label for="inputName">NIK</label>
+                <input type="text" value="<?= $dta['nik_masyarakat'] ?>" id="nik_masyarakat" name="nik_masyarakat"class="form-control">
+              </div>
+
+              <div class="form-group">
                 <label for="inputName">Nama Lengkap</label>
-                <input type="text" value="<?= $dta['nama_akun_kelurahan'] ?>" id="nama_admin" name="nama_admin"class="form-control">
-              </div>
-
-
-              <div class="form-group">
-                <label for="inputName">Username</label>
-                <input type="text" value="<?= $dta['username_akun_kelurahan'] ?>" disabled id="username" name="username"class="form-control">
+                <input type="text" value="<?= $dta['nama_masyarakat'] ?>" id="nama_masyarakat" name="nama_masyarakat"class="form-control">
               </div>
 
               <div class="form-group">
-                <label for="inputName">Kelurahan</label>
-              <div class="col-4">
-                <select class="form-control select2" style="width: 100%;" name="kelurahan" id="kelurahan">
-                  <option selected="selected" value="<?= $dta['kelurahan_akun_kelurahan'] ?>"><?= $dta['kelurahan_akun_kelurahan'] ?></option>
+                <label for="inputName">Alamat Lengkap</label>
+                <input type="text" value="<?= $dta['alamat_masyarakat'] ?>" id="alamat_masyarakat" name="alamat_masyarakat"class="form-control">
+              </div>
+
+              <div class="form-group">
+                <label for="inputName">Telpon</label>
+                <input type="number" value="<?= $dta['telpon_masyarakat'] ?>" id="telpon_masyarakat" name="telpon_masyarakat"class="form-control">
+              </div>
+
+              <div class="form-group">
+                <label for="inputName">Usia</label>
+                <input type="number" value="<?= $dta['usia_masyarakat'] ?>" id="usia_masyarakat" name="usia_masyarakat"class="form-control">
+              </div>
+
+              <div class="form-group">
+              <label for="inputName">Kelurahan</label>
+                <select class="form-control select2" style="width: 100%;" name="kelurahan_masyarakat" id="kelurahan_masyarakat">
+                  <option selected="selected" value="<?= $dta['kelurahan_masyarakat'] ?>"><?= $dta['kelurahan_masyarakat'] ?></option>
                   <option value="Balang Baru">Balang Baru</option>
                   <option value="Barombong">Barombong</option>
                   <option value="Bongaya">Bongaya</option>
@@ -77,23 +91,22 @@ $dta = mysqli_fetch_assoc($result);
                   <option value="Tanjung Merdeka">Tanjung Merdeka</option>
                 </select>
               </div>
-              </div>
 
               <div class="form-group">
                     <label for="customFile">Foto</label>
                     <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="foto_admin" name="foto_admin" onchange="readURL(this);" >
-                      <label class="custom-file-label" for="foto_admin">Choose file</label>
+                      <input type="file" class="custom-file-input" id="foto_masyarakat" name="foto_masyarakat" onchange="readURL(this);" >
+                      <label class="custom-file-label" for="foto_masyarakat">Choose file</label>
                     </div>
                   </div>
                   <br>
-                  <img style="max-width:180px; max-height:180px;" id="blah" src="foto/<?php echo $dta['foto_akun_kelurahan'] ?>" alt="your image" />
+                  <img style="max-width:180px; max-height:180px;" id="blah" src="foto/<?php echo $dta['foto_masyarakat'] ?>" alt="your image" />
 
               <div class="col-12">
-              <input type="hidden" name="id_admin" value="<?= $dta['id_akun_kelurahan'] ?>">
-              <input type="hidden" name="foto_now" value="<?= $dta['foto_akun_kelurahan'] ?>">
-              <button type="submit" name="edit_admin" id="edit_admin" disabled="" class="btn btn-success float-right" style="margin-top: 3% ; margin-left: 2%;">Simpan</button>
-              <a href="/pelaporan-sampah/kelurahan/admin/user/data.php" class="btn btn-secondary float-right" style="margin-top: 3% ;">Batal</a>
+              <input type="hidden" name="id_masyarakat" value="<?= $dta['id_masyarakat'] ?>">
+              <input type="hidden" name="foto_now" value="<?= $dta['foto_masyarakat'] ?>">
+              <button type="submit" name="edit_masyarakat" id="edit_masyarakat" disabled="" class="btn btn-success float-right" style="margin-top: 3% ; margin-left: 2%;">Simpan</button>
+              <a href="/pelaporan-sampah/kelurahan/admin/masyarakat/data.php" class="btn btn-secondary float-right" style="margin-top: 3% ;">Batal</a>
             </div>
             </form>
             </div>
