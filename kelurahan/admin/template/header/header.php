@@ -71,12 +71,40 @@ $kelurahan_header = $get_data_akun['kelurahan_akun_kelurahan'];
     </form>
 
         <!-- Right navbar links -->
-        <ul class="navbar-nav ml-auto">
-
-
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a style="color: red;" class="nav-link" data-toggle="modal" data-target="#modal-default"  href="" role="button">
+          <i class="fas fa fa-power-off" style="color: red;"></i> Logout
+        </a>
+      </li>
     </ul>
   </nav>
   <!-- /.navbar -->
+
+        <!-- Modal Hapus -->
+        <div class="modal fade" tabindex="-1" id="modal-default">
+        <div class="modal-dialog">
+          <div class="modal-content bg-default">
+            <div class="modal-header">
+            
+              <h4 class="modal-title"> <i class="fa fa-power-off"></i> Konfirmasi</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Yakin Ingin Keluar ?</p>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Batal</button>
+              <a href="/pelaporan-sampah/kelurahan/logout.php?logout=true&for=login_admin_kelurahan" type="button" class="btn btn-outline-dark">Keluar</a>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-light-grey elevation-3">
@@ -115,18 +143,17 @@ $kelurahan_header = $get_data_akun['kelurahan_akun_kelurahan'];
             </a>
           </li>
 
-          <!-- <li class="nav-header">Setting</li> -->
 
-
-          <!-- <li class="nav-item">
-            <a href="/pelaporan-sampah/kelurahan/admin/mahasiswa/data.php" class="nav-link">
-              <i class="nav-icon fa fa-database"></i>
+          <li class="nav-header">Master Data</li>
+          <li class="nav-item">
+            <a href="/pelaporan-sampah/kelurahan/admin/kendaraan/data.php" class="nav-link">
+              <i class="nav-icon fa fa-truck"></i>
               <p>
-                Master Data
+                Data Kendaraan
               </p>
             </a>
-          </li> -->
-          
+          </li>
+
           <li class="nav-item">
             <a href="/pelaporan-sampah/kelurahan/admin/masyarakat/data.php" class="nav-link">
               <i class="nav-icon fa fa-user-plus"></i>
@@ -136,7 +163,46 @@ $kelurahan_header = $get_data_akun['kelurahan_akun_kelurahan'];
             </a>
           </li>
 
+          <li class="nav-item">
+            <a href="/pelaporan-sampah/kelurahan/admin/petugas/data.php" class="nav-link">
+              <i class="nav-icon fa fa-id-badge"></i>
+              <p>
+                Data Petugas
+              </p>
+            </a>
+          </li>
 
+
+          <li class="nav-header">Laporan</li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="far fa fa-file nav-icon"></i>
+              <p>
+                Lapor Sampah
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="far fa fa-file-excel nav-icon"></i>
+              <p>
+                Lapor Keluhan
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="far fa fa-print nav-icon"></i>
+              <p>
+                Cetak
+              </p>
+            </a>
+          </li>
+
+
+          <li class="nav-header">Pengaturan</li>
           <li class="nav-item">
             <a href="/pelaporan-sampah/kelurahan/admin/user/data.php" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
@@ -154,7 +220,7 @@ $kelurahan_header = $get_data_akun['kelurahan_akun_kelurahan'];
               </p>
             </a>
           </li>
-
+<!-- 
           <li class="nav-item">
             <a class="nav-link"  href="/pelaporan-sampah/kelurahan/logout.php?logout=true&for=login_admin_kelurahan" role="button">
               <i class="nav-icon fa fa-power-off"></i>
@@ -163,7 +229,7 @@ $kelurahan_header = $get_data_akun['kelurahan_akun_kelurahan'];
               </p>
             </a>
           </li>
-          <li class="nav-header"></li>
+          <li class="nav-header"></li> -->
           <li class="nav-header"></li>
         </ul>
       </nav>

@@ -158,7 +158,7 @@ $dta = mysqli_fetch_assoc($result);
                               </div>
                             </div>
                             <!-- /.card-header -->
-                            <div class="card-body table-responsive p-0" style="max-height: 500px; height: fit-content;">
+                            <div class="card-body table-responsive p-0" style="height: 500px;">
                               <table class="table table-head-fixed text-nowrap">
                                 <thead>
                                   <tr>
