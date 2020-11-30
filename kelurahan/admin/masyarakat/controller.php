@@ -13,6 +13,7 @@ if (isset($_POST['submit_masyarakat'])) {
 	$nik_masyarakat = $_POST['nik_masyarakat'];
 	$nama_masyarakat = $_POST['nama_masyarakat'];
 	$alamat_masyarakat = $_POST['alamat_masyarakat'];
+	$area_masyarakat = $_POST['area_masyarakat'];
 	$telpon_masyarakat = $_POST['telpon_masyarakat'];
 	$usia_masyarakat = $_POST['usia_masyarakat'];
 	$kelurahan_masyarakat = $_POST['kelurahan_masyarakat'];
@@ -26,7 +27,7 @@ if (isset($_POST['submit_masyarakat'])) {
     $file_tmp = $_FILES['foto_masyarakat']['tmp_name'];
 
     // TAMBAH DATA
-	$query= "INSERT INTO tb_masyarakat VALUES (NULL, '$nik_masyarakat', '$nama_masyarakat', '$alamat_masyarakat', '$telpon_masyarakat','$usia_masyarakat', '$kelurahan_masyarakat', '-', '$password', '$nama_foto', '$status_masyarakat', 'Sudah')";
+	$query= "INSERT INTO tb_masyarakat VALUES (NULL, '$nik_masyarakat', '$nama_masyarakat', '$alamat_masyarakat', '$area_masyarakat', '$telpon_masyarakat','$usia_masyarakat', '$kelurahan_masyarakat', '-', '$password', '$nama_foto', '$status_masyarakat', 'Sudah')";
 	mysqli_query($conn, $query);
 	if (mysqli_affected_rows($conn) > 0) {
 		move_uploaded_file($file_tmp, 'foto/'.$nama_foto);
@@ -52,6 +53,7 @@ if (isset($_POST['edit_masyarakat'])) {
 	$nik_masyarakat = $_POST['nik_masyarakat'];
 	$nama_masyarakat = $_POST['nama_masyarakat'];
 	$alamat_masyarakat = $_POST['alamat_masyarakat'];
+	$area_masyarakat = $_POST['area_masyarakat'];
 	$telpon_masyarakat = $_POST['telpon_masyarakat'];
 	$usia_masyarakat = $_POST['usia_masyarakat'];
 	$kelurahan_masyarakat = $_POST['kelurahan_masyarakat'];
@@ -75,6 +77,7 @@ if (isset($_POST['edit_masyarakat'])) {
 		$query = "UPDATE tb_masyarakat SET nik_masyarakat = '$nik_masyarakat',
 											nama_masyarakat = '$nama_masyarakat',
 											alamat_masyarakat = '$alamat_masyarakat',
+											area_masyarakat = '$area_masyarakat',
 											telpon_masyarakat = '$telpon_masyarakat',
 											usia_masyarakat = '$usia_masyarakat',
 											kelurahan_masyarakat = '$kelurahan_masyarakat',

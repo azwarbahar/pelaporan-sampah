@@ -57,13 +57,16 @@ require_once '../template/header/header.php';
               </div>
 
               <div class="form-group">
-                <label for="inputName">Telpon</label>
-                <input type="number" id="telpon_masyarakat" name="telpon_masyarakat"class="form-control">
-              </div>
-
-              <div class="form-group">
-                <label for="inputName">Usia</label>
-                <input type="number" id="usia_masyarakat" name="usia_masyarakat"class="form-control">
+              <label for="inputName">Area</label>
+                <select class="form-control select2" style="width: 100%;" name="area_masyarakat" id="area_masyarakat">
+                  <option selected="selected" value="-">- Pilih -</option>
+                  <?php
+                    $area = mysqli_query($conn, "SELECT * FROM tb_area WHERE kelurahan_area = '$kelurahan_header'");
+                    foreach($area as $dta_area){
+                      echo "<option value='$dta_area[id_area]'>$dta_area[nama_area]</option>";
+                    }
+                  ?>
+                </select>
               </div>
 
               <div class="form-group">
@@ -82,6 +85,16 @@ require_once '../template/header/header.php';
                   <option value="Parang Tambung">Parang Tambung</option>
                   <option value="Tanjung Merdeka">Tanjung Merdeka</option>
                 </select>
+              </div>
+
+              <div class="form-group">
+                <label for="inputName">Telpon</label>
+                <input type="number" id="telpon_masyarakat" name="telpon_masyarakat"class="form-control">
+              </div>
+
+              <div class="form-group">
+                <label for="inputName">Usia</label>
+                <input type="number" id="usia_masyarakat" name="usia_masyarakat"class="form-control">
               </div>
 
               <div class="form-group">

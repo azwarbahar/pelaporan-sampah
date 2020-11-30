@@ -5,14 +5,6 @@ $id_masyarakat = $_GET['id_masyarakat'];
 $result = mysqli_query($conn, "SELECT * FROM tb_masyarakat WHERE id_masyarakat = '$id_masyarakat'");
 $dta = mysqli_fetch_assoc($result);
 
-// $partai = mysqli_query($conn, "SELECT * FROM tb_partai WHERE id_partai = '$dta[id_partai]'");
-// $dta_partai = mysqli_fetch_assoc($partai);
-
-// $dapil = mysqli_query($conn, "SELECT * FROM tb_dapil WHERE id_dapil = '$dta[id_dapil]'");
-// $dta_dapil = mysqli_fetch_assoc($dapil);
-
-// $komisi = mysqli_query($conn, "SELECT * FROM tb_komisi WHERE id_komisi = '$dta[id_komisi]'");
-// $dta_komisi = mysqli_fetch_assoc($komisi);
 ?>
 
 
@@ -92,6 +84,11 @@ $dta = mysqli_fetch_assoc($result);
                       <p class="text-muted">
                         <?= $dta['kelurahan_masyarakat'] ?>
                       </p>
+                      <?php
+                      $result1 = mysqli_query($conn, "SELECT * FROM tb_area WHERE id_area = '$dta[area_masyarakat]'");
+                      $dta1 = mysqli_fetch_assoc($result1);
+                      ?>
+                      <p class="text-muted"><b>Area :</b> <?= $dta1['nama_area'] ?></p>
                       <hr>
 
                       <strong><i class="fas fa-phone mr-1"></i> Telpon</strong>

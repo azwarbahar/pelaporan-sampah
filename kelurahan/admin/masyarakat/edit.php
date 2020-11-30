@@ -65,6 +65,24 @@ $dta = mysqli_fetch_assoc($result);
               </div>
 
               <div class="form-group">
+              <label for="inputName">Area</label>
+                <select class="form-control select2" style="width: 100%;" name="area_masyarakat" id="area_masyarakat">
+                  <!-- <option selected="selected" value="-">- Pilih -</option> -->
+                  <?php
+                    $area = mysqli_query($conn, "SELECT * FROM tb_area WHERE kelurahan_area = '$kelurahan_header'");
+                    while($row=mysqli_fetch_assoc($area)) {
+                      if ($dta['area_masyarakat'] == $row['id_area']) {
+                        $selected = 'selected="selected"';
+                      } else {
+                        $selected = '';
+                      }
+                      echo "<option value='$row[id_area]' $selected>$row[nama_area]</option>";
+                    }
+                  ?>
+                </select>
+              </div>
+
+              <div class="form-group">
                 <label for="inputName">Telpon</label>
                 <input type="number" value="<?= $dta['telpon_masyarakat'] ?>" id="telpon_masyarakat" name="telpon_masyarakat"class="form-control">
               </div>
