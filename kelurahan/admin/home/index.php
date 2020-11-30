@@ -51,7 +51,7 @@ require '../template/header/header.php';
                   // echo "<h3>$row_mahasiswa_final</h3>";
                 ?>
                 <h3>20</h3>
-                <p>Calon Mahasiswa</p>
+                <p>Data Masyarakat</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
@@ -71,10 +71,10 @@ require '../template/header/header.php';
                     // echo "<h3>$row_aspek_final</h3>";
                   ?>
                   <h3>20</h3>
-                  <p>Jumlah Aspek</p>
+                  <p>Jumlah Kendaraan</p>
                 </div>
                 <div class="icon">
-                  <i class="fas fa-file"></i>
+                  <i class="fas fa-truck"></i>
                 </div>
                 <a href="../aspek/data.php" class="small-box-footer">Detail <i class="fas fa-arrow-circle-right"></i></a>
               </div>
@@ -91,10 +91,10 @@ require '../template/header/header.php';
                     // echo "<h3>$row_kriteria_final</h3>";
                   ?>
                   <h3>20</h3>
-                  <p>Jumlah Kriteria</p>
+                  <p>Data Petugas</p>
                 </div>
                 <div class="icon">
-                  <i class="fas fa-file"></i>
+                  <i class="fas fa-id-badge"></i>
                 </div>
                 <a href="../kriteria/data.php" class="small-box-footer">Detail <i class="fas fa-arrow-circle-right"></i></a>
             </div>

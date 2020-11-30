@@ -146,6 +146,15 @@ $kelurahan_header = $get_data_akun['kelurahan_akun_kelurahan'];
 
           <li class="nav-header">Master Data</li>
           <li class="nav-item">
+            <a href="/pelaporan-sampah/kelurahan/admin/area/data.php" class="nav-link">
+              <i class="nav-icon fa fa-map-pin"></i>
+              <p>
+                Area Kerja
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a href="/pelaporan-sampah/kelurahan/admin/kendaraan/data.php" class="nav-link">
               <i class="nav-icon fa fa-truck"></i>
               <p>
