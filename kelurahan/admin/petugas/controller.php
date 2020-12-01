@@ -9,24 +9,29 @@ function plugins() { ?>
 require('../../../koneksi.php');
 
 // SUBMIT MASYARAKAT
-if (isset($_POST['submit_masyarakat'])) {
-	$nik_masyarakat = $_POST['nik_masyarakat'];
-	$nama_masyarakat = $_POST['nama_masyarakat'];
-	$alamat_masyarakat = $_POST['alamat_masyarakat'];
-	$telpon_masyarakat = $_POST['telpon_masyarakat'];
-	$usia_masyarakat = $_POST['usia_masyarakat'];
-	$kelurahan_masyarakat = $_POST['kelurahan_masyarakat'];
-	$password = password_hash($nik_masyarakat, PASSWORD_DEFAULT);
-	$status_masyarakat = "Aktif";
+if (isset($_POST['submit_pekerja'])) {
+	$nik_pekerja = $_POST['nik_pekerja'];
+	$nama_pekerja = $_POST['nama_pekerja'];
+	$jenis_kelamin_pekerja = $_POST['jenis_kelamin_pekerja'];
+	$usia_pekerja = $_POST['usia_pekerja'];
+	$alamat_pekerja = $_POST['alamat_pekerja'];
+	$latling_pekerja = "-";
+	$telpon_pekerja = $_POST['telpon_pekerja'];
+	$kelurahan_pekerja = $_POST['kelurahan_pekerja'];
+	$password = password_hash($nik_pekerja, PASSWORD_DEFAULT);
+	$area_pekerja = $_POST['area_pekerja'];
+	$kendaraan_pekerja = $_POST['kendaraan_pekerja'];
+	$status_pekerja = "Aktif";
+	$status_kerja_pekerja = "Off";
 
 	// SET FOTO
-	$foto = $_FILES['foto_masyarakat']['name'];
+	$foto = $_FILES['foto_pekerja']['name'];
 	$ext = pathinfo($foto, PATHINFO_EXTENSION);
 	$nama_foto = "image_".time().".".$ext;
-    $file_tmp = $_FILES['foto_masyarakat']['tmp_name'];
+    $file_tmp = $_FILES['foto_pekerja']['tmp_name'];
 
     // TAMBAH DATA
-	$query= "INSERT INTO tb_masyarakat VALUES (NULL, '$nik_masyarakat', '$nama_masyarakat', '$alamat_masyarakat', '$telpon_masyarakat','$usia_masyarakat', '$kelurahan_masyarakat', '-', '$password', '$nama_foto', '$status_masyarakat', 'Sudah')";
+	$query= "INSERT INTO tb_pekerja VALUES (NULL, '$nik_pekerja', '$nama_pekerja', '$alamat_pekerja', '$telpon_pekerja','$usia_pekerja', '$kelurahan_pekerja', '-', '$password', '$nama_foto', '$status_pekerja', 'Sudah')";
 	mysqli_query($conn, $query);
 	if (mysqli_affected_rows($conn) > 0) {
 		move_uploaded_file($file_tmp, 'foto/'.$nama_foto);
@@ -35,7 +40,7 @@ if (isset($_POST['submit_masyarakat'])) {
 			$(document).ready(function() {
 				swal({
 					title: 'Berhasil',
-					text: 'Data Masyarakat Berhasil ditambah!',
+					text: 'Data Pekerja Berhasil ditambah!',
 					icon: 'success'
 				}).then((data) => {
 					location.href = 'data.php';
@@ -47,23 +52,23 @@ if (isset($_POST['submit_masyarakat'])) {
 
 
 // UPDATE MASYARAKAT
-if (isset($_POST['edit_masyarakat'])) {
-	$id_masyarakat = $_POST['id_masyarakat'];
-	$nik_masyarakat = $_POST['nik_masyarakat'];
-	$nama_masyarakat = $_POST['nama_masyarakat'];
-	$alamat_masyarakat = $_POST['alamat_masyarakat'];
-	$telpon_masyarakat = $_POST['telpon_masyarakat'];
-	$usia_masyarakat = $_POST['usia_masyarakat'];
-	$kelurahan_masyarakat = $_POST['kelurahan_masyarakat'];
-	// $password = password_hash($nik_masyarakat, PASSWORD_DEFAULT);
-	// $status_masyarakat = "Aktif";
+if (isset($_POST['edit_pekerja'])) {
+	$id_pekerja = $_POST['id_pekerja'];
+	$nik_pekerja = $_POST['nik_pekerja'];
+	$nama_pekerja = $_POST['nama_pekerja'];
+	$alamat_pekerja = $_POST['alamat_pekerja'];
+	$telpon_pekerja = $_POST['telpon_pekerja'];
+	$usia_pekerja = $_POST['usia_pekerja'];
+	$kelurahan_pekerja = $_POST['kelurahan_pekerja'];
+	// $password = password_hash($nik_pekerja, PASSWORD_DEFAULT);
+	// $status_pekerja = "Aktif";
 
     // SET FOTO
-	if ($_FILES['foto_masyarakat']['name'] != '') {
-		$foto = $_FILES['foto_masyarakat']['name'];
+	if ($_FILES['foto_pekerja']['name'] != '') {
+		$foto = $_FILES['foto_pekerja']['name'];
 		$ext = pathinfo($foto, PATHINFO_EXTENSION);
 		$nama_foto = "image_".time().".".$ext;
-		$file_tmp = $_FILES['foto_masyarakat']['tmp_name'];
+		$file_tmp = $_FILES['foto_pekerja']['tmp_name'];
 		// HAPUS OLD FOTO
 		$target = "foto/".$_POST['foto_now'];
 		if (file_exists($target) && $_POST['foto_now'] != 'default.png') unlink($target);
@@ -72,13 +77,13 @@ if (isset($_POST['edit_masyarakat'])) {
 	} else {
 		$nama_foto = $_POST['foto_now'];
 	}
-		$query = "UPDATE tb_masyarakat SET nik_masyarakat = '$nik_masyarakat',
-											nama_masyarakat = '$nama_masyarakat',
-											alamat_masyarakat = '$alamat_masyarakat',
-											telpon_masyarakat = '$telpon_masyarakat',
-											usia_masyarakat = '$usia_masyarakat',
-											kelurahan_masyarakat = '$kelurahan_masyarakat',
-											foto_masyarakat = '$nama_foto' WHERE id_masyarakat = '$id_masyarakat'";
+		$query = "UPDATE tb_pekerja SET nik_pekerja = '$nik_pekerja',
+											nama_pekerja = '$nama_pekerja',
+											alamat_pekerja = '$alamat_pekerja',
+											telpon_pekerja = '$telpon_pekerja',
+											usia_pekerja = '$usia_pekerja',
+											kelurahan_pekerja = '$kelurahan_pekerja',
+											foto_pekerja = '$nama_foto' WHERE id_pekerja = '$id_pekerja'";
 		mysqli_query($conn, $query);
 	// EDIT PARTAI
 	if (mysqli_affected_rows($conn) > 0) {
@@ -87,7 +92,7 @@ if (isset($_POST['edit_masyarakat'])) {
 			$(document).ready(function() {
 				swal({
 					title: 'Berhasil',
-					text: 'Data Masyarakat berhasil diubah',
+					text: 'Data Pekerja berhasil diubah',
 					icon: 'success'
 				}).then((data) => {
 					location.href = 'data.php';
@@ -99,10 +104,10 @@ if (isset($_POST['edit_masyarakat'])) {
 
 
 // HAPUS ADMIN
-if (isset($_GET['hapus_masyarakat'])) {
-	$id_masyarakat = $_GET['id_masyarakat'];
+if (isset($_GET['hapus_pekerja'])) {
+	$id_pekerja = $_GET['id_pekerja'];
 
-	$query = "DELETE FROM tb_masyarakat WHERE id_masyarakat = '$id_masyarakat'";
+	$query = "DELETE FROM tb_pekerja WHERE id_pekerja = '$id_pekerja'";
 	mysqli_query($conn, $query);
 	if (mysqli_affected_rows($conn) > 0) {
 		plugins(); ?>
@@ -110,7 +115,7 @@ if (isset($_GET['hapus_masyarakat'])) {
 			$(document).ready(function() {
 				swal({
 					title: 'Berhasil Dihapus',
-					text: 'Data Masyarakat berhasil dihapus',
+					text: 'Data Pekerja berhasil dihapus',
 					icon: 'success'
 				}).then((data) => {
 					location.href = 'data.php';

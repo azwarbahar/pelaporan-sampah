@@ -1,6 +1,6 @@
 <?php
 require_once '../template/header/header.php';
-$masyarakat = mysqli_query($conn, "SELECT * FROM tb_masyarakat WHERE kelurahan_masyarakat = '$kelurahan_header'");
+$pekerja = mysqli_query($conn, "SELECT * FROM tb_pekerja WHERE kelurahan_pekerja = '$kelurahan_header'");
 ?>
 
   <!-- Content Wrapper. Contains page content -->
@@ -10,12 +10,12 @@ $masyarakat = mysqli_query($conn, "SELECT * FROM tb_masyarakat WHERE kelurahan_m
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Data Masyarakat</h1>
+            <h1 class="m-0 text-dark">Data Petugas</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/pelaporan-sampah/kelurahan/admin/">Home</a></li>
-              <li class="breadcrumb-item active">Data Masyarakat</li>
+              <li class="breadcrumb-item active">Data Petugas</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -31,60 +31,67 @@ $masyarakat = mysqli_query($conn, "SELECT * FROM tb_masyarakat WHERE kelurahan_m
 
             <div class="card">
               <div class="card-header">
-                <a href="tambah.php" type="button" class="btn btn-primary"><i class="fa fa-plus-square"></i>&nbsp Tambah Masyarakat</a>
+                <a href="tambah.php" type="button" class="btn btn-primary"><i class="fa fa-plus-square"></i>&nbsp Tambah Petugas</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>No</th>
                     <th>NIK</th>
                     <th>Nama</th>
                     <th>Telpon</th>
-                    <th>Alamat</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Kendaraan</th>
                     <th>Status</th>
-                    <th>Aksi</th>
+                    <th></th>
                   </tr>
                   </thead>
                   <tbody>
-                  <?php $i = 1; foreach($masyarakat as $dta) { ?>
+                  <?php $i = 1; foreach($pekerja as $dta) { ?>
                   <tr>
-                    <td style="text-align:center"><?= $i ?></td>
-                    <td><?= $dta['nik_masyarakat'] ?></td>
-                    <td><?= $dta['nama_masyarakat'] ?></td>
-                    <td><?= $dta['telpon_masyarakat'] ?></td>
-                    <td><?= $dta['alamat_masyarakat'] ?></td>
+                    <td style="font-size: small;"><?= $dta['nik_pekerja'] ?></td>
+                    <td style="font-size: small;"><?= $dta['nama_pekerja'] ?></td>
+                    <td style="font-size: small;"><?= $dta['telpon_pekerja'] ?></td>
+                    <td style="font-size: small;"><?= $dta['jenis_kelamin_pekerja'] ?></td>
+                    <td style="font-size: small;"><?= $dta['kendaraan_pekerja'] ?></td>
                     <?php
-                      if ($dta['status_masyarakat'] == "Aktif"){
-                        echo "<td style='text-align:center'><span class='badge bg-success'>Aktif</span></td>";
-                      } else if ($dta['status_masyarakat'] == "Non Aktif"){
-                        echo "<td style='text-align:center'><span class='badge bg-danger'>Non Aktif</span></td>";
+                      if ($dta['status_pekerja'] == "Aktif"){
+                        echo "<td style=' font-size: small; text-align:center'><span class='badge bg-success'>Aktif</span></td>";
+                      } else if ($dta['status_pekerja'] == "Non Aktif"){
+                        echo "<td style=' font-size: small; text-align:center'><span class='badge bg-danger'>Non Aktif</span></td>";
                       }
                     ?>
-                    <td style="text-align:center">
-                        <a href="detail.php?id_masyarakat=<?= $dta['id_masyarakat'] ?>" type="button" class="btn btn-secondary"><i class="fa fa-eye"></i></a>
-                        <a href="edit.php?id_masyarakat=<?= $dta['id_masyarakat'] ?>" type="button" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                        <a href="#" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger<?= $dta['id_masyarakat'] ?>" ><i class="fa fa-trash"></i></a>
+                    <td style="text-align:center; width: 20px;">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
+                          <i class="fas fa fa-ellipsis-v"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" role="menu">
+                          <a href="#" class="dropdown-item">Lihat</a>
+                          <a href="edit.php?id_pekerja=<?= $dta['id_pekerja'] ?>" class="dropdown-item">Edit</a>
+                          <a href="#" data-toggle="modal" data-target="#modal-danger<?= $dta['id_pekerja'] ?>" class="dropdown-item">Hapus</a>
+                        </div>
+                      </div>
                     </td>
                   </tr>
 
       <!-- Modal Hapus -->
-      <div class="modal fade" tabindex="-1" id="modal-danger<?= $dta['id_masyarakat'] ?>">
+      <div class="modal fade" tabindex="-1" id="modal-danger<?= $dta['id_pekerja'] ?>">
         <div class="modal-dialog">
           <div class="modal-content bg-danger">
             <div class="modal-header">
-              <h4 class="modal-title">Hapus Data Masyarakat</h4>
+              <h4 class="modal-title">Hapus Data Petugas</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              <p>Yakin Ingin Menghapus Data Masyarakat</p>
+              <p>Yakin Ingin Menghapus Data Petugas</p>
             </div>
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-outline-light" data-dismiss="modal">Batal</button>
-              <a href="controller.php?hapus_masyarakat=true&id_masyarakat=<?= $dta['id_masyarakat'] ?>" type="button" class="btn btn-outline-light">Hapus</a>
+              <a href="controller.php?hapus_pekerja=true&id_pekerja=<?= $dta['id_pekerja'] ?>" type="button" class="btn btn-outline-light">Hapus</a>
             </div>
           </div>
           <!-- /.modal-content -->
