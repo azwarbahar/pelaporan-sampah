@@ -114,7 +114,7 @@ require_once '../template/header/header.php';
                 <div class="col-12">
                   <input type="hidden" value="<?= $kelurahan_header ?>" name="kelurahan_pekerja">
                 <button type="submit" name="submit_pekerja" class="btn btn-success float-right" style="margin-top: 3% ; margin-left: 2%;">Simpan</button>
-                <a href="/pelaporan-sampah/kelurahan/admin/pekerja/data.php" class="btn btn-secondary float-right" style="margin-top: 3% ;">Batal</a>
+                <a href="/pelaporan-sampah/kelurahan/admin/petugas/data.php" class="btn btn-secondary float-right" style="margin-top: 3% ;">Batal</a>
               </div>
             </form>
             </div>

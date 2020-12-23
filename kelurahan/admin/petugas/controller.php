@@ -31,7 +31,21 @@ if (isset($_POST['submit_pekerja'])) {
     $file_tmp = $_FILES['foto_pekerja']['tmp_name'];
 
     // TAMBAH DATA
-	$query= "INSERT INTO tb_pekerja VALUES (NULL, '$nik_pekerja', '$nama_pekerja', '$alamat_pekerja', '$telpon_pekerja','$usia_pekerja', '$kelurahan_pekerja', '-', '$password', '$nama_foto', '$status_pekerja', 'Sudah')";
+	$query= "INSERT INTO tb_pekerja VALUES (NULL, '$nik_pekerja',
+													'$nama_pekerja',
+													'$jenis_kelamin_pekerja',
+													'$usia_pekerja',
+													'$alamat_pekerja',
+													'-',
+													'-',
+													'$telpon_pekerja',
+													'$kelurahan_pekerja',
+													'$password',
+													'$area_pekerja',
+													'$kendaraan_pekerja',
+													'$nama_foto',
+													'$status_pekerja',
+													'$status_kerja_pekerja')";
 	mysqli_query($conn, $query);
 	if (mysqli_affected_rows($conn) > 0) {
 		move_uploaded_file($file_tmp, 'foto/'.$nama_foto);
@@ -51,17 +65,17 @@ if (isset($_POST['submit_pekerja'])) {
 }
 
 
-// UPDATE MASYARAKAT
+// UPDATE PEKERJA
 if (isset($_POST['edit_pekerja'])) {
 	$id_pekerja = $_POST['id_pekerja'];
 	$nik_pekerja = $_POST['nik_pekerja'];
 	$nama_pekerja = $_POST['nama_pekerja'];
+	$jenis_kelamin_pekerja = $_POST['jenis_kelamin_pekerja'];
+	$usia_pekerja = $_POST['usia_pekerja'];
 	$alamat_pekerja = $_POST['alamat_pekerja'];
 	$telpon_pekerja = $_POST['telpon_pekerja'];
-	$usia_pekerja = $_POST['usia_pekerja'];
-	$kelurahan_pekerja = $_POST['kelurahan_pekerja'];
-	// $password = password_hash($nik_pekerja, PASSWORD_DEFAULT);
-	// $status_pekerja = "Aktif";
+	$area_pekerja = $_POST['area_pekerja'];
+	$kendaraan_pekerja = $_POST['kendaraan_pekerja'];
 
     // SET FOTO
 	if ($_FILES['foto_pekerja']['name'] != '') {
@@ -79,10 +93,12 @@ if (isset($_POST['edit_pekerja'])) {
 	}
 		$query = "UPDATE tb_pekerja SET nik_pekerja = '$nik_pekerja',
 											nama_pekerja = '$nama_pekerja',
+											jenis_kelamin_pekerja = '$jenis_kelamin_pekerja',
+											usia_pekerja = '$usia_pekerja',
 											alamat_pekerja = '$alamat_pekerja',
 											telpon_pekerja = '$telpon_pekerja',
-											usia_pekerja = '$usia_pekerja',
-											kelurahan_pekerja = '$kelurahan_pekerja',
+											area_pekerja = '$area_pekerja',
+											kendaraan_pekerja = '$kendaraan_pekerja',
 											foto_pekerja = '$nama_foto' WHERE id_pekerja = '$id_pekerja'";
 		mysqli_query($conn, $query);
 	// EDIT PARTAI
@@ -124,5 +140,57 @@ if (isset($_GET['hapus_pekerja'])) {
 		</script>
 	<?php }
 }
+
+// RESET PASSWORD PEKERJA
+if (isset($_GET['reset_password_pekerja'])) {
+	$id_pekerja = $_GET['id_pekerja'];
+	$nik_pekerja = $_GET['nik_pekerja'];
+	$password = password_hash($nik_pekerja, PASSWORD_DEFAULT);
+
+	$query = "UPDATE tb_pekerja SET password = '$password' WHERE id_pekerja = '$id_pekerja'";
+
+		mysqli_query($conn, $query);
+	// EDIT
+	if (mysqli_affected_rows($conn) > 0) {
+		plugins(); ?>
+		<script>
+			$(document).ready(function() {
+				swal({
+					title: 'Berhasil',
+					text: 'Reset Password berhasil',
+					icon: 'success'
+				}).then((data) => {
+					location.href = 'data.php';
+				});
+			});
+		</script>
+	<?php }
+}
+
+// STATUS PEKERJA
+if (isset($_GET['update_status_pekerja'])) {
+	$id_pekerja = $_GET['id_pekerja'];
+	$status_pekerja_ubah = $_GET['status_pekerja_ubah'];
+
+	$query = "UPDATE tb_pekerja SET status_pekerja = '$status_pekerja_ubah' WHERE id_pekerja = '$id_pekerja'";
+
+		mysqli_query($conn, $query);
+	// EDIT
+	if (mysqli_affected_rows($conn) > 0) {
+		plugins(); ?>
+		<script>
+			$(document).ready(function() {
+				swal({
+					title: 'Berhasil',
+					text: 'Update berhasil',
+					icon: 'success'
+				}).then((data) => {
+					location.href = 'data.php';
+				});
+			});
+		</script>
+	<?php }
+}
+
 
 ?>

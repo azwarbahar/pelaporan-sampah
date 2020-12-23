@@ -54,7 +54,12 @@ $pekerja = mysqli_query($conn, "SELECT * FROM tb_pekerja WHERE kelurahan_pekerja
                     <td style="font-size: small;"><?= $dta['nama_pekerja'] ?></td>
                     <td style="font-size: small;"><?= $dta['telpon_pekerja'] ?></td>
                     <td style="font-size: small;"><?= $dta['jenis_kelamin_pekerja'] ?></td>
-                    <td style="font-size: small;"><?= $dta['kendaraan_pekerja'] ?></td>
+                    <?php
+                      $kenderaan = mysqli_query($conn, "SELECT * FROM tb_kendaraan WHERE id_kendaraan='$dta[kendaraan_pekerja]'");
+                      foreach($kenderaan as $dta_kendaraan){
+                        echo "<td style='font-size: small;'>$dta_kendaraan[kode_kendaraan] - $dta_kendaraan[nama_kendaraan]</td>";
+                      }
+                    ?>
                     <?php
                       if ($dta['status_pekerja'] == "Aktif"){
                         echo "<td style=' font-size: small; text-align:center'><span class='badge bg-success'>Aktif</span></td>";
@@ -71,6 +76,18 @@ $pekerja = mysqli_query($conn, "SELECT * FROM tb_pekerja WHERE kelurahan_pekerja
                           <a href="#" class="dropdown-item">Lihat</a>
                           <a href="edit.php?id_pekerja=<?= $dta['id_pekerja'] ?>" class="dropdown-item">Edit</a>
                           <a href="#" data-toggle="modal" data-target="#modal-danger<?= $dta['id_pekerja'] ?>" class="dropdown-item">Hapus</a>
+                          <a href="#" data-toggle="modal" data-target="#modal-warning<?= $dta['id_pekerja'] ?>" class="dropdown-item">Reset Password</a>
+                          <?php
+                            if ($dta['status_pekerja'] == "Aktif"){
+                          ?>
+                          <a href="#" data-toggle="modal" data-target="#modal-default<?= $dta['id_pekerja'] ?>" class="dropdown-item">Non Aktif</a>
+                          <?php
+                            } else if ($dta['status_pekerja'] == "Non Aktif"){
+                              ?>
+                              <a href="#" data-toggle="modal" data-target="#modal-default<?= $dta['id_pekerja'] ?>" class="dropdown-item">Aktif</a>
+                              <?php
+                            }
+                          ?>
                         </div>
                       </div>
                     </td>
@@ -92,6 +109,63 @@ $pekerja = mysqli_query($conn, "SELECT * FROM tb_pekerja WHERE kelurahan_pekerja
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-outline-light" data-dismiss="modal">Batal</button>
               <a href="controller.php?hapus_pekerja=true&id_pekerja=<?= $dta['id_pekerja'] ?>" type="button" class="btn btn-outline-light">Hapus</a>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+
+      <!-- Modal Reset Password -->
+      <div class="modal fade" tabindex="-1" id="modal-warning<?= $dta['id_pekerja'] ?>">
+        <div class="modal-dialog">
+          <div class="modal-content bg-warning">
+            <div class="modal-header">
+              <h4 class="modal-title">Reset Password Petugas</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Yakin Ingin Reset Password Petugas</p>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-outline-light" data-dismiss="modal">Batal</button>
+              <a href="controller.php?reset_password_pekerja=true&id_pekerja=<?= $dta['id_pekerja'] ?>&nik_pekerja=<?= $dta['nik_pekerja'] ?>" type="button" class="btn btn-outline-light">Reset</a>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+      <!-- Modal NON Aktif -->
+      <div class="modal fade" tabindex="-1" id="modal-default<?= $dta['id_pekerja'] ?>">
+        <div class="modal-dialog">
+          <div class="modal-content bg-default">
+            <div class="modal-header">
+            <?php
+              $status_modal= "";
+                if ($dta['status_pekerja'] == "Aktif"){
+                  $status_modal = "Non Aktif";
+                  } else if ($dta['status_pekerja'] == "Non Aktif"){
+                  $status_modal = "Aktif";
+                }
+            ?>
+              <h4 class="modal-title"><?= $status_modal ?>kan Petugas</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Yakin Ingin <?= $status_modal ?>kan Petugas</p>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+              <a href="controller.php?update_status_pekerja=true&id_pekerja=<?= $dta['id_pekerja'] ?>&status_pekerja_ubah=<?= $status_modal ?>" type="button" class="btn btn-primary">OK</a>
             </div>
           </div>
           <!-- /.modal-content -->
