@@ -3,7 +3,7 @@ require_once '../template/header/header.php';
 
 
 $id_admin = $_GET['id_admin'];
-$result = mysqli_query($conn, "SELECT * FROM tb_admin WHERE id_admin = '$id_admin'");
+$result = mysqli_query($conn, "SELECT * FROM tb_akun_kecamatan WHERE id_akun_kecamatan = '$id_admin'");
 $dta = mysqli_fetch_assoc($result);
 
 
@@ -21,8 +21,8 @@ $dta = mysqli_fetch_assoc($result);
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/spk_pm_unm/admin/">Home</a></li>
-              <li class="breadcrumb-item"><a href="/spk_pm_unm/admin/user/data.php">User Admin</a></li>
+              <li class="breadcrumb-item"><a href="/pelaporan-sampah/kecamatan/admin/">Home</a></li>
+              <li class="breadcrumb-item"><a href="/pelaporan-sampah/kecamatan/admin/user/data.php">User Admin</a></li>
               <li class="breadcrumb-item active">Edit</li>
             </ol>
           </div><!-- /.col -->
@@ -50,18 +50,13 @@ $dta = mysqli_fetch_assoc($result);
             <div class="card-body">
               <div class="form-group">
                 <label for="inputName">Nama Lengkap</label>
-                <input type="text" value="<?= $dta['nama_admin'] ?>" id="nama_admin" name="nama_admin"class="form-control">
+                <input type="text" value="<?= $dta['nama_akun_kecamatan'] ?>" id="nama_admin" name="nama_admin"class="form-control">
               </div>
 
 
               <div class="form-group">
                 <label for="inputName">Username</label>
-                <?php
-                  $queri_akun = mysqli_query($conn, "SELECT * FROM tb_akun WHERE id_akun = $dta[id_admin] AND level_akun = 'admin' ");
-                    while($row=mysqli_fetch_assoc($queri_akun)) {
-                      echo "<input type='text' value='$row[username]' id='username' name='username'class='form-control'>";
-                    }
-                ?>
+                <input type="text" value="<?= $dta['username_akun_kecamatan'] ?>" disabled id="username" name="username"class="form-control">
               </div>
 
               <div class="form-group">
@@ -72,13 +67,13 @@ $dta = mysqli_fetch_assoc($result);
                     </div>
                   </div>
                   <br>
-                  <img style="max-width:180px; max-height:180px;" id="blah" src="foto/<?php echo $dta['foto_admin'] ?>" alt="your image" />
+                  <img style="max-width:180px; max-height:180px;" id="blah" src="foto/<?php echo $dta['foto_akun_kecamatan'] ?>" alt="your image" />
 
               <div class="col-12">
-              <input type="hidden" name="id_admin" value="<?= $dta['id_admin'] ?>">
-              <input type="hidden" name="foto_now" value="<?= $dta['foto_admin'] ?>">
+              <input type="hidden" name="id_admin" value="<?= $dta['id_akun_kecamatan'] ?>">
+              <input type="hidden" name="foto_now" value="<?= $dta['foto_akun_kecamatan'] ?>">
               <button type="submit" name="edit_admin" id="edit_admin" disabled="" class="btn btn-success float-right" style="margin-top: 3% ; margin-left: 2%;">Simpan</button>
-              <a href="/spk_pm_unm/admin/user/data.php" class="btn btn-secondary float-right" style="margin-top: 3% ;">Batal</a>
+              <a href="/pelaporan-sampah/kecamatan/admin/user/data.php" class="btn btn-secondary float-right" style="margin-top: 3% ;">Batal</a>
             </div>
             </form>
             </div>

@@ -14,8 +14,8 @@ require_once '../template/header/header.php';
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/spk_pm_unm/admin/">Home</a></li>
-              <li class="breadcrumb-item"><a href="/spk_pm_unm/admin/user/data.php">User Admin</a></li>
+              <li class="breadcrumb-item"><a href="/pelaporan-sampah/kecamatan/admin/">Home</a></li>
+              <li class="breadcrumb-item"><a href="/pelaporan-sampah/kecamatan/admin/user/data.php">User Admin</a></li>
               <li class="breadcrumb-item active">Tambah</li>
             </ol>
           </div><!-- /.col -->
@@ -29,7 +29,7 @@ require_once '../template/header/header.php';
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-10" style="left: 10px">
           <div class="card card-primary">
             <div class="card-header">
               <h3 class="card-title">Tambah User Admin</h3>
@@ -60,11 +60,11 @@ require_once '../template/header/header.php';
                     </div>
                   </div>
                   <br>
-                  <img style="max-width:180px; max-height:180px;" id="blah" src="/spk_pm_unm/assets/dist/img/default-150x150.png" alt="your image" />
+                  <img style="max-width:180px; max-height:180px;" id="blah" src="/pelaporan-sampah/assets/dist/img/default-150x150.png" alt="your image" />
 
               <div class="col-12">
               <button type="submit" name="submit_admin" class="btn btn-success float-right" style="margin-top: 3% ; margin-left: 2%;">Simpan</button>
-              <a href="/spk_pm_unm/admin/user/data.php" class="btn btn-secondary float-right" style="margin-top: 3% ;">Batal</a>
+              <a href="/pelaporan-sampah/kecamatan/admin/user/data.php" class="btn btn-secondary float-right" style="margin-top: 3% ;">Batal</a>
             </div>
             </form>
             </div>

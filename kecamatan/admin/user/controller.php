@@ -1,19 +1,18 @@
 <?php
 
 function plugins() { ?>
-	<link rel="stylesheet" href="/spk_pm_unm/assets/plugins/bootstrap-more/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/spk_pm_unm/assets/dist/css2/components.css">
-	<script src="/spk_pm_unm/assets/dist/jquery.min.js"></script>
-	<script src="/spk_pm_unm/assets/dist/sweetalert/sweetalert.min.js"></script>
+	<link rel="stylesheet" href="/pelaporan-sampah/assets/plugins/bootstrap-more/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/pelaporan-sampah/assets/dist/css2/components.css">
+	<script src="/pelaporan-sampah/assets/dist/jquery.min.js"></script>
+	<script src="/pelaporan-sampah/assets/dist/sweetalert/sweetalert.min.js"></script>
 <?php }
-require('../../koneksi.php');
+require('../../../koneksi.php');
 
 // SUBMIT ADMIN
 if (isset($_POST['submit_admin'])) {
 	$nama_admin = $_POST['nama_admin'];
 	$username = $_POST['username'];
 	$password = password_hash($username, PASSWORD_DEFAULT);
-	$level_akun = "admin";
 	$status_admin = "Aktif";
 
 	// SET FOTO
@@ -23,22 +22,16 @@ if (isset($_POST['submit_admin'])) {
     $file_tmp = $_FILES['foto_admin']['tmp_name'];
 
     // TAMBAH DATA
-	$query= "INSERT INTO tb_admin VALUES (NULL, '$nama_admin', '$nama_foto', '$status_admin')";
+	$query= "INSERT INTO tb_akun_kecamatan VALUES (NULL, '$nama_admin', '$username', '$password', '$nama_foto', '$status_admin')";
 	mysqli_query($conn, $query);
 	if (mysqli_affected_rows($conn) > 0) {
-
-		//get Id Admin
-		$getIdInster = mysqli_insert_id($conn);
-		$queryAkunAnggota = "INSERT INTO tb_akun VALUES (NULL, '$getIdInster', '$username', '$password', '$level_akun', '$status_admin')";
-		mysqli_query($conn, $queryAkunAnggota);
-
 		move_uploaded_file($file_tmp, 'foto/'.$nama_foto);
 		plugins(); ?>
 		<script>
 			$(document).ready(function() {
 				swal({
 					title: 'Berhasil',
-					text: 'Data Admin Berhasil ditambah!',
+					text: 'Data Admin kecamatan Berhasil ditambah!',
 					icon: 'success'
 				}).then((data) => {
 					location.href = 'data.php';
@@ -53,7 +46,6 @@ if (isset($_POST['submit_admin'])) {
 if (isset($_POST['edit_admin'])) {
 	$id_admin = $_POST['id_admin'];
 	$nama_admin = $_POST['nama_admin'];
-	$username = $_POST['username'];
 
     // SET FOTO
 	if ($_FILES['foto_admin']['name'] != '') {
@@ -69,18 +61,16 @@ if (isset($_POST['edit_admin'])) {
 	} else {
 		$nama_foto = $_POST['foto_now'];
 	}
-		$query = "UPDATE tb_admin SET nama_admin = '$nama_admin', foto_admin = '$nama_foto' WHERE id_admin = '$id_admin'";
+		$query = "UPDATE tb_akun_kecamatan SET nama_akun_kecamatan = '$nama_admin', foto_akun_kecamatan = '$nama_foto' WHERE id_akun_kecamatan = '$id_admin'";
 		mysqli_query($conn, $query);
 	// EDIT PARTAI
 	if (mysqli_affected_rows($conn) > 0) {
-		$queryAkun = "UPDATE tb_akun SET username = '$username' WHERE id_akun = '$id_admin' AND level_akun= 'admin'";
-		mysqli_query($conn, $queryAkun);
 		plugins(); ?>
 		<script>
 			$(document).ready(function() {
 				swal({
 					title: 'Berhasil',
-					text: 'Data Partai berhasil diubah',
+					text: 'Data Admin kecamatan berhasil diubah',
 					icon: 'success'
 				}).then((data) => {
 					location.href = 'data.php';
@@ -95,19 +85,15 @@ if (isset($_POST['edit_admin'])) {
 if (isset($_GET['hapus_admin'])) {
 	$id_admin = $_GET['id_admin'];
 
-	$query = "DELETE FROM tb_admin WHERE id_admin = '$id_admin'";
+	$query = "DELETE FROM tb_akun_kecamatan WHERE id_akun_kecamatan = '$id_admin'";
 	mysqli_query($conn, $query);
 	if (mysqli_affected_rows($conn) > 0) {
-
-		$queryAkun = "UPDATE tb_akun SET status = 'Non Aktif' WHERE id_akun = '$id_admin' AND level_akun= 'admin'";
-		mysqli_query($conn, $queryAkun);
-
 		plugins(); ?>
 		<script>
 			$(document).ready(function() {
 				swal({
 					title: 'Berhasil Dihapus',
-					text: 'Data Partai berhasil dihapus',
+					text: 'Data Admin kecamatan berhasil dihapus',
 					icon: 'success'
 				}).then((data) => {
 					location.href = 'data.php';
