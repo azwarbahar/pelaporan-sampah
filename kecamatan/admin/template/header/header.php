@@ -1,10 +1,13 @@
 <?php
-// require('../../koneksi.php');
+require('../../../koneksi.php');
 
-// if (!isset($_SESSION['login_admin'])) {
-//   header("location: ../login.php");
-// }
-
+if (!isset($_SESSION['login_admin_kecamatan'])) {
+  header("location: ../../login.php");
+}
+$get_id_session = $_SESSION['get_id_kecamatan'];
+$query_header_akun = mysqli_query($conn, "SELECT * FROM tb_akun_kecamatan WHERE id_akun_kecamatan = '$get_id_session'");
+$get_data_akun = mysqli_fetch_assoc($query_header_akun);
+$nama_header = $get_data_akun['nama_akun_kecamatan'];
 ?>
 
 <!DOCTYPE html>
@@ -12,8 +15,8 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SPK | Profile Matching</title>
-  <link rel="icon" href="/pelaporan-sampah/assets/dist/img/logo_unm_bg_white.png">
+  <title>Tamalate | Pelaporan Sampah</title>
+  <link rel="icon" href="/pelaporan-sampah/assets/dist/img/AdminLTELogo.png">
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -49,7 +52,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/pelaporan-sampah/admin/index.php" class="nav-link">Home</a>
+        <a href="/pelaporan-sampah/kecamatan/admin/index.php" class="nav-link">Home</a>
       </li>
     </ul>
 
@@ -65,21 +68,49 @@
       </div>
     </form>
 
-        <!-- Right navbar links -->
-        <ul class="navbar-nav ml-auto">
-
-
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a style="color: white;" class="nav-link" data-toggle="modal" data-target="#modal-default"  href="" role="button">
+          <i class="fas fa fa-power-off" style="color: white;"></i> Logout
+        </a>
+      </li>
     </ul>
   </nav>
-  <!-- /.navbar -->
+<!-- /.navbar -->
+
+<!-- Modal Hapus -->
+<div class="modal fade" tabindex="-1" id="modal-default">
+<div class="modal-dialog">
+  <div class="modal-content bg-default">
+    <div class="modal-header">
+    
+      <h4 class="modal-title"> <i class="fa fa-power-off"></i> Konfirmasi</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Yakin Ingin Keluar ?</p>
+    </div>
+    <div class="modal-footer justify-content-between">
+      <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Batal</button>
+      <a href="/pelaporan-sampah/kecamatan/logout.php?logout=true&for=login_admin_kecamatan" type="button" class="btn btn-outline-dark">Keluar</a>
+    </div>
+  </div>
+  <!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-orange elevation-5">
     <!-- Brand Logo -->
-    <a href="/pelaporan-sampah/admin/index.php" class="brand-link">
+    <a href="/pelaporan-sampah/kecamatan/admin/index.php" class="brand-link">
       <img src="/pelaporan-sampah/assets/dist/img/AdminLTELogo.png" alt="Logo Kabupaten Soppeng" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">Pelaporan Sampah</span>
+      <span class="brand-text font-weight-light">Kec Tamalate</span>
     </a>
 
     <!-- Sidebar -->
@@ -90,7 +121,7 @@
           <img src="/pelaporan-sampah/assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Admin</a>
+          <a href="#" class="d-block"><?= $nama_header ?></a>
           <a href="#"<i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -102,7 +133,7 @@
                with font-awesome or any other icon font library -->
 
           <li class="nav-item has-treeview menu-open">
-            <a href="/pelaporan-sampah/admin/" class="nav-link active">
+            <a href="/pelaporan-sampah/kecamatan/admin/" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -113,18 +144,100 @@
           <!-- <li class="nav-header">Setting</li> -->
 
 
+          <li class="nav-header">Master Data</li>
+
           <li class="nav-item">
-            <a href="/pelaporan-sampah/admin/mahasiswa/data.php" class="nav-link">
-              <i class="nav-icon fa fa-database"></i>
+            <a href="/pelaporan-sampah/kecamatan/admin/masyarakat/data.php" class="nav-link">
+              <i class="nav-icon fa fa-user-plus"></i>
               <p>
-                Master Data
+                Data Masyarakat
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/pelaporan-sampah/kecamatan/admin/admin-kelurahan/data.php" class="nav-link">
+              <i class="nav-icon fa fa-address-card"></i>
+              <p>
+                Admin kecamatan
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/pelaporan-sampah/kecamatan/admin/kendaraan/data.php" class="nav-link">
+              <i class="nav-icon fa fa-truck"></i>
+              <p>
+                Data Kendaraan
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/pelaporan-sampah/kecamatan/admin/petugas/data.php" class="nav-link">
+              <i class="nav-icon fa fa-id-badge"></i>
+              <p>
+                Data Petugas
               </p>
             </a>
           </li>
 
 
+          <li class="nav-header">Laporan</li>
           <li class="nav-item">
-            <a href="/pelaporan-sampah/admin/user/data.php" class="nav-link">
+            <a href="#" class="nav-link">
+              <i class="far fa fa-file nav-icon"></i>
+              <p>
+                Lapor Sampah 
+                <span class="badge badge-secondary">2</span>
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="far fa fa-file-excel nav-icon"></i>
+              <p>
+                Lapor Keluhan 
+                <span class="badge badge-warning">2</span>
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="far fa fa-print nav-icon"></i>
+              <p>
+                Cetak
+              </p>
+            </a>
+          </li>
+
+
+          <li class="nav-header">Kontent</li>
+          <li class="nav-item">
+            <a href="/pelaporan-sampah/kecamatan/admin/edukasi/data.php" class="nav-link">
+              <i class="far fa fa-image nav-icon"></i>
+              <p>
+                Poster Edukasi
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="far fa fa-newspaper nav-icon"></i>
+              <p>
+                Berita
+              </p>
+            </a>
+          </li>
+
+
+
+          <li class="nav-header">Pengaturan</li>
+          <li class="nav-item">
+            <a href="/pelaporan-sampah/kecamatan/admin/user/data.php" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>
                 Admin
@@ -137,15 +250,6 @@
               <i class="far fa-circle nav-icon"></i>
               <p>
                 Tema
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link"  href="/pelaporan-sampah/logout.php?logout=true&for=login_admin" role="button">
-              <i class="nav-icon fa fa-power-off"></i>
-              <p>
-                Logout
               </p>
             </a>
           </li>
