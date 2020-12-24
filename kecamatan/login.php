@@ -1,51 +1,48 @@
 
 <?php
-// require 'koneksi.php';
+require '../koneksi.php';
 
-// if (isset($_COOKIE['login_admin'])) $_SESSION['login_admin'] = $_COOKIE['login_admin'];
+if (isset($_COOKIE['login_admin_kecamatan'])) $_SESSION['login_admin_kecamatan'] = $_COOKIE['login_admin_kecamatan'];
 
-// if (isset($_COOKIE['get_id'])) $_SESSION['get_id'] = $_COOKIE['get_id'];
+if (isset($_COOKIE['get_id_kecamatan'])) $_SESSION['get_id_kecamatan'] = $_COOKIE['get_id_kecamatan'];
 
-// if (isset($_SESSION['login_admin'])) header("location: admin/");
+if (isset($_SESSION['login_admin_kecamatan'])) header("location: admin/");
 
-// $password = null;
-// $username = null;
-// $err_user = false;
-// $err_pass = false;
-// $err_stss = false;
+$password = null;
+$username = null;
+$err_user = false;
+$err_pass = false;
+$err_stss = false;
 
 
-// if (isset($_POST['login'])) {
-//   $username = $_POST['username'];
-//   $password = $_POST['password'];
+if (isset($_POST['login'])) {
+  $username = $_POST['username'];
+  $password = $_POST['password'];
 
-//   $result = mysqli_query($conn, "SELECT * FROM tb_akun WHERE username = '$username' AND status = 'Aktif'");
-//   $get = mysqli_fetch_assoc($result);
+  $result = mysqli_query($conn, "SELECT * FROM tb_akun_kecamatan WHERE username_akun_kecamatan = '$username' AND status_akun_kecamatan = 'Aktif'");
+  $get = mysqli_fetch_assoc($result);
 
-//   if ($get) {
-//     $get_password = $get['password'];
-//     $get_id = $get['id'];
-//     $level_akun = $get['level_akun'];
-//     $status = $get['status'];
+  if ($get) {
+    $get_password = $get['password_akun_kecamatan'];
+    $get_id_kecamatan = $get['id_akun_kecamatan'];
+    $status = $get['status_akun_kecamatan'];
 
-//     if (password_verify($password, $get_password)) {
-//       $_SESSION['get_id'] = $get_id;
-//       setcookie('get_id', $get_id, time()+172800);
+    if (password_verify($password, $get_password)) {
+      $_SESSION['get_id_kecamatan'] = $get_id_kecamatan;
+      setcookie('get_id_kecamatan', $get_id_kecamatan, time()+172800);
 
-//       if ($level_akun == 'admin') {
-//         if ($status != 'Aktif') $err_stss = true;
-//         else {
-//           $_SESSION['login_admin'] = $get_password;
-//           if (isset($_POST['remember'])) {
-//             setcookie('login_admin', $get_password, time()+172800);
-//           }
-//           header("location: admin/");
-//           exit();
-//         }
-//       }
-//     } else $err_pass = true;
-//   } else $err_user = true;
-// }
+        if ($status != 'Aktif') $err_stss = true;
+        else {
+          $_SESSION['login_admin_kecamatan'] = $get_password;
+          if (isset($_POST['remember'])) {
+            setcookie('login_admin_kecamatan', $get_password, time()+172800);
+          }
+          header("location: admin/");
+          exit();
+        }
+    } else $err_pass = true;
+  } else $err_user = true;
+}
 
 ?>
 
@@ -54,7 +51,8 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SPK PM UNM| Log in</title>
+  <title>Tamalate | Pelaporan Sampah</title>
+  <link rel="icon" href="/pelaporan-sampah/assets/dist/img/AdminLTELogo.png">
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -97,12 +95,12 @@ PELAPORAN SAMPAH KECAMATAN TAMALATE</h4>
                         Masukkan username
                       </div>
                       <?php
-                      // if ($err_user == true) { 
+                      if ($err_user == true) { 
                         ?>
-                        <!-- <div class="text-danger">
+                        <div class="text-danger">
                           Username tidak ditemukan
-                        </div> -->
-                      <?php //} ?>
+                        </div>
+                      <?php } ?>
 
         <div class="input-group mb-3">
           <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
@@ -113,17 +111,17 @@ PELAPORAN SAMPAH KECAMATAN TAMALATE</h4>
           </div>
         </div>
         <div class="invalid-feedback"> Masukkan password</div>
-        <?php //if ($err_pass == true) { ?>
-        <!-- <div class="text-danger">
+        <?php if ($err_pass == true) { ?>
+        <div class="text-danger">
           Password tidak sesuai
-        </div> -->
-        <?php// } ?>
+        </div>
+        <?php } ?>
 
-        <?php //if ($err_stss == true) { ?>
-        <!-- <div class="text-danger">
+        <?php if ($err_stss == true) { ?>
+        <div class="text-danger">
           Akun belum diverifikasi atau sedang dinonaktifkan
-        </div> -->
-        <?php //} ?>
+        </div>
+        <?php } ?>
           <br><br>
         <div class="row">
           <div class="col-8">
@@ -136,8 +134,8 @@ PELAPORAN SAMPAH KECAMATAN TAMALATE</h4>
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <!-- <button type="submit" class="btn btn-primary btn-block" name="login" tabindex="4">Login</button> -->
-            <a  href="admin/" type="submit" class="btn btn-primary btn-block" name="login" tabindex="4">Login</a>
+            <button type="submit" class="btn btn-primary btn-block" name="login" tabindex="4">Login</button>
+            <!-- <a  href="submit" type="submit" class="btn btn-primary btn-block" name="login" tabindex="4">Login</a> -->
           </div>
           <!-- /.col -->
         </div>

@@ -187,7 +187,8 @@ $kelurahan_header = $get_data_akun['kelurahan_akun_kelurahan'];
             <a href="#" class="nav-link">
               <i class="far fa fa-file nav-icon"></i>
               <p>
-                Lapor Sampah
+                Lapor Sampah 
+                <span class="badge badge-secondary">2</span>
               </p>
             </a>
           </li>
@@ -196,7 +197,8 @@ $kelurahan_header = $get_data_akun['kelurahan_akun_kelurahan'];
             <a href="#" class="nav-link">
               <i class="far fa fa-file-excel nav-icon"></i>
               <p>
-                Lapor Keluhan
+                Lapor Keluhan 
+                <span class="badge badge-warning">2</span>
               </p>
             </a>
           </li>

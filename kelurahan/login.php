@@ -70,7 +70,7 @@ if (isset($_POST['login'])) {
 <body class="hold-transition login-page">
   
 <h4 style="text-align: center;">
-  WEBSITE ADMIN KECAMATAN </h4>
+  WEBSITE ADMIN KELURAHAN </h4>
 <h4 style="text-align: center;">
 PELAPORAN SAMPAH KECAMATAN TAMALATE</h4>
 <div class="login-box">
