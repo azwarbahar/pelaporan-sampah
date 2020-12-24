@@ -43,8 +43,13 @@ require '../template/header/header.php';
               <span class="info-box-icon bg-info"><i class="ion ion-person-add"></i></span>
 
               <div class="info-box-content">
+                <?php
+                  $masyarakat_home = mysqli_query($conn, "SELECT * FROM tb_masyarakat");
+                  $row_masyarakat_home = mysqli_num_rows($masyarakat_home);
+                  $row_masyarakat_home_final = $row_masyarakat_home;
+                ?>
                 <span class="info-box-text">Data Masyarakat</span>
-                <span class="info-box-number">20</span>
+                <span class="info-box-number"><?= $row_masyarakat_home_final ?></span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -56,8 +61,13 @@ require '../template/header/header.php';
               <span class="info-box-icon bg-success"><i class="fas fa-truck"></i></span>
 
               <div class="info-box-content">
+                <?php
+                  $kendaraan_home = mysqli_query($conn, "SELECT * FROM tb_kendaraan");
+                  $row_kendaraan_home = mysqli_num_rows($kendaraan_home);
+                  $row_kendaraan_home_final = $row_kendaraan_home;
+                ?>
                 <span class="info-box-text">Jumlah Kendaraan</span>
-                <span class="info-box-number">20</span>
+                <span class="info-box-number"><?= $row_kendaraan_home_final ?></span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -69,8 +79,13 @@ require '../template/header/header.php';
               <span class="info-box-icon bg-warning"><i class="fas fa-id-badge"></i></span>
 
               <div class="info-box-content">
+                <?php
+                  $pekerja_home = mysqli_query($conn, "SELECT * FROM tb_pekerja");
+                  $row_pekerja_home = mysqli_num_rows($pekerja_home);
+                  $row_pekerja_home_final = $row_pekerja_home;
+                ?>
                 <span class="info-box-text">Data Petugas</span>
-                <span class="info-box-number">20</span>
+                <span class="info-box-number"><?= $row_pekerja_home_final ?></span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -82,8 +97,13 @@ require '../template/header/header.php';
               <span class="info-box-icon bg-danger"><i class="ion ion-person"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Admin</span>
-                <span class="info-box-number">20</span>
+                <?php
+                  $akun_kelurahan_home = mysqli_query($conn, "SELECT * FROM tb_akun_kelurahan");
+                  $row_akun_kelurahan_home = mysqli_num_rows($akun_kelurahan_home);
+                  $row_akun_kelurahan_home_final = $row_akun_kelurahan_home;
+                ?>
+                <span class="info-box-text">Admin Kelurahan</span>
+                <span class="info-box-number"><?= $row_akun_kelurahan_home_final ?></span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -122,8 +142,13 @@ require '../template/header/header.php';
               <span class="info-box-icon bg-info"><i class="fa fa-image"></i></span>
 
               <div class="info-box-content">
+                <?php
+                  $edukasi_home = mysqli_query($conn, "SELECT * FROM tb_edukasi");
+                  $row_edukasi_home = mysqli_num_rows($edukasi_home);
+                  $row_edukasi_home_final = $row_edukasi_home;
+                ?>
                 <span class="info-box-text">Konten Edukasi</span>
-                <span class="info-box-number">20</span>
+                <span class="info-box-number"><?= $row_edukasi_home_final ?></span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -136,8 +161,13 @@ require '../template/header/header.php';
               <span class="info-box-icon bg-warning"><i class="fa fa-newspaper"></i></span>
 
               <div class="info-box-content">
+                <?php
+                  $berita_home = mysqli_query($conn, "SELECT * FROM tb_berita");
+                  $row_berita_home = mysqli_num_rows($berita_home);
+                  $row_berita_home_final = $row_berita_home;
+                ?>
                 <span class="info-box-text">Konten Berita</span>
-                <span class="info-box-number">20</span>
+                <span class="info-box-number"><?= $row_berita_home_final ?></span>
               </div>
               <!-- /.info-box-content -->
             </div>
