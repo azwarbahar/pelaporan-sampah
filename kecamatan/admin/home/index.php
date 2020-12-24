@@ -29,97 +29,121 @@ require '../template/header/header.php';
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-
-                <div class="alert alert-secondary alert-dismissible">
+                <div class="callout callout-danger">
                   <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
                   <h5><i class="icon fas fa-info"></i> Welcome Back!</h5>
                   Selamat Datang <b>Admin</b>
-                  <br> <br>
                 </div>
 
         <!-- Small boxes (Stat box) -->
         <br>
         <div class="row">
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-              <?php
-                  // $mahasiswa = mysqli_query($conn, "SELECT * FROM tb_mahasiswa");
-                  // $row_mahasiswa = mysqli_num_rows($mahasiswa);
-                  // $row_mahasiswa_final = $row_mahasiswa;
-                  // echo "<h3>$row_mahasiswa_final</h3>";
-                ?>
-                <h3>20</h3>
-                <p>Calon Mahasiswa</p>
+          <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-info"><i class="ion ion-person-add"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Data Masyarakat</span>
+                <span class="info-box-number">20</span>
               </div>
-              <div class="icon">
-                <i class="ion ion-person-add"></i>
-              </div>
-              <a href="../mahasiswa/data.php" class="small-box-footer">Detail <i class="fas fa-arrow-circle-right"></i></a>
+              <!-- /.info-box-content -->
             </div>
+            <!-- /.info-box -->
           </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <?php
-                    // $aspek = mysqli_query($conn, "SELECT * FROM tb_aspek");
-                    // $row_aspek = mysqli_num_rows($aspek);
-                    // $row_aspek_final = $row_aspek;
-                    // echo "<h3>$row_aspek_final</h3>";
-                  ?>
-                  <h3>20</h3>
-                  <p>Jumlah Aspek</p>
-                </div>
-                <div class="icon">
-                  <i class="fas fa-file"></i>
-                </div>
-                <a href="../aspek/data.php" class="small-box-footer">Detail <i class="fas fa-arrow-circle-right"></i></a>
+          <!-- /.col -->
+          <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-success"><i class="fas fa-truck"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Jumlah Kendaraan</span>
+                <span class="info-box-number">20</span>
               </div>
+              <!-- /.info-box-content -->
             </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <?php
-                    // $kriteria = mysqli_query($conn, "SELECT * FROM tb_kriteria");
-                    // $row_kriteria = mysqli_num_rows($kriteria);
-                    // $row_kriteria_final = $row_kriteria;
-                    // echo "<h3>$row_kriteria_final</h3>";
-                  ?>
-                  <h3>20</h3>
-                  <p>Jumlah Kriteria</p>
-                </div>
-                <div class="icon">
-                  <i class="fas fa-file"></i>
-                </div>
-                <a href="../kriteria/data.php" class="small-box-footer">Detail <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
+            <!-- /.info-box -->
           </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <?php
-                  // $admin = mysqli_query($conn, "SELECT * FROM tb_admin");
-                  // $row_admin = mysqli_num_rows($admin);
-                  // $row_admin_final = $row_admin;
-                  // echo "<h3>$row_admin_final</h3>";
-                ?>
-                <h3>20</h3>
-                <p>Admin</p>
+          <!-- /.col -->
+          <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-warning"><i class="fas fa-id-badge"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Data Petugas</span>
+                <span class="info-box-number">20</span>
               </div>
-              <div class="icon">
-                <i class="ion ion-person"></i>
-              </div>
-              <a href="../admin/data.php" class="small-box-footer">Detail <i class="fas fa-arrow-circle-right"></i></a>
+              <!-- /.info-box-content -->
             </div>
+            <!-- /.info-box -->
           </div>
-          <!-- ./col -->
+          <!-- /.col -->
+          <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-danger"><i class="ion ion-person"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Admin</span>
+                <span class="info-box-number">20</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-success"><i class="fa fa-file"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Laporan Sampah</span>
+                <span class="info-box-number">20</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-danger"><i class="fa fa-file-excel"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Laporan Keluhan</span>
+                <span class="info-box-number">20</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          
+          <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-info"><i class="fa fa-image"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Konten Edukasi</span>
+                <span class="info-box-number">20</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+
+          <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-warning"><i class="fa fa-newspaper"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Konten Berita</span>
+                <span class="info-box-number">20</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
         </div>
         <br>
         <!-- /.row (main row) -->
@@ -275,15 +299,15 @@ require '../template/header/header.php';
 
 <!-- page script -->
 <script>
-  
+
 	var chart11; // globally available
   $(function () {
-    
+
     chart11 = new Highcharts.Chart({
 	         chart: {
 	            renderTo: 'container2',
 	            type: 'column'
-	         },  
+	         },
 	         title: {
 	            text: 'Grafik Perangkingan '
 	         },
@@ -308,7 +332,7 @@ require '../template/header/header.php';
 	            ]
 	      });
 
-    
+
     $(document).on('click', '[data-toggle="lightbox"]', function(event) {
       event.preventDefault();
       $(this).ekkoLightbox({

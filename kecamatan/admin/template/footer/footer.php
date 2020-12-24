@@ -57,6 +57,8 @@
 <!-- bootstrap-switch-button -->
 <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/dist/bootstrap-switch-button.min.js"></script>
 
+<!-- Summernote -->
+<script src="/pelaporan-sampah/assets/plugins/summernote/summernote-bs4.min.js"></script>
 <!-- page script -->
 <script>
   $(function () {
@@ -158,7 +160,9 @@
       "responsive": true,
     });
 
-    
+    // Summernote
+    $('.textarea').summernote()
+
     $(document).on('click', '[data-toggle="lightbox"]', function(event) {
       event.preventDefault();
       $(this).ekkoLightbox({

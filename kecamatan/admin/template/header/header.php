@@ -21,6 +21,8 @@ $nama_header = $get_data_akun['nama_akun_kecamatan'];
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="/pelaporan-sampah/assets/plugins/fontawesome-free/css/all.min.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="/pelaporan-sampah/assets/plugins/summernote/summernote-bs4.css">
   <!-- Ekko Lightbox -->
   <link rel="stylesheet" href="/pelaporan-sampah/assets/plugins/ekko-lightbox/ekko-lightbox.css">
   <!-- Ionicons -->
@@ -225,7 +227,7 @@ $nama_header = $get_data_akun['nama_akun_kecamatan'];
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/pelaporan-sampah/kecamatan/admin/berita/data.php" class="nav-link">
               <i class="far fa fa-newspaper nav-icon"></i>
               <p>
                 Berita
