@@ -26,7 +26,6 @@ if (isset($_POST['login'])) {
     $get_password = $get['password_akun_kelurahan'];
     $get_id_kelurahan = $get['id_akun_kelurahan'];
     $status = $get['status_akun_kelurahan'];
-
     if (password_verify($password, $get_password)) {
       $_SESSION['get_id_kelurahan'] = $get_id_kelurahan;
       setcookie('get_id_kelurahan', $get_id_kelurahan, time()+172800);

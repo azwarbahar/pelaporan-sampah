@@ -72,7 +72,7 @@ $dta = mysqli_fetch_assoc($result);
                   <option value="Maccini Sombala">Maccini Sombala</option>
                   <option value="Mangasa">Mangasa</option>
                   <option value="Mannuruki">Mannuruki</option>
-                  <option value="Pa'baeng-Baeng">Pa'baeng-Baeng</option>
+                  <option value="Pabaeng-Baeng">Pa'baeng-Baeng</option>
                   <option value="Parang Tambung">Parang Tambung</option>
                   <option value="Tanjung Merdeka">Tanjung Merdeka</option>
                 </select>
