@@ -1,5 +1,6 @@
 <?php
  require_once '../../koneksi.php';
+ header('Content-type: application/json');
 
 $query = "SELECT * FROM tb_berita ORDER BY id_berita DESC";
 

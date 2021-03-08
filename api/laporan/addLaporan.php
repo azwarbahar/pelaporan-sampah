@@ -1,8 +1,5 @@
 <?php
  require_once '../../koneksi.php';
-
- var_dump($_POST);
- exit();
     $keterangan_laporan = $_POST['keterangan_laporan'];
     $foto_laporan = $_POST['foto_laporan'];
     $latitude_laporan = $_POST['latitude_laporan'];
