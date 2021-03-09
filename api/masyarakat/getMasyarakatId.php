@@ -13,6 +13,6 @@ while($row = mysqli_fetch_assoc($result)){
 }
 
  echo ($result) ?
- json_encode(array("kode" => "1", "result_masyarakat" => $array)) :
- json_encode(array("kode" => "0", "pesan" => "Data tidak ditemukan"));
+ json_encode(array("kode" => 1, "result_masyarakat" => $array)) :
+ json_encode(array("kode" => 0, "pesan" => "Data tidak ditemukan"));
 ?>
