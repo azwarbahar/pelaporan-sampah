@@ -180,38 +180,15 @@ $kelurahan_header = $get_data_akun['kelurahan_akun_kelurahan'];
               </p>
             </a>
           </li>
-
-
-          <li class="nav-header">Laporan</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="far fa fa-file nav-icon"></i>
               <p>
-                Lapor Sampah 
-                <span class="badge badge-secondary">2</span>
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="far fa fa-file-excel nav-icon"></i>
-              <p>
-                Lapor Keluhan 
+                Lapor
                 <span class="badge badge-warning">2</span>
               </p>
             </a>
           </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="far fa fa-print nav-icon"></i>
-              <p>
-                Cetak
-              </p>
-            </a>
-          </li>
-
 
           <li class="nav-header">Pengaturan</li>
           <li class="nav-item">
