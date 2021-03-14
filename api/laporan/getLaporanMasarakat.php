@@ -3,7 +3,7 @@
  header('Content-type: application/json');
 
 $masyarakat_id = $_GET["masyarakat_id"];
-$query = "SELECT * FROM tb_laporan WHERE masyarakat_id = '$masyarakat_id'";
+$query = "SELECT * FROM tb_laporan WHERE masyarakat_id = '$masyarakat_id' ORDER BY id_laporan DESC";
 
 
  $result = mysqli_query($conn, $query);

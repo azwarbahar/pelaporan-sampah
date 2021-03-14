@@ -8,9 +8,12 @@
     $nik_laporan = $_POST['nik_laporan'];
     $kelurahan_laporan = $_POST['kelurahan_laporan'];
     $area_laporan = $_POST['area_laporan'];
-    $petugas_id = "";
     $masyarakat_id = $_POST['masyarakat_id'];
     $staus_laporan = "Proccess";
+
+    $callPetugas = mysqli_query($conn, "SELECT * FROM tb_pekerja WHERE kelurahan_pekerja = '$kelurahan_laporan' AND area_pekerja = '$area_laporan' AND status_pekerja = 'Aktif'");
+    $petugasData = mysqli_fetch_assoc($callPetugas);
+    $petugas_id = $petugasData['id_pekerja'];
 
     $query = "INSERT INTO tb_laporan values(null,'$keterangan_laporan',
                                             '$foto_laporan',
