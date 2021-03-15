@@ -32,6 +32,7 @@ $pekerja = mysqli_query($conn, "SELECT * FROM tb_pekerja WHERE kelurahan_pekerja
             <div class="card">
               <div class="card-header">
                 <a href="tambah.php" type="button" class="btn btn-primary"><i class="fa fa-plus-square"></i>&nbsp Tambah Petugas</a>
+                <a href="tambah-koordinator.php" type="button" class="btn btn-info"><i class="fa fa-plus-square"></i>&nbsp Tambah Koordinator</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -42,7 +43,7 @@ $pekerja = mysqli_query($conn, "SELECT * FROM tb_pekerja WHERE kelurahan_pekerja
                     <th>Nama</th>
                     <th>Telpon</th>
                     <th>Jenis Kelamin</th>
-                    <th>Kendaraan</th>
+                    <th>Jabatan</th>
                     <th>Status</th>
                     <th></th>
                   </tr>
@@ -54,12 +55,7 @@ $pekerja = mysqli_query($conn, "SELECT * FROM tb_pekerja WHERE kelurahan_pekerja
                     <td style="font-size: small;"><?= $dta['nama_pekerja'] ?></td>
                     <td style="font-size: small;"><?= $dta['telpon_pekerja'] ?></td>
                     <td style="font-size: small;"><?= $dta['jenis_kelamin_pekerja'] ?></td>
-                    <?php
-                      $kenderaan = mysqli_query($conn, "SELECT * FROM tb_kendaraan WHERE id_kendaraan='$dta[kendaraan_pekerja]'");
-                      foreach($kenderaan as $dta_kendaraan){
-                        echo "<td style='font-size: small;'>$dta_kendaraan[kode_kendaraan] - $dta_kendaraan[nama_kendaraan]</td>";
-                      }
-                    ?>
+                    <td style="font-size: small;"><?= $dta['role_pekerja'] ?></td>
                     <?php
                       if ($dta['status_pekerja'] == "Aktif"){
                         echo "<td style=' font-size: small; text-align:center'><span class='badge bg-success'>Aktif</span></td>";
@@ -74,7 +70,17 @@ $pekerja = mysqli_query($conn, "SELECT * FROM tb_pekerja WHERE kelurahan_pekerja
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" role="menu">
                           <a href="#" class="dropdown-item">Lihat</a>
-                          <a href="edit.php?id_pekerja=<?= $dta['id_pekerja'] ?>" class="dropdown-item">Edit</a>
+                          <?php
+                            if ($dta['role_pekerja'] == "Petugas"){
+                          ?>
+                            <a href="edit.php?id_pekerja=<?= $dta['id_pekerja'] ?>" class="dropdown-item">Edit</a>
+                          <?php
+                            } else {
+                              ?>
+                              <a href="edit-koordinator.php?id_pekerja=<?= $dta['id_pekerja'] ?>" class="dropdown-item">Edit</a>
+                              <?php
+                            }
+                          ?>
                           <a href="#" data-toggle="modal" data-target="#modal-danger<?= $dta['id_pekerja'] ?>" class="dropdown-item">Hapus</a>
                           <a href="#" data-toggle="modal" data-target="#modal-warning<?= $dta['id_pekerja'] ?>" class="dropdown-item">Reset Password</a>
                           <?php
