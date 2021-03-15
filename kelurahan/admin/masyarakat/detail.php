@@ -15,7 +15,7 @@ $dta = mysqli_fetch_assoc($result);
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <a href="data.php" class="btn btn-secondary"><i class="fa fa-arrow-left"></i> Back</a>
+          <!-- <a href="data.php" class="btn btn-secondary"><i class="fa fa-arrow-left"></i> Back</a> -->
           <h1 class="m-0 text-dark">Data Masyarakat</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">

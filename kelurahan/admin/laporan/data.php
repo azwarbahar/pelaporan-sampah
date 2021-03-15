@@ -17,7 +17,7 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/reses-dprd/anggota-dpr/">Home</a></li>
+              <li class="breadcrumb-item"><a href="/pelaporan-sampah/kelurahan/admin/">Home</a></li>
               <li class="breadcrumb-item active">Laporan</li>
             </ol>
           </div><!-- /.col -->
@@ -34,8 +34,8 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan
 
             <div class="card">
               <div class="card-header">
-              <h4 style="text-align: center;"><b>DAFTAR LAPORAN YANG TELAH DILAPORKAN</b></h4>
-              <h4 style="text-align: center;"><b>OLEH MASYARAKAT MENGGUNAKAN APLIKASI MTR TAMALATE</b></h4>
+              <h4 style="text-align: center;"><b>DAFTAR LAPORAN DARI MASYARAKAT</b></h4>
+              <h4 style="text-align: center;"><b>MENGGUNAKAN APLIKASI MTR TAMALATE</b></h4>
                 <!-- <a href="tambah.php" type="button" class="btn btn-primary"><i class="fa fa-plus-square"></i>&nbsp Tambah Laporan</a> -->
                 <!-- <div class="col-3">
                     <div class="form-group">
@@ -59,8 +59,8 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan
                   <thead>
                     <tr>
                     <th>No</th>
-                    <th>Foto</th>
                     <th>NIK</th>
+                    <th>Tanggal</th>
                     <th>Keterangan</th>
                     <th>Status</th>
                     <th></th>
@@ -72,8 +72,12 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan
                     ?>
                   <tr>
                   <td style="text-align: center;"><?= $i ?></td>
-                    <td><?= $dta['foto_laporan'] ?></td>
-                    <td><?= $dta['nik_laporan'] ?></td>
+                    <td><a href="../masyarakat/detail.php?id_masyarakat=<?= $dta['masyarakat_id'] ?>"> <?= $dta['nik_laporan'] ?></a></td>
+                    <?php
+                      // $area = mysqli_query($conn, "SELECT * FROM tb_area WHERE id_area = '$dta[area_laporan]'");
+                      // $dta_area = mysqli_fetch_assoc($area);
+                    ?>
+                    <td><?= $dta['created_at'] ?></td>
                     <td><?= $dta['keterangan_laporan'] ?></td>
                     <td><?= $dta['staus_laporan'] ?></td>
                     <td style="text-align:center">

@@ -181,7 +181,7 @@ $kelurahan_header = $get_data_akun['kelurahan_akun_kelurahan'];
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/pelaporan-sampah/kelurahan/admin/laporan/data.php" class="nav-link">
               <i class="far fa fa-file nav-icon"></i>
               <p>
                 Lapor
