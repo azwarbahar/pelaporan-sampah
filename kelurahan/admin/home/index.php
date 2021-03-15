@@ -45,18 +45,18 @@ require '../template/header/header.php';
             <div class="small-box bg-info">
               <div class="inner">
               <?php
-                  // $mahasiswa = mysqli_query($conn, "SELECT * FROM tb_mahasiswa");
-                  // $row_mahasiswa = mysqli_num_rows($mahasiswa);
-                  // $row_mahasiswa_final = $row_mahasiswa;
-                  // echo "<h3>$row_mahasiswa_final</h3>";
+                  $masyarakat = mysqli_query($conn, "SELECT * FROM tb_masyarakat WHERE kelurahan_masyarakat = '$get_data_akun[kelurahan_akun_kelurahan]'");
+                  $row_masyarakat = mysqli_num_rows($masyarakat);
+                  $row_masyarakat_final = $row_masyarakat;
+                  echo "<h3>$row_masyarakat_final</h3>";
                 ?>
-                <h3>20</h3>
+                <!-- <h3>20</h3> -->
                 <p>Data Masyarakat</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="../mahasiswa/data.php" class="small-box-footer">Detail <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="../masyarakat/data.php" class="small-box-footer">Detail <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -65,18 +65,18 @@ require '../template/header/header.php';
             <div class="small-box bg-success">
               <div class="inner">
                 <?php
-                    // $aspek = mysqli_query($conn, "SELECT * FROM tb_aspek");
-                    // $row_aspek = mysqli_num_rows($aspek);
-                    // $row_aspek_final = $row_aspek;
-                    // echo "<h3>$row_aspek_final</h3>";
+                    $kendaraan = mysqli_query($conn, "SELECT * FROM tb_kendaraan WHERE kelurahan_kendaraan = '$get_data_akun[kelurahan_akun_kelurahan]'");
+                    $row_kendaraan = mysqli_num_rows($kendaraan);
+                    $row_kendaraan_final = $row_kendaraan;
+                    echo "<h3>$row_kendaraan_final</h3>";
                   ?>
-                  <h3>20</h3>
+                  <!-- <h3>20</h3> -->
                   <p>Jumlah Kendaraan</p>
                 </div>
                 <div class="icon">
                   <i class="fas fa-truck"></i>
                 </div>
-                <a href="../aspek/data.php" class="small-box-footer">Detail <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="../kendaraan/data.php" class="small-box-footer">Detail <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
           <!-- ./col -->
@@ -85,18 +85,18 @@ require '../template/header/header.php';
             <div class="small-box bg-warning">
               <div class="inner">
                 <?php
-                    // $kriteria = mysqli_query($conn, "SELECT * FROM tb_kriteria");
-                    // $row_kriteria = mysqli_num_rows($kriteria);
-                    // $row_kriteria_final = $row_kriteria;
-                    // echo "<h3>$row_kriteria_final</h3>";
+                    $petugas = mysqli_query($conn, "SELECT * FROM tb_pekerja WHERE kelurahan_pekerja = '$get_data_akun[kelurahan_akun_kelurahan]'");
+                    $row_petugas = mysqli_num_rows($petugas);
+                    $row_petugas_final = $row_petugas;
+                    echo "<h3>$row_petugas_final</h3>";
                   ?>
-                  <h3>20</h3>
+                  <!-- <h3>20</h3> -->
                   <p>Data Petugas</p>
                 </div>
                 <div class="icon">
                   <i class="fas fa-id-badge"></i>
                 </div>
-                <a href="../kriteria/data.php" class="small-box-footer">Detail <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="../petugas/data.php" class="small-box-footer">Detail <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -105,18 +105,18 @@ require '../template/header/header.php';
             <div class="small-box bg-danger">
               <div class="inner">
                 <?php
-                  // $admin = mysqli_query($conn, "SELECT * FROM tb_admin");
-                  // $row_admin = mysqli_num_rows($admin);
-                  // $row_admin_final = $row_admin;
-                  // echo "<h3>$row_admin_final</h3>";
+                  $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan = '$get_data_akun[kelurahan_akun_kelurahan]'");
+                  $row_laporan = mysqli_num_rows($laporan);
+                  $row_laporan_final = $row_laporan;
+                  echo "<h3>$row_laporan_final</h3>";
                 ?>
-                <h3>20</h3>
-                <p>Admin</p>
+                <!-- <h3>20</h3> -->
+                <p>Laporan</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person"></i>
               </div>
-              <a href="../admin/data.php" class="small-box-footer">Detail <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="../laporan/data.php" class="small-box-footer">Detail <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
