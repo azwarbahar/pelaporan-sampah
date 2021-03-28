@@ -40,7 +40,7 @@ if (isset($_POST['submit_masyarakat'])) {
 													'$nama_foto',
 													'$status_masyarakat',
 													'Sudah',
-													'-')";
+													'Belum')";
 	mysqli_query($conn, $query);
 	if (mysqli_affected_rows($conn) > 0) {
 		move_uploaded_file($file_tmp, 'foto/'.$nama_foto);
