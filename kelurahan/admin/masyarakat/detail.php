@@ -175,10 +175,45 @@ $dta = mysqli_fetch_assoc($result);
                                   <tr>
                                     <td style="text-align:center"><?= $i ?></td>
                                     <td><?= $dta_laporan['keterangan_laporan'] ?></td>
-                                    <td><span class="tag tag-success"><?= $dta_laporan['staus_laporan'] ?></span></td>
+                                    <?php
+                                      if ($dta_laporan['staus_laporan'] == "Done"){
+                                        echo "<td style='text-align:center'><span class='badge bg-success'>Selesai</span></td>";
+                                      } else if ($dta_laporan['staus_laporan'] == "Proccess"){
+                                        echo "<td style='text-align:center'><span class='badge bg-secondary'>Proses</span></td>";
+                                      } else if ($dta_laporan['staus_laporan'] == "Cancel"){
+                                        echo "<td style='text-align:center'><span class='badge bg-danger'>Batal</span></td>";
+                                      }
+                                    ?>
                                     <td><?= $dta_laporan['created_at'] ?></td>
-                                    <td>Bacon</td>
+                                    <td style="text-align:center">
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-detail-laporan<?= $dta_laporan['id_laporan'] ?>"><i class="fa fa-eye"></i></button>
+                                    </td>
                                   </tr>
+
+                                  <!-- MODAL DETAIL LAPORAN -->
+                                  <div class="modal fade" id="modal-detail-laporan<?= $dta_laporan['id_laporan'] ?>">
+                                    <div class="modal-dialog modal-xl">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h4 class="modal-title">Detail Laporan</h4>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+                                          <p>One fine body&hellip;</p>
+                                        </div>
+                                        <div class="modal-footer justify-content-between">
+                                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                        </div>
+                                      </div>
+                                      <!-- /.modal-content -->
+                                    </div>
+                                    <!-- /.modal-dialog -->
+                                  </div>
+                                  <!-- /.modal -->
+
+
                                 <?php $i = $i + 1; } ?>
                                 </tbody>
                               </table>
