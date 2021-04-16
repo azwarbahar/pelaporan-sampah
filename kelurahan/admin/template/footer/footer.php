@@ -57,6 +57,8 @@
 <!-- bootstrap-switch-button -->
 <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/dist/bootstrap-switch-button.min.js"></script>
 
+<!-- MAPS -->
+
 <!-- page script -->
 <script>
   $(function () {
@@ -208,6 +210,7 @@
 </script>
 
 <script type="text/javascript">
+
   $(document).ready(function () {
     bsCustomFileInput.init();
   });

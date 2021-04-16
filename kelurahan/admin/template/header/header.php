@@ -18,6 +18,7 @@ $kelurahan_header = $get_data_akun['kelurahan_akun_kelurahan'];
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Tamalate | Pelaporan Sampah</title>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAISwXwMy9RIBS6qnrxkC3fPRL3hfSrJSg&callback=initialize" async defer></script> -->
   <link rel="icon" href="/pelaporan-sampah/assets/dist/img/AdminLTELogo.png">
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
