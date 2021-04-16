@@ -201,7 +201,44 @@ $dta = mysqli_fetch_assoc($result);
                                           </button>
                                         </div>
                                         <div class="modal-body">
-                                          <p>One fine body&hellip;</p>
+                                          <div class="row">
+                                            <div class="col-12">
+                                              <h4>
+                                                <small class="float-right">Date: 2/10/2014</small>
+                                              </h4>
+                                            </div>
+                                            <!-- /.col -->
+                                          </div>
+                                          <div class="row invoice-info">
+                                            <div class="col-sm-4 invoice-col">
+                                              <strong>NIK : </strong> 09876545678 <br><br>
+                                              <strong>NAMA : </strong> 09876545678 <br><br>
+                                              <strong>ALAMAT : </strong> 09876545678 <br><br>
+                                              <strong>STATUS : </strong> <span class='badge bg-danger'>Batal</span> <br><br>
+                                            </div>
+                                          </div>
+                                          <hr>
+                                          <div class="callout callout-info">
+                                            <h5>Petugas Terlapor</h5>
+                                            <div class="row">
+                                              <div class="col-2">
+                                                  <img class="profile-user-img img-fluid img-circle" src="foto/<?= $dta['foto_masyarakat'] ?>" alt="User profile picture">
+                                              </div>
+                                              <div class="col-9" style=" margin-top: auto; margin-bottom: auto;">
+                                                <h6 style="margin-top: 15px;" > <strong> Muhammad Azwar Bahar</strong> <br> 0987667890</h6>
+                                              </div>
+                                              <div class="col-1" style=" margin-top: auto; margin-bottom: auto;">
+                                                <button type="button" class="btn btn-default">Detail</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <hr>
+                                          <div class="alert alert-danger alert-dismissible">
+                                            <h5><i class="icon fas fa-info"></i> Keterangan</h5>
+                                            Info alert preview. This alert is dismissable.
+                                          </div>
+                                          <hr>
+
                                         </div>
                                         <div class="modal-footer justify-content-between">
                                           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -260,54 +297,6 @@ $dta = mysqli_fetch_assoc($result);
 
 
 </div>
-<!-- /.content-wrapper -->
-
-<script type="text/javascript">
-
-var marker;
-    function initialize(){
-        // Variabel untuk menyimpan informasi lokasi
-        var infoWindow = new google.maps.InfoWindow;
-        //  Variabel berisi properti tipe peta
-        var mapOptions = {
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        } 
-        // Pembuatan peta
-        var peta = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
-		// Variabel untuk menyimpan batas kordinat
-        var bounds = new google.maps.LatLngBounds();
-        // Pengambilan data dari database MySQL
-        <?php
-
-			$query = $db->query("SELECT * FROM tb_masyarakat WHERE id_masyarakat = '$id_masyarakat' ");
-			while ($row = $query->fetch_assoc()) {
-				$nama = $row["nama_masyarakat"];
-				$lat  = $row["latitude_masyarakat"];
-				$long = $row["longitude_masyarakat"];
-				echo "addMarker($lat, $long, '$nama');\n";
-			}
-        ?> 
-        // Proses membuat marker 
-        function addMarker(lat, lng, info){
-            var lokasi = new google.maps.LatLng(lat, lng);
-            bounds.extend(lokasi);
-            var marker = new google.maps.Marker({
-                map: peta,
-                position: lokasi
-            });       
-            peta.fitBounds(bounds);
-            bindInfoWindow(marker, peta, infoWindow, info);
-         }
-        // Menampilkan informasi pada masing-masing marker yang diklik
-        function bindInfoWindow(marker, peta, infoWindow, html){
-            google.maps.event.addListener(marker, 'click', function() {
-            infoWindow.setContent(html);
-            infoWindow.open(peta, marker);
-          });
-        }
-    }
-
-</script>
 <?php
 require '../template/footer/footer.php';
 ?>
