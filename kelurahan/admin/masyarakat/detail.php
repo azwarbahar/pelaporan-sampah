@@ -238,6 +238,11 @@ $dta = mysqli_fetch_assoc($result);
                                             Info alert preview. This alert is dismissable.
                                           </div>
                                           <hr>
+                                          <h6><strong>Bukti Foto</strong></h6>
+                                          <br>
+                                          <div>
+                                            <img src="foto/<?= $dta['foto_masyarakat'] ?>">
+                                          </div>
 
                                         </div>
                                         <div class="modal-footer justify-content-between">
