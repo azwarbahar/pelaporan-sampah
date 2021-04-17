@@ -69,7 +69,7 @@ $pekerja = mysqli_query($conn, "SELECT * FROM tb_pekerja WHERE kelurahan_pekerja
                           <i class="fas fa fa-ellipsis-v"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" role="menu">
-                          <a href="#" class="dropdown-item">Lihat</a>
+                          <a href="detail.php?id_pekerja=<?= $dta['id_pekerja'] ?>" class="dropdown-item">Lihat</a>
                           <?php
                             if ($dta['role_pekerja'] == "Petugas"){
                           ?>

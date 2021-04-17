@@ -79,59 +79,108 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan
                     ?>
                     <td><?= $dta['created_at'] ?></td>
                     <td><?= $dta['keterangan_laporan'] ?></td>
-                    <td><?= $dta['staus_laporan'] ?></td>
-                    <td style="text-align:center">
-                        <a href="detail.php?id_masyarakat=<?= $dta['id_masyarakat'] ?>" type="button" class="btn btn-info"><i class="fa fa-eye"></i></a>
-                    </td>
                     <?php
-                      // $get_id_anggota1 = $dta['id_anggota'];
-                      // $anggota = mysqli_query($conn, "SELECT * FROM tb_anggota WHERE id_anggota = $get_id_anggota1");
-                      // while($row_anggota=mysqli_fetch_assoc($anggota)) {
-                      //   echo " <td>$row_anggota[nama_anggota]</td>";
-                      //   $get_id_fraksi = $row_anggota['id_fraksi'];
-                      //   $fraksi = mysqli_query($conn, "SELECT * FROM tb_fraksi WHERE id_fraksi = $get_id_fraksi");
-                      //   while($row_fraksi=mysqli_fetch_assoc($fraksi)) {
-                      //     $get_id_partai = $row_fraksi['id_partai'];
-                      //     $partai = mysqli_query($conn, "SELECT * FROM tb_partai WHERE id_partai = $get_id_partai");
-                      //     while($row_partai=mysqli_fetch_assoc($partai)) {
-                      //       echo " <td>$row_partai[nama_partai]</td>";
-                      //     }
-                      //   }
-                      //   $get_id_dapil = $row_anggota['id_dapil'];
-                      //   $dapil = mysqli_query($conn, "SELECT * FROM tb_dapil WHERE id_dapil = $get_id_dapil");
-                      //   while($row_dapil=mysqli_fetch_assoc($dapil)) {
-                      //     echo " <td style='text-align: center;'>$row_dapil[nama_dapil]</td>";
-                      //   }
-                      // }
+                      if ($dta['staus_laporan']=="Done"){
+                        echo " <td><span class='badge bg-success'>Selesai</span></td>";
+                      } else if ($dta['staus_laporan']=="Cancel"){
+                        echo " <td><span class='badge bg-danger'>Batal</span></td>";
+                      } else {
+                        echo " <td><span class='badge bg-secondary'>Proses</span></td>";
+                      }
                     ?>
+                    <td style="text-align:center">
+                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-detail-laporan<?= $dta['id_laporan'] ?>"><i class="fa fa-eye"></i></button>
+                    </td>
                   </tr>
+                  
 
-      <!-- Modal Hapus -->
-      <div class="modal fade" tabindex="-1" id="modal-danger<?= $dta['id_laporan'] ?>">
-        <div class="modal-dialog">
-          <div class="modal-content bg-danger">
-            <div class="modal-header">
-              <h4 class="modal-title">Hapus Laporan</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <p>Yakin Ingin Menghapus Laporan</p>
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-outline-light" data-dismiss="modal">Batal</button>
-              <a href="controller.php?hapus_laporan=true&id_laporan=<?= $dta['id_laporan'] ?>" type="button" class="btn btn-outline-light">Hapus</a>
-            </div>
-          </div>
-          <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-      </div>
-      <!-- /.modal -->
+                                  <!-- MODAL DETAIL LAPORAN -->
+                                  <div class="modal fade" id="modal-detail-laporan<?= $dta['id_laporan'] ?>">
+                                    <div class="modal-dialog modal-xl">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h4 class="modal-title">Detail Laporan</h4>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+                                          <div class="row">
+                                            <div class="col-12">
+                                              <h4>
+                                                <small class="float-right">Date: <?= $dta['created_at'] ?></small>
+                                              </h4>
+                                            </div>
+                                            <!-- /.col -->
+                                          </div>
+                                          <div class="row invoice-info">
+                                            <div class="col-sm-4 invoice-col">
+                                              <strong>NIK : </strong> <?= $dta['nik_laporan'] ?> <tab> <a href="../masyarakat/detail.php?id_masyarakat=<?= $dta['masyarakat_id'] ?>" style="margin-left: 20px;">    detail    </a> <br><br>
+                                              <?php
+                                                $masyarakat_laporan = mysqli_query($conn, "SELECT * FROM tb_masyarakat WHERE id_masyarakat = '$dta[masyarakat_id]'");
+                                                $dta_masyarakat_laporan = mysqli_fetch_assoc($masyarakat_laporan);
+                                              ?>
+                                              <strong>NAMA : </strong> <?= $dta_masyarakat_laporan['nama_masyarakat'] ?> <br><br>
+                                              <strong>ALAMAT : </strong> <?= $dta['alamat_laporan'] ?> <br><br>
+                                              <?php
+                                              if ($dta['staus_laporan']=="Done"){
+                                                echo " <strong>STATUS : </strong> <span class='badge bg-success'>Selesai</span> <br><br>";
+                                              } else if ($dta['staus_laporan']=="Cancel"){
+                                                echo " <strong>STATUS : </strong> <span class='badge bg-danger'>Batal</span> <br><br>";
+                                              } else {
+                                                echo " <strong>STATUS : </strong> <span class='badge bg-secondary'>Proses</span> <br><br>";
+                                              }
 
-                  <?php 
-                  $i = $i + 1; } 
+                                              ?>
+                                            </div>
+                                          </div>
+                                          <hr>
+                                          <div class="callout callout-info">
+                                            <h5>Petugas Terlapor</h5>
+                                              <?php
+                                                $petugas_laporan = mysqli_query($conn, "SELECT * FROM tb_pekerja WHERE id_pekerja = '$dta[petugas_id]'");
+                                                $dta_petugas_laporan = mysqli_fetch_assoc($petugas_laporan);
+                                              ?>
+                                            <div class="row">
+                                              <div class="col-2">
+                                                  <img class="profile-user-img img-fluid img-circle" src="../petugas/foto/<?=$dta_petugas_laporan['foto_pekerja'] ?>" alt="User profile picture">
+                                              </div>
+                                              <div class="col-9" style=" margin-top: auto; margin-bottom: auto;">
+                                                <h6 style="margin-top: 15px;" > <strong> <?=$dta_petugas_laporan['nama_pekerja'] ?></strong> <br> <?=$dta_petugas_laporan['telpon_pekerja'] ?></h6>
+                                              </div>
+                                              <div class="col-1" style=" margin-top: auto; margin-bottom: auto;">
+                                                <a href="../petugas/detail.php?id_pekerja=<?= $dta['petugas_id'] ?>" type="button" class="btn btn-default">Lihat</a>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <hr>
+                                          <div class="alert alert-danger alert-dismissible">
+                                            <h5><i class="icon fas fa-info"></i> Keterangan</h5>
+                                            <?= $dta['keterangan_laporan'] ?>
+                                          </div>
+                                          <hr>
+                                          <h6><strong>Bukti Foto</strong></h6>
+                                          <br>
+                                          <div>
+                                            <a href="../../../assets/dist/img/laporan/<?=$dta['foto_laporan'] ?>" target="_blank">
+                                              <img style="max-width: 700px; max-height: 700px;" border="2" align="center"  src="../../../assets/dist/img/laporan/<?=$dta['foto_laporan'] ?>"/>
+                                            </a>
+                                          </div>
+
+                                        </div>
+                                        <div class="modal-footer justify-content-between">
+                                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                        </div>
+                                      </div>
+                                      <!-- /.modal-content -->
+                                    </div>
+                                    <!-- /.modal-dialog -->
+                                  </div>
+                                  <!-- /.modal -->
+
+
+                  <?php
+                  $i = $i + 1; }
                   ?>
                   </tbody>
 

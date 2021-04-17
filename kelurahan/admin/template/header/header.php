@@ -182,11 +182,16 @@ $kelurahan_header = $get_data_akun['kelurahan_akun_kelurahan'];
             </a>
           </li>
           <li class="nav-item">
+          <?php
+            $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan = '$get_data_akun[kelurahan_akun_kelurahan]'");
+            $row_laporan = mysqli_num_rows($laporan);
+            $row_laporan_final = $row_laporan;
+          ?>
             <a href="/pelaporan-sampah/kelurahan/admin/laporan/data.php" class="nav-link">
               <i class="far fa fa-file nav-icon"></i>
               <p>
                 Lapor
-                <span class="badge badge-warning">2</span>
+                <span class="badge badge-danger"><?= $row_laporan_final ?></span>
               </p>
             </a>
           </li>

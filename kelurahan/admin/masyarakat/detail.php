@@ -21,7 +21,7 @@ $dta = mysqli_fetch_assoc($result);
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="/pelaporan-sampah/kelurahan/admin/">Home</a></li>
-            <li class="breadcrumb-item"><a href="/pelaporan-sampah/kelurahan/admin/layout/profile-dpr/data.php">Data Masyarakat</a></li>
+            <li class="breadcrumb-item"><a href="/pelaporan-sampah/kelurahan/admin/masyarakat/data.php">Data Masyarakat</a></li>
             <li class="breadcrumb-item active">Detail</li>
           </ol>
         </div><!-- /.col -->
@@ -245,7 +245,7 @@ $dta = mysqli_fetch_assoc($result);
                                                 <h6 style="margin-top: 15px;" > <strong> <?=$dta_petugas_laporan['nama_pekerja'] ?></strong> <br> <?=$dta_petugas_laporan['telpon_pekerja'] ?></h6>
                                               </div>
                                               <div class="col-1" style=" margin-top: auto; margin-bottom: auto;">
-                                                <a href="../petugas/detail.php?<?= $dta_laporan['petugas_id'] ?>" type="button" class="btn btn-default">Lihat</a>
+                                                <a href="../petugas/detail.php?id_pekerja=<?= $dta_laporan['petugas_id'] ?>" type="button" class="btn btn-default">Lihat</a>
                                               </div>
                                             </div>
                                           </div>
