@@ -204,17 +204,30 @@ $dta = mysqli_fetch_assoc($result);
                                           <div class="row">
                                             <div class="col-12">
                                               <h4>
-                                                <small class="float-right">Date: 2/10/2014</small>
+                                                <small class="float-right">Date: <?= $dta_laporan['created_at'] ?></small>
                                               </h4>
                                             </div>
                                             <!-- /.col -->
                                           </div>
                                           <div class="row invoice-info">
                                             <div class="col-sm-4 invoice-col">
-                                              <strong>NIK : </strong> 09876545678 <br><br>
-                                              <strong>NAMA : </strong> 09876545678 <br><br>
-                                              <strong>ALAMAT : </strong> 09876545678 <br><br>
-                                              <strong>STATUS : </strong> <span class='badge bg-danger'>Batal</span> <br><br>
+                                              <strong>NIK : </strong> <?= $dta_laporan['nik_laporan'] ?> <br><br>
+                                              <?php
+                                                $masyarakat_laporan = mysqli_query($conn, "SELECT * FROM tb_masyarakat WHERE id_masyarakat = '$dta_laporan[masyarakat_id]'");
+                                                $dta_masyarakat_laporan = mysqli_fetch_assoc($masyarakat_laporan);
+                                              ?>
+                                              <strong>NAMA : </strong> <?= $dta_masyarakat_laporan['nama_masyarakat'] ?> <br><br>
+                                              <strong>ALAMAT : </strong> <?= $dta_laporan['alamat_laporan'] ?> <br><br>
+                                              <?php
+                                              if ($dta_laporan['staus_laporan']=="Done"){
+                                                echo " <strong>STATUS : </strong> <span class='badge bg-success'>Selesai</span> <br><br>";
+                                              } else if ($dta_laporan['staus_laporan']=="Cancel"){
+                                                echo " <strong>STATUS : </strong> <span class='badge bg-danger'>Batal</span> <br><br>";
+                                              } else {
+                                                echo " <strong>STATUS : </strong> <span class='badge bg-secondary'>Proses</span> <br><br>";
+                                              }
+
+                                              ?>
                                             </div>
                                           </div>
                                           <hr>
@@ -228,20 +241,22 @@ $dta = mysqli_fetch_assoc($result);
                                                 <h6 style="margin-top: 15px;" > <strong> Muhammad Azwar Bahar</strong> <br> 0987667890</h6>
                                               </div>
                                               <div class="col-1" style=" margin-top: auto; margin-bottom: auto;">
-                                                <button type="button" class="btn btn-default">Detail</button>
+                                                <button type="button" class="btn btn-default">Lihat</button>
                                               </div>
                                             </div>
                                           </div>
                                           <hr>
                                           <div class="alert alert-danger alert-dismissible">
                                             <h5><i class="icon fas fa-info"></i> Keterangan</h5>
-                                            Info alert preview. This alert is dismissable.
+                                            <?= $dta_laporan['keterangan_laporan'] ?>
                                           </div>
                                           <hr>
                                           <h6><strong>Bukti Foto</strong></h6>
                                           <br>
                                           <div>
-                                            <img src="foto/<?= $dta['foto_masyarakat'] ?>">
+                                            <a href="../../../assets/dist/img/laporan/<?=$dta_laporan['foto_laporan'] ?>" target="_blank">
+                                              <img style="max-width: 700px; max-height: 700px;" border="2" align="center"  src="../../../assets/dist/img/laporan/<?=$dta_laporan['foto_laporan'] ?>"/>
+                                            </a>
                                           </div>
 
                                         </div>
