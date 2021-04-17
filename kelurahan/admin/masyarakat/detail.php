@@ -233,15 +233,19 @@ $dta = mysqli_fetch_assoc($result);
                                           <hr>
                                           <div class="callout callout-info">
                                             <h5>Petugas Terlapor</h5>
+                                              <?php
+                                                $petugas_laporan = mysqli_query($conn, "SELECT * FROM tb_pekerja WHERE id_pekerja = '$dta_laporan[petugas_id]'");
+                                                $dta_petugas_laporan = mysqli_fetch_assoc($petugas_laporan);
+                                              ?>
                                             <div class="row">
                                               <div class="col-2">
-                                                  <img class="profile-user-img img-fluid img-circle" src="foto/<?= $dta['foto_masyarakat'] ?>" alt="User profile picture">
+                                                  <img class="profile-user-img img-fluid img-circle" src="../petugas/foto/<?=$dta_petugas_laporan['foto_pekerja'] ?>" alt="User profile picture">
                                               </div>
                                               <div class="col-9" style=" margin-top: auto; margin-bottom: auto;">
-                                                <h6 style="margin-top: 15px;" > <strong> Muhammad Azwar Bahar</strong> <br> 0987667890</h6>
+                                                <h6 style="margin-top: 15px;" > <strong> <?=$dta_petugas_laporan['nama_pekerja'] ?></strong> <br> <?=$dta_petugas_laporan['telpon_pekerja'] ?></h6>
                                               </div>
                                               <div class="col-1" style=" margin-top: auto; margin-bottom: auto;">
-                                                <button type="button" class="btn btn-default">Lihat</button>
+                                                <a href="../petugas/detail.php?<?= $dta_laporan['petugas_id'] ?>" type="button" class="btn btn-default">Lihat</a>
                                               </div>
                                             </div>
                                           </div>
