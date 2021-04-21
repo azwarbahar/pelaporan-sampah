@@ -181,9 +181,19 @@ $kelurahan_header = $get_data_akun['kelurahan_akun_kelurahan'];
               </p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a href="/pelaporan-sampah/kelurahan/admin/petugas/data.php" class="nav-link">
+              <i class="nav-icon fa fa-desktop"></i>
+              <p>
+                Data Sampah
+              </p>
+            </a>
+          </li>
+
           <li class="nav-item">
           <?php
-            $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan = '$get_data_akun[kelurahan_akun_kelurahan]'");
+            $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan = '$get_data_akun[kelurahan_akun_kelurahan]' AND staus_laporan = 'Proccess'");
             $row_laporan = mysqli_num_rows($laporan);
             $row_laporan_final = $row_laporan;
           ?>
