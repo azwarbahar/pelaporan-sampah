@@ -39,11 +39,11 @@ $pekerja = mysqli_query($conn, "SELECT * FROM tb_pekerja WHERE kelurahan_pekerja
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>NIK</th>
                     <th>Nama</th>
+                    <th>Jabatan</th>
                     <th>Telpon</th>
                     <th>Jenis Kelamin</th>
-                    <th>Jabatan</th>
+                    <th>Kendaraan</th>
                     <th>Status</th>
                     <th></th>
                   </tr>
@@ -51,11 +51,27 @@ $pekerja = mysqli_query($conn, "SELECT * FROM tb_pekerja WHERE kelurahan_pekerja
                   <tbody>
                   <?php $i = 1; foreach($pekerja as $dta) { ?>
                   <tr>
-                    <td style="font-size: small;"><?= $dta['nik_pekerja'] ?></td>
                     <td style="font-size: small;"><?= $dta['nama_pekerja'] ?></td>
+                    <?php
+                    if ($dta['role_pekerja'] == "Petugas"){
+                      echo "<td style=' font-size: small; text-align:center'><span class='badge bg-primary'>Petugas</span></td>";
+                    } else{
+                      echo "<td style=' font-size: small; text-align:center'><span class='badge bg-info'>Koordinator</span></td>";
+                    }
+                    ?>
                     <td style="font-size: small;"><?= $dta['telpon_pekerja'] ?></td>
                     <td style="font-size: small;"><?= $dta['jenis_kelamin_pekerja'] ?></td>
-                    <td style="font-size: small;"><?= $dta['role_pekerja'] ?></td>
+                    <?php
+                      $kendaraan = mysqli_query($conn, "SELECT * FROM tb_kendaraan WHERE id_kendaraan = '$dta[kendaraan_pekerja]'");
+                      $dta_kendaraan = mysqli_fetch_assoc($kendaraan);
+                      if ($dta_kendaraan != null){
+                        echo " <td style='font-size: small;'> <a href='#'>  $dta_kendaraan[kode_kendaraan] - $dta_kendaraan[nama_kendaraan]</a></td>";
+                      } else{
+                        echo "
+                        <td style='font-size: small;'>-</td>";
+                      }
+
+                    ?>
                     <?php
                       if ($dta['status_pekerja'] == "Aktif"){
                         echo "<td style=' font-size: small; text-align:center'><span class='badge bg-success'>Aktif</span></td>";
