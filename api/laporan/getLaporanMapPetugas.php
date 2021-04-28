@@ -6,8 +6,13 @@ $kelurahan_laporan = $_GET["kelurahan_laporan"];
 $area_laporan = $_GET["area_laporan"];
 $staus_laporan = $_GET["staus_laporan"];
 
-$query = "SELECT * FROM tb_laporan WHERE kelurahan_laporan = '$kelurahan_laporan' AND area_laporan = '$area_laporan'
-                                    AND staus_laporan = '$staus_laporan' ORDER BY id_laporan DESC";
+if ($area_laporan == "-"){
+    $query = "SELECT * FROM tb_laporan WHERE kelurahan_laporan = '$kelurahan_laporan'
+                                        AND staus_laporan = '$staus_laporan' ORDER BY id_laporan DESC";
+} else{
+    $query = "SELECT * FROM tb_laporan WHERE kelurahan_laporan = '$kelurahan_laporan' AND area_laporan = '$area_laporan'
+                                        AND staus_laporan = '$staus_laporan' ORDER BY id_laporan DESC";
+}
 
  $result = mysqli_query($conn, $query);
 

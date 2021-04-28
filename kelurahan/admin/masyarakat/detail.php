@@ -96,7 +96,7 @@ $dta = mysqli_fetch_assoc($result);
                       <hr>
 
                       <strong><i class="fas fa-circle mr-1"></i> Usia</strong>
-                      <p class="text-muted"><?= $dta['telpon_masyarakat'] ?></p>
+                      <p class="text-muted"><?= $dta['usia_masyarakat'] ?></p>
                       <hr>
 
                       <strong><i class="fas fa-circle mr-1"></i>Status Akun</strong>
