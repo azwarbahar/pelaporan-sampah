@@ -4,12 +4,14 @@
     $satuan_sampah = $_POST['satuan_sampah'];
     $kelurahan_sampah = $_POST['kelurahan_sampah'];
     $petugas_id = $_POST['petugas_id'];
+    $tanggal_sekarang = $_POST['tanggal_sekarang'];
 
     $query = "INSERT INTO tb_sampah values(null,'$jumlah_sampah',
                                             '$satuan_sampah',
                                             '$kelurahan_sampah',
                                             '$petugas_id',
-                                            null)";
+                                            null,
+                                            '$tanggal_sekarang')";
 
         if ( mysqli_query($conn, $query) ){
 
