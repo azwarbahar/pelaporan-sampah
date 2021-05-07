@@ -262,7 +262,6 @@ $dta = mysqli_fetch_assoc($result);
                                               <img style="max-width: 700px; max-height: 700px;" border="2" align="center"  src="../../../assets/dist/img/laporan/<?=$dta_laporan['foto_laporan'] ?>"/>
                                             </a>
                                           </div>
-
                                         </div>
                                         <div class="modal-footer justify-content-between">
                                           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
