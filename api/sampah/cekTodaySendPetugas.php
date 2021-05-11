@@ -2,10 +2,10 @@
  require_once '../../koneksi.php';
  header('Content-type: application/json');
 
-$petugas_id = $_GET["petugas_id"];
+$id_petugas = $_GET["id_petugas"];
 $tanggal = $_GET["tanggal"];
 
-$query = "SELECT * FROM tb_sampah WHERE petugas_id = '$petugas_id' AND tanggal_manual = '$tanggal'";
+$query = "SELECT * FROM tb_laporan_petugas WHERE id_petugas = '$id_petugas' AND tanggal = '$tanggal'";
 
  $result = mysqli_query($conn, $query);
 
