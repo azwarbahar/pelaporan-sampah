@@ -11,10 +11,10 @@
     $masyarakat_id = $_POST['masyarakat_id'];
     $staus_laporan = "Proccess";
 
-    $callPetugas = mysqli_query($conn, "SELECT * FROM tb_pekerja WHERE kelurahan_pekerja = '$kelurahan_laporan' AND area_pekerja = '$area_laporan' AND status_pekerja = 'Aktif'");
-    $petugasData = mysqli_fetch_assoc($callPetugas);
-    $petugas_id = $petugasData['id_pekerja'];
-
+    // $callPetugas = mysqli_query($conn, "SELECT * FROM tb_pekerja WHERE kelurahan_pekerja = '$kelurahan_laporan' AND area_pekerja = '$area_laporan' AND status_pekerja = 'Aktif'");
+    // $petugasData = mysqli_fetch_assoc($callPetugas);
+    // $petugas_id = $petugasData['id_pekerja'];
+    $petugas_id = "-";
     $query = "INSERT INTO tb_laporan values(null,'$keterangan_laporan',
                                             '$foto_laporan',
                                             '$latitude_laporan',
