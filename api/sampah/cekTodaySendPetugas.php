@@ -9,12 +9,12 @@ $query = "SELECT * FROM tb_laporan_petugas WHERE id_petugas = '$id_petugas' AND 
 
  $result = mysqli_query($conn, $query);
 
-//  $array = array();
+ $array = array();
 while($row = mysqli_fetch_assoc($result)){
-    $array = $row;
+    $array[] = $row;
 }
 
  echo ($result) ?
- json_encode(array("kode" => "1", "result_data" => $array)) :
+ json_encode(array("kode" => "1", "result_data_petugas" => $array)) :
  json_encode(array("kode" => "0", "pesan" => "Data tidak ditemukan"));
 ?>
