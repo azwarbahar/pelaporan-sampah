@@ -3,7 +3,7 @@
  header('Content-type: application/json');
 
 $petugas_id = $_GET["petugas_id"];
-$query = "SELECT * FROM tb_laporan WHERE petugas_id = '$petugas_id' AND ( staus_laporan = 'Done' OR staus_laporan = 'Cancel' ) ORDER BY id_laporan DESC";
+$query = "SELECT * FROM tb_laporan WHERE petugas_id = '$petugas_id' ORDER BY id_laporan DESC";
 
  $result = mysqli_query($conn, $query);
 
