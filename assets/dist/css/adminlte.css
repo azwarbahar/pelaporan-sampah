@@ -27194,7 +27194,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 .img-size-64,
 .img-size-50,
 .img-size-32 {
-  height: auto;
+  height: 32px;
 }
 
 .img-size-64 {

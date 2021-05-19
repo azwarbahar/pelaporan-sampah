@@ -128,14 +128,40 @@ require '../template/header/header.php';
           <div class="col-md-6">
             <div class="card card-danger">
               <div class="card-header">
-                <h3 class="card-title">Ranking Diagram Bar</h3>
+                <h3 class="card-title">Laporan Petugas Terbaru</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                   <i class="fas fa-minus"></i></button>
                 </div>
               </div>
               <div class="card-body">
-                <div id="container2" style="min-width: fit-content; height: fit-content; margin: 0 auto"></div>
+                <div id="container2" style="min-width: fit-content; height: fit-content; margin: 0 auto">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Nama</th>
+                      <th>Tanggal</th>
+                      <th style="width: 40px">Label</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php
+                      $laporan_petugas = mysqli_query($conn, "SELECT * FROM tb_laporan_petugas WHERE kelurahan = '$kelurahan_header'");
+                      foreach($laporan_petugas as $dta_laporan_petugas) { 
+                    ?>
+                    <tr>
+                      <td>
+                      <img src="../../../assets/dist/img/img_mtr.png"  alt="Product 1" class="img-circle img-size-50 mr-2">
+                      Some Product
+                      </td>
+                      <td>Update software</td>
+                      <td><span class="badge bg-danger">55%</span></td>
+                    </tr>
+
+                  <?php } ?>
+                  </tbody>
+                </table>
+                </div>
               </div>
             </div>
           </div>
