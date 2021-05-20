@@ -5,6 +5,7 @@ $id_pekerja = $_GET['id_pekerja'];
 $result = mysqli_query($conn, "SELECT * FROM tb_pekerja WHERE id_pekerja = '$id_pekerja'");
 $dta = mysqli_fetch_assoc($result);
 
+$laporan_petugas = mysqli_query($conn, "SELECT * FROM tb_laporan_petugas WHERE id_petugas ='$id_pekerja' ORDER BY id_laporan_petugas DESC ");
 // $partai = mysqli_query($conn, "SELECT * FROM tb_partai WHERE id_partai = '$dta[id_partai]'");
 // $dta_partai = mysqli_fetch_assoc($partai);
 
@@ -280,6 +281,69 @@ $dta = mysqli_fetch_assoc($result);
                     <!-- /.nav-tabs-custom -->
                   </div>
                   <!-- /.col -->
+
+
+                  <div class="card card-danger">
+                    <div class="card-header">
+                      <h3 class="card-title">Laporan Harian</h3>
+                      <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                        <i class="fas fa-minus"></i></button>
+                      </div>
+                    </div><!-- /.card-header -->
+                    <div class="card-body">
+                      <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                          <tr>
+                          <th>No</th>
+                          <th>Kendaraan</th>
+                          <th>Tanggal</th>
+                          <th>Berat Sampah</th>
+                          <th>Foto</th>
+                        </tr>
+                        </thead>
+                        <tbody id="table-approve">
+                        <?php
+                        $i = 1; foreach($laporan_petugas as $dta) {
+                          ?>
+                        <tr>
+                        <td style="text-align: center;"><?= $i ?></td>
+                        <?php
+                            $petugas = mysqli_query($conn, "SELECT * FROM tb_pekerja WHERE id_pekerja = '$dta[id_petugas]' ");
+                            $dta_petugas = mysqli_fetch_assoc($petugas);
+                        ?>
+                          <?php
+                            $kendaraan = mysqli_query($conn, "SELECT * FROM tb_kendaraan WHERE id_kendaraan = '$dta_petugas[kendaraan_pekerja]'");
+                            $dta_kendaraan = mysqli_fetch_assoc($kendaraan);
+                            if ($dta_kendaraan != null){
+                              echo " <td style='font-size: small;  text-align:center'> <a href='#'>  $dta_kendaraan[nomor_kendaraan] - $dta_kendaraan[nama_kendaraan]</a></td>";
+                            } else{
+                              echo "
+                              <td style='font-size: small;  text-align:center'> - </td>";
+                            }
+
+                          ?>
+                          <td><?= $dta['crated_at'] ?></td>
+                          <td style="text-align: center"><?= $dta['berat_sampah'] ?> Kg</td>
+                          <td style="text-align: center">
+                            <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-detail-laporan"><i class="fa fa-eye"></i></button> -->
+
+                              <a href="../../../assets/dist/img/lapor_petugas/<?= $dta['foto_bukti'] ?>" data-toggle="lightbox" data-title="Nama : <?= $dta_petugas['nama_pekerja'] ?>" data-gallery="gallery">
+                              <img src="../../../assets/dist/img/lapor_petugas/<?= $dta['foto_bukti'] ?>" border=3 height=60 width=60 class="img-fluid mb-2" alt="red sample"/>
+                              </a>
+                          </td>
+                        </tr>
+
+                        <?php
+                        $i = $i + 1; }
+                        ?>
+                        </tbody>
+
+                      </table>
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                  </div>
+
                 </div>
 
               </div>

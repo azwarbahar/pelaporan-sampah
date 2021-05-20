@@ -60,6 +60,8 @@
 <!-- MAPS -->
 
 <!-- page script -->
+
+
 <script>
   $(function () {
     $("#example1").DataTable({

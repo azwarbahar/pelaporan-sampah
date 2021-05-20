@@ -188,11 +188,11 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan
 
               </div>
               <!-- /.card-body -->
-                <div class="col-12">
+                <!-- <div class="col-12">
                   <a href="laporan-print.php" target="_blank" class="btn btn-primary" style="margin-right: 5px;">
                     <i class="fas fa-download"></i> Cetak Print/PDF
                   </a>
-                </div>
+                </div> -->
 
               <br>
             </div>

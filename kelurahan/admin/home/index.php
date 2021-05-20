@@ -126,6 +126,26 @@ require '../template/header/header.php';
 
         <div class="row">
           <div class="col-md-6">
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Data Sampah</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                  <i class="fas fa-minus"></i></button>
+                </div>
+              </div>
+              <div class="card-body">
+                <?php
+                $berat_sampah= mysqli_query($conn,"SELECT SUM(berat_sampah) AS total_berat FROM tb_laporan_petugas");
+                $row_berat_sampah = mysqli_fetch_assoc($berat_sampah)
+                ?>
+                <h4> <b><small> Total Se-Kecamatan </small> <?= $row_berat_sampah['total_berat'] ?> </b> kg </h4> <br>
+                <div id="container2" style="min-width: fit-content; height: fit-content; margin: 0"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
             <div class="card card-danger">
               <div class="card-header">
                 <h3 class="card-title">Laporan Petugas Terbaru</h3>
@@ -135,87 +155,47 @@ require '../template/header/header.php';
                 </div>
               </div>
               <div class="card-body">
-                <div id="container2" style="min-width: fit-content; height: fit-content; margin: 0 auto">
                 <table class="table table-striped">
                   <thead>
                     <tr>
                       <th>Nama</th>
                       <th>Tanggal</th>
-                      <th style="width: 40px">Label</th>
+                      <th>Berat</th>
+                      <th> </th>
                     </tr>
                   </thead>
                   <tbody>
                     <?php
-                      $laporan_petugas = mysqli_query($conn, "SELECT * FROM tb_laporan_petugas WHERE kelurahan = '$kelurahan_header'");
-                      foreach($laporan_petugas as $dta_laporan_petugas) { 
+                      $i = 0;
+                      $laporan_petugas = mysqli_query($conn, "SELECT * FROM tb_laporan_petugas WHERE kelurahan = '$kelurahan_header' ORDER BY id_laporan_petugas DESC ");
+                      foreach($laporan_petugas as $dta_laporan_petugas) {
+                        if ($i > 5)
+                          break;
+                      $petugas = mysqli_query($conn, "SELECT * FROM tb_pekerja WHERE id_pekerja = '$dta_laporan_petugas[id_petugas]' ");
+                      $dta_petugas = mysqli_fetch_assoc($petugas);
                     ?>
                     <tr>
                       <td>
-                      <img src="../../../assets/dist/img/img_mtr.png"  alt="Product 1" class="img-circle img-size-50 mr-2">
-                      Some Product
+                      <img src="../petugas/foto/<?= $dta_petugas['foto_pekerja'] ?>"  alt="Product 1" class="img-circle img-size-50 mr-2">
+                      <?= $dta_petugas['nama_pekerja'] ?>
                       </td>
-                      <td>Update software</td>
-                      <td><span class="badge bg-danger">55%</span></td>
+                      <td><?= $dta_laporan_petugas['crated_at'] ?></td>
+                      <td><span class="badge bg-danger"><?= $dta_laporan_petugas['berat_sampah'] ?></span><small> Kg</small></td>
+                      <td>
+                      <a href="../petugas/detail.php?id_pekerja=<?= $dta_petugas['id_pekerja'] ?>" class="text-muted" >
+                        <i class="fas fa-eye"></i>
+                      </a>
+                    </td>
                     </tr>
 
-                  <?php } ?>
+                  <?php $i++; } ?>
                   </tbody>
                 </table>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Ranking Tabel</h3>
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                  <i class="fas fa-minus"></i></button>
-                </div>
-              </div>
-              <div class="card-body">
-                
-              <!-- <div class="card-body p-0">
-                <table class="table table-striped">
-                  <thead>
-                    <tr>
-                      <th style="width: 10px">No</th>
-                      <th>Nama</th>
-                      <th>Nilai</th>
-                      <th style="width: 40px">Ranking</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php
-                    // $hasil_akhir = mysqli_query($conn, "SELECT * FROM tb_hasil_akhir_mahasiswa ORDER BY nilai_hasil_akhir_mahasiswa DESC");
-                    // $i = 1; foreach($hasil_akhir as $dta_hasil_akhir) {
-                    ?>
-                    <tr>
-                      
-                      <?php
-                      // if($i == 1){
-                      //   echo "<td><span class='badge bg-success'> Ranking $i </span></td>";
-                      // } else if($i == 2){
-                      //   echo "<td><span class='badge bg-warning'> Ranking $i </span></td>";
-                      // } else if($i == 3){
-                      //   echo "<td><span class='badge bg-danger'> Ranking $i </span></td>";
-                      // } else {
-                      //   echo "<td><span class='badge bg-secondary'> Ranking $i </span></td>";
-                      // }
-                      ?>
-                      <td class="project-actions text-right">
-                          <a class="btn btn-info btn-sm" target="_blank" href="nilai-mahasiswa-print.php?id_mahasiswa=<?= $dta_hasil_akhir['id_mahasiswa']  ?>&ranking=<?= $i ?>"><i class="fas fa-print"></i> Print</a>
-                      </td>
-                    </tr>
-                    <?php //$i = $i + 1; } ?>
-                  </tbody>
-                </table>
-                <br>
-                <a href="ranking-print.php" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print Ranking</a>
-              </div> -->
+                <div class="col-12">
+                  <a href="../petugas/laporan-petugas.php"class="btn btn-primary" style="margin-right: 5px;"> Lihat Semua
+                  </a>
+                </div><br>
               </div>
             </div>
           </div>
@@ -311,26 +291,32 @@ require '../template/header/header.php';
 	            type: 'column'
 	         },  
 	         title: {
-	            text: 'Grafik Perangkingan '
+	            text: ' '
 	         },
 	         xAxis: {
-	            categories: ['Mahasiswa']
+	            categories: ['Kelurahan']
 	         },
 	         yAxis: {
 	            title: {
-	               text: 'Nilai'
+	               text: 'Berat'
 	            }
 	         },
 	              series:
 	            [
-	            <?php while ($row = mysqli_fetch_assoc($result)){
+	            <?php
+              $kelurahan_array = array("Balang Baru", "Barombong", "Bongaya",
+                                       "Bonto Duri", "Jongaya", "Maccini Sombala", "Mangasa",
+                                       "Mannuruki", "Pabaeng-Baeng", "Parang Tambung", "Tanjung Merdeka");
+              foreach ($kelurahan_array as $dta_kelurahan_array){
+                $result= mysqli_query($conn,"SELECT SUM(berat_sampah) AS total_berat FROM tb_laporan_petugas WHERE kelurahan = '$dta_kelurahan_array' ");
+                $row = mysqli_fetch_assoc($result)
 	                  ?>
 	                 //data yang diambil dari database dimasukan ke variable nama dan data
 	                 //
-	                  {	name: '<?php echo $row['nama_mahasiswa'] ?>',
-	                    data: [<?php echo $row['nilai_hasil_akhir_mahasiswa'] ?>]
+	                  {	name: '<?php echo $dta_kelurahan_array ?>',
+	                    data: [<?php echo $row['total_berat'] ?>]
 	                  },
-	                  <?php } ?>
+	            <?php } ?>
 	            ]
 	      });
 

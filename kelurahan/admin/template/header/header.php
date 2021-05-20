@@ -174,21 +174,27 @@ $kelurahan_header = $get_data_akun['kelurahan_akun_kelurahan'];
           </li>
 
           <li class="nav-item">
-            <a href="/pelaporan-sampah/kelurahan/admin/petugas/data.php" class="nav-link">
+            <a href="" class="nav-link">
               <i class="nav-icon fa fa-id-badge"></i>
               <p>
-                Data Petugas
+                Petugas
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="/pelaporan-sampah/kelurahan/admin/petugas/data.php" class="nav-link">
-              <i class="nav-icon fa fa-desktop"></i>
-              <p>
-                Data Sampah
-              </p>
-            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/pelaporan-sampah/kelurahan/admin/petugas/data.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/pelaporan-sampah/kelurahan/admin/petugas/laporan-petugas.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Laporan Petugas</p>
+                </a>
+              </li>
+            </ul>
           </li>
 
           <li class="nav-item">
