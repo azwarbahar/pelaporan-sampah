@@ -204,46 +204,9 @@ require '../template/header/header.php';
                 </div>
               </div>
               <div class="card-body">
-                
-              <!-- <div class="card-body p-0">
-                <table class="table table-striped">
-                  <thead>
-                    <tr>
-                      <th style="width: 10px">No</th>
-                      <th>Nama</th>
-                      <th>Nilai</th>
-                      <th style="width: 40px">Ranking</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php
-                    // $hasil_akhir = mysqli_query($conn, "SELECT * FROM tb_hasil_akhir_mahasiswa ORDER BY nilai_hasil_akhir_mahasiswa DESC");
-                    // $i = 1; foreach($hasil_akhir as $dta_hasil_akhir) {
-                    ?>
-                    <tr>
-                      
-                      <?php
-                      // if($i == 1){
-                      //   echo "<td><span class='badge bg-success'> Ranking $i </span></td>";
-                      // } else if($i == 2){
-                      //   echo "<td><span class='badge bg-warning'> Ranking $i </span></td>";
-                      // } else if($i == 3){
-                      //   echo "<td><span class='badge bg-danger'> Ranking $i </span></td>";
-                      // } else {
-                      //   echo "<td><span class='badge bg-secondary'> Ranking $i </span></td>";
-                      // }
-                      ?>
-                      <td class="project-actions text-right">
-                          <a class="btn btn-info btn-sm" target="_blank" href="nilai-mahasiswa-print.php?id_mahasiswa=<?= $dta_hasil_akhir['id_mahasiswa']  ?>&ranking=<?= $i ?>"><i class="fas fa-print"></i> Print</a>
-                      </td>
-                    </tr>
-                    <?php //$i = $i + 1; } ?>
-                  </tbody>
-                </table>
-                <br>
-                <a href="ranking-print.php" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print Ranking</a>
-              </div> -->
+
+
+
               </div>
             </div>
           </div>
