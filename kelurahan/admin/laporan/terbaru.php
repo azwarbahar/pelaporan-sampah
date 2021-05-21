@@ -1,6 +1,6 @@
 <?php
 require '../template/header/header.php';
-$laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan ='$get_data_akun[kelurahan_akun_kelurahan]'");
+$laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan ='$get_data_akun[kelurahan_akun_kelurahan]' AND staus_laporan = 'Proccess'");
 // $dta_jadwal = mysqli_fetch_assoc($jadwal);
 // $aspirasi = mysqli_query($conn, "SELECT * FROM tb_aspirasi WHERE status_aspirasi='Approve' AND id_jadwal='$dta_jadwal[id_jadwal]'");
 
@@ -13,12 +13,12 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Laporan</h1>
+            <h1 class="m-0 text-dark">Laporan Terbaru</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/pelaporan-sampah/kelurahan/admin/">Home</a></li>
-              <li class="breadcrumb-item active">Laporan</li>
+              <li class="breadcrumb-item active">Laporan Terbaru</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -34,9 +34,8 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan
 
             <div class="card">
               <div class="card-header">
-              <h4 style="text-align: center;"><b>DAFTAR LAPORAN DARI MASYARAKAT</b></h4>
+              <h4 style="text-align: center;"><b>DAFTAR LAPORAN terbaru DARI MASYARAKAT</b></h4>
               <h4 style="text-align: center;"><b>MENGGUNAKAN APLIKASI MTR TAMALATE</b></h4>
-                <!-- <a href="tambah.php" type="button" class="btn btn-primary"><i class="fa fa-plus-square"></i>&nbsp Tambah Laporan</a> -->
                 <!-- <div class="col-3">
                     <div class="form-group">
                       <label for="inputName">Jadwal</label>
@@ -92,7 +91,6 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan
                       <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-detail-laporan<?= $dta['id_laporan'] ?>"><i class="fa fa-eye"></i></button>
                     </td>
                   </tr>
-                  
 
                                   <!-- MODAL DETAIL LAPORAN -->
                                   <div class="modal fade" id="modal-detail-laporan<?= $dta['id_laporan'] ?>">
@@ -138,25 +136,27 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan
                                           if ($dta['petugas_id'] != "-"){
                                           ?>
                                           <hr>
-                                          <div class="callout callout-info">
-                                            <h5>Petugas Terlapor</h5>
-                                              <?php
-                                                $petugas_laporan = mysqli_query($conn, "SELECT * FROM tb_pekerja WHERE id_pekerja = '$dta[petugas_id]'");
-                                                $dta_petugas_laporan = mysqli_fetch_assoc($petugas_laporan);
-                                              ?>
-                                            <div class="row">
-                                              <div class="col-2">
-                                                  <img class="profile-user-img img-fluid img-circle" src="../petugas/foto/<?=$dta_petugas_laporan['foto_pekerja'] ?>" alt="User profile picture">
-                                              </div>
-                                              <div class="col-9" style=" margin-top: auto; margin-bottom: auto;">
-                                                <h6 style="margin-top: 15px;" > <strong> <?=$dta_petugas_laporan['nama_pekerja'] ?></strong> <br> <?=$dta_petugas_laporan['telpon_pekerja'] ?></h6>
-                                              </div>
-                                              <div class="col-1" style=" margin-top: auto; margin-bottom: auto;">
-                                                <a href="../petugas/detail.php?id_pekerja=<?= $dta['petugas_id'] ?>" type="button" class="btn btn-default">Lihat</a>
-                                              </div>
+                                            <div class="callout callout-info">
+                                                <h5>Petugas Terlapor</h5>
+                                                <?php
+                                                    $petugas_laporan = mysqli_query($conn, "SELECT * FROM tb_pekerja WHERE id_pekerja = '$dta[petugas_id]'");
+                                                    $dta_petugas_laporan = mysqli_fetch_assoc($petugas_laporan);
+                                                ?>
+                                                <div class="row">
+                                                    <div class="col-2">
+                                                        <img class="profile-user-img img-fluid img-circle" src="../petugas/foto/<?=$dta_petugas_laporan['foto_pekerja'] ?>" alt="User profile picture">
+                                                    </div>
+                                                    <div class="col-9" style=" margin-top: auto; margin-bottom: auto;">
+                                                        <h6 style="margin-top: 15px;" > <strong> <?=$dta_petugas_laporan['nama_pekerja'] ?></strong> <br> <?=$dta_petugas_laporan['telpon_pekerja'] ?></h6>
+                                                    </div>
+                                                    <div class="col-1" style=" margin-top: auto; margin-bottom: auto;">
+                                                        <a href="../petugas/detail.php?id_pekerja=<?= $dta['petugas_id'] ?>" type="button" class="btn btn-default">Lihat</a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                          </div>
-                                          <?php } ?>
+                                          <?php
+                                          }
+                                          ?>
                                           <hr>
                                           <div class="alert alert-danger alert-dismissible">
                                             <h5><i class="icon fas fa-info"></i> Keterangan</h5>
@@ -193,7 +193,7 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan
               </div>
               <!-- /.card-body -->
                 <div class="col-12" style="margin-left: 20px;" >
-                <a href="terbaru.php" type="button" class="btn btn-primary">&nbsp Lihat Terbaru</a>
+                <a href="data.php" type="button" class="btn btn-primary">&nbsp Lihat Semua</a>
                 </div>
 
               <br>

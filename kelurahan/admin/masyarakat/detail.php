@@ -230,6 +230,9 @@ $dta = mysqli_fetch_assoc($result);
                                               ?>
                                             </div>
                                           </div>
+                                          <?php
+                                          if ($dta_laporan['petugas_id'] != "-"){
+                                          ?>
                                           <hr>
                                           <div class="callout callout-info">
                                             <h5>Petugas Terlapor</h5>
@@ -249,6 +252,7 @@ $dta = mysqli_fetch_assoc($result);
                                               </div>
                                             </div>
                                           </div>
+                                          <?php } ?>
                                           <hr>
                                           <div class="alert alert-danger alert-dismissible">
                                             <h5><i class="icon fas fa-info"></i> Keterangan</h5>

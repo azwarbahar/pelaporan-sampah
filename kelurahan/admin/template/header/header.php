@@ -203,13 +203,29 @@ $kelurahan_header = $get_data_akun['kelurahan_akun_kelurahan'];
             $row_laporan = mysqli_num_rows($laporan);
             $row_laporan_final = $row_laporan;
           ?>
-            <a href="/pelaporan-sampah/kelurahan/admin/laporan/data.php" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="far fa fa-file nav-icon"></i>
               <p>
                 Lapor
                 <span class="badge badge-danger"><?= $row_laporan_final ?></span>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/pelaporan-sampah/kelurahan/admin/laporan/terbaru.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Terbaru
+                <span class="badge badge-danger"><?= $row_laporan_final ?></span>
+              </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/pelaporan-sampah/kelurahan/admin/laporan/data.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Semua</p>
+                </a>
+              </li>
+            </ul>
           </li>
 
           <li class="nav-header">Pengaturan</li>
