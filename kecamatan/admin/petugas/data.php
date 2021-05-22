@@ -40,8 +40,8 @@ $pekerja = mysqli_query($conn, "SELECT * FROM tb_pekerja");
                   <thead>
                   <tr>
                     <th>Foto</th>
-                    <th>NIK</th>
                     <th>Nama</th>
+                    <th>Kelurahan</th>
                     <th>Telpon</th>
                     <th>Jabatan</th>
                     <th>Status</th>
@@ -52,8 +52,8 @@ $pekerja = mysqli_query($conn, "SELECT * FROM tb_pekerja");
                   <?php $i = 1; foreach($pekerja as $dta) { ?>
                   <tr>
                     <td style="text-align:center"><img src="../../../kelurahan/admin/petugas/foto/<?php echo $dta['foto_pekerja'] ?>" alt="" border=3 height=60 width=60></img></td>
-                    <td style="font-size: small;"><?= $dta['nik_pekerja'] ?></td>
                     <td style="font-size: small;"><?= $dta['nama_pekerja'] ?></td>
+                    <td style="font-size: small;"><?= $dta['kelurahan_pekerja'] ?></td>
                     <td style="font-size: small;"><?= $dta['telpon_pekerja'] ?></td>
                     <td style="font-size: small;"><?= $dta['role_pekerja'] ?></td>
                     <?php
@@ -64,7 +64,7 @@ $pekerja = mysqli_query($conn, "SELECT * FROM tb_pekerja");
                       }
                     ?>
                     <td style="text-align:center; width: 20px;">
-                      <a class="btn btn-info btn-sm" href="edit.php?id_pekerja=<?= $dta['id_pekerja'] ?>"><i class="fas fa-eye"></i></a>
+                      <a class="btn btn-info btn-sm" href="detail.php?id_pekerja=<?= $dta['id_pekerja'] ?>"><i class="fas fa-eye"></i></a>
                     </td>
                   </tr>
 
