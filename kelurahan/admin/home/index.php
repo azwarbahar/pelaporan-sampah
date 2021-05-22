@@ -347,11 +347,11 @@ require '../template/header/header.php';
 	            text: ' '
 	         },
 	         xAxis: {
-	            categories: ['Kelurahan']
+	            categories: ['Petugas']
 	         },
 	         yAxis: {
 	            title: {
-	               text: 'Berat'
+	               text: 'Berat Sampah'
 	            }
 	         },
 	              series:
