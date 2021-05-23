@@ -177,6 +177,75 @@ require '../template/header/header.php';
         </div>
         <br>
         <!-- /.row (main row) -->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-success card-tabs">
+              <div class="card-header p-0 pt-1">
+                <ul class="nav nav-tabs" id="custom-tabs-two-tab" role="tablist">
+                  <li class="pt-2 px-3"><h3 class="card-title">Data Sampah</h3></li>
+                  <li class="nav-item">
+                    <a class="nav-link active" id="custom-tabs-two-grafik-tab" data-toggle="pill" href="#custom-tabs-two-grafik" role="tab" aria-controls="custom-tabs-two-grafik" aria-selected="true">Grafik</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="custom-tabs-two-tabel-tab" data-toggle="pill" href="#custom-tabs-two-tabel" role="tab" aria-controls="custom-tabs-two-tabel" aria-selected="false">Tabel</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-body">
+                <div class="tab-content" id="custom-tabs-two-tabContent">
+                    <?php
+                    $berat_sampah= mysqli_query($conn,"SELECT SUM(berat_sampah) AS total_berat FROM tb_laporan_petugas");
+                    $row_berat_sampah = mysqli_fetch_assoc($berat_sampah)
+                    ?>
+                    <h4> <b><small> Total Se-Kecamatan </small> <?= $row_berat_sampah['total_berat'] ?> </b> kg </h4> <br>
+                  <div class="tab-pane fade show active" id="custom-tabs-two-grafik" role="tabpanel" aria-labelledby="custom-tabs-two-grafik-tab">
+                    <div id="container2" style="min-width: fit-content; height: fit-content; margin: 0"></div>
+                  </div>
+                  <div class="tab-pane fade" id="custom-tabs-two-tabel" role="tabpanel" aria-labelledby="custom-tabs-two-tabel-tab">
+                    <div class="card-body p-0">
+                      <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th style="width: 10px">No</th>
+                            <th>Kelurahan</th>
+                            <th style="width: 40px">Total</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <?php
+                            $no = 1;
+                            $kelurahan_array_tabel = array("Balang Baru", "Barombong", "Bongaya",
+                                                  "Bonto Duri", "Jongaya", "Maccini Sombala", "Mangasa",
+                                                  "Mannuruki", "Pabaeng-Baeng", "Parang Tambung", "Tanjung Merdeka");
+                            // foreach ($kelurahan_array_tabel as $dta_kelurahan_array_tabel){
+                            $getPetugas_tabel = mysqli_query($conn,"SELECT * FROM tb_pekerja WHERE kelurahan_pekerja = '$kelurahan_header' ");
+                            foreach ($getPetugas_tabel as $dta_getPetugas_tabel){
+                              $result_tabel= mysqli_query($conn,"SELECT SUM(berat_sampah) AS total_berat_tabel FROM tb_laporan_petugas WHERE id_petugas = '$dta_getPetugas_tabel[id_pekerja]' ");
+                              $row_tabel = mysqli_fetch_assoc($result_tabel);
+                          ?>
+                          <tr>
+                            <td><?= $no ?></td>
+                            <td> <a href="../petugas/detail.php?id_pekerja=<?= $dta_getPetugas_tabel['id_pekerja'] ?>"><?= $dta_getPetugas_tabel['nama_pekerja'] ?></a> </td>
+                            <?php
+                              if ($row_tabel['total_berat_tabel'] < 1){
+                                echo "<td><span class='badge bg-success'> 0 kg </span></td>";
+                              } else{
+                                echo "<td><span class='badge bg-success'> $row_tabel[total_berat_tabel] kg </span></td>";
+                              }
+
+                            ?>
+                          </tr>
+                        </tbody>
+                          <?php $no = $no + 1; } ?>
+                      </table>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div class="row">
           <div class="col-md-6">

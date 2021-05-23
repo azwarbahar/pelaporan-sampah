@@ -137,10 +137,6 @@ require '../template/header/header.php';
                     <a class="nav-link" id="custom-tabs-two-tabel-tab" data-toggle="pill" href="#custom-tabs-two-tabel" role="tab" aria-controls="custom-tabs-two-tabel" aria-selected="false">Tabel</a>
                   </li>
                 </ul>
-                <!-- <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                  <i class="fas fa-minus"></i></button>
-                </div> -->
               </div>
               <div class="card-body">
                 <div class="tab-content" id="custom-tabs-two-tabContent">
