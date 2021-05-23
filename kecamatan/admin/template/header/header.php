@@ -199,36 +199,37 @@ $nama_header = $get_data_akun['nama_akun_kecamatan'];
             </ul>
           </li>
 
-
-          <li class="nav-header">Laporan</li>
           <li class="nav-item">
+          <?php
+            $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE staus_laporan = 'Proccess'");
+            $row_laporan = mysqli_num_rows($laporan);
+            $row_laporan_final = $row_laporan;
+          ?>
             <a href="#" class="nav-link">
               <i class="far fa fa-file nav-icon"></i>
               <p>
-                Lapor Sampah 
-                <span class="badge badge-secondary">2</span>
+                Lapor
+                <span class="badge badge-danger"><?= $row_laporan_final ?></span>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/pelaporan-sampah/kecamatan/admin/laporan/terbaru.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Terbaru
+                <span class="badge badge-danger"><?= $row_laporan_final ?></span>
+              </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/pelaporan-sampah/kecamatan/admin/laporan/data.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Semua</p>
+                </a>
+              </li>
+            </ul>
           </li>
 
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="far fa fa-file-excel nav-icon"></i>
-              <p>
-                Lapor Keluhan 
-                <span class="badge badge-warning">2</span>
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="far fa fa-print nav-icon"></i>
-              <p>
-                Cetak
-              </p>
-            </a>
-          </li>
 
 
           <li class="nav-header">Kontent</li>
