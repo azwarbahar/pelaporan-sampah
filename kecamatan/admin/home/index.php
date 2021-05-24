@@ -293,7 +293,11 @@ require '../template/header/header.php';
 
                   <?php $i++; } ?>
                   </tbody>
-                </table>
+                </table><br>
+                    <div class="col-12">
+                      <a href="../laporan/data.php"class="btn btn-primary" style="margin-right: 5px;"> Lihat Semua
+                      </a>
+                    </div><br>
               </div>
             </div>
           </div>
@@ -343,7 +347,11 @@ require '../template/header/header.php';
 
                   <?php $i++; } ?>
                   </tbody>
-                </table>
+                </table><br>
+                    <div class="col-12">
+                      <a href="../petugas/laporan-petugas.php"class="btn btn-primary" style="margin-right: 5px;"> Lihat Semua
+                      </a>
+                    </div><br>
               </div>
             </div>
           </div>

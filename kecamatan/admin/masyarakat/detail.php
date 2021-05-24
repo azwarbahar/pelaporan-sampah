@@ -61,7 +61,7 @@ $dta = mysqli_fetch_assoc($result);
                       <p class="text-muted text-center"><?= $dta['nik_masyarakat'] ?></p>
                       <ul class="list-group list-group-unbordered mb-3"></ul>
 
-                      <a href="edit.php?id_masyarakat=<?= $dta['id_masyarakat'] ?>" class="btn btn-danger btn-block"><b>Edit Profile</b></a>
+                      <!-- <a href="edit.php?id_masyarakat=" class="btn btn-danger btn-block"><b>Edit Profile</b></a> -->
                     </div>
                     <!-- /.card-body -->
                   </div>

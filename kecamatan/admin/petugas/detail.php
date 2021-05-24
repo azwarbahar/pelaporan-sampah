@@ -70,7 +70,7 @@ $laporan_petugas = mysqli_query($conn, "SELECT * FROM tb_laporan_petugas WHERE i
                       <p class="text-muted text-center"><?= $dta['nik_pekerja'] ?></p>
                       <ul class="list-group list-group-unbordered mb-3"></ul>
 
-                      <a href="edit.php?id_pekerja=<?= $dta['id_pekerja'] ?>" class="btn btn-danger btn-block"><b>Edit Profile</b></a>
+                      <!-- <a href="edit.php?id_pekerja=" class="btn btn-danger btn-block"><b>Edit Profile</b></a> -->
                     </div>
                     <!-- /.card-body -->
                   </div>
