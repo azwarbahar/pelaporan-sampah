@@ -358,7 +358,7 @@ require '../template/header/header.php';
               //                          "Mannuruki", "Pabaeng-Baeng", "Parang Tambung", "Tanjung Merdeka");
               // foreach ($kelurahan_array as $dta_kelurahan_array){
 
-              $getPetugas = mysqli_query($conn,"SELECT * FROM tb_pekerja WHERE kelurahan_pekerja = '$kelurahan_header' ");
+              $getPetugas = mysqli_query($conn,"SELECT * FROM tb_pekerja WHERE kelurahan_pekerja = '$kelurahan_header' AND role_pekerja = 'Petugas' ");
               foreach ($getPetugas as $dta_getPetugas){
                 $result= mysqli_query($conn,"SELECT SUM(berat_sampah) AS total_berat FROM tb_laporan_petugas WHERE id_petugas = '$dta_getPetugas[id_pekerja]' ");
                 $row = mysqli_fetch_assoc($result)

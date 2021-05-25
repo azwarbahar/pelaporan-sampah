@@ -285,7 +285,7 @@ require '../template/header/header.php';
                       <td><?= $dta_laporan_masyarakat['created_at'] ?></td>
                       <!-- <td><span class="badge bg-danger">// $dta_laporan_petugas['berat_sampah'] ?></span><small> Kg</small></td> -->
                       <td>
-                      <a href="../masyarakat/detail.php?id_pekerja=<?= $dta_masyarakat['id_pekerja'] ?>" class="text-muted" >
+                      <a href="../masyarakat/detail.php?id_masyarakat=<?= $dta_masyarakat['id_masyarakat'] ?>" class="text-muted" >
                         <i class="fas fa-eye"></i>
                       </a>
                     </td>
