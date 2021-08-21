@@ -36,13 +36,13 @@ Author URL: http://w3layouts.com
                           <a class="nav-link" href="index.html">Home </a>
                       </li>
                       <li class="nav-item @@about__active">
-                          <a class="nav-link" href="about.html">About</a>
+                          <a class="nav-link" href="about.html">Tentang</a>
                       </li>
                       <li class="nav-item @@services__active">
-                          <a class="nav-link" href="services.html">Services</a>
+                          <a class="nav-link" href="services.html">Layanan</a>
                       </li>
                       <li class="nav-item @@contact__active">
-                          <a class="nav-link" href="contact.html">Contact</a>
+                          <a class="nav-link" href="contact.html">Kontak</a>
                       </li>
                   </ul>
                   <ul class="navbar-nav search-right mt-lg-0 mt-2">
@@ -116,7 +116,7 @@ Author URL: http://w3layouts.com
 </section>
 <!-- /main-slider -->
 <!-- home block1 -->
-<section class="wthree-row py-5 about-main" id="about">
+<!-- <section class="wthree-row py-5 about-main" id="about">
     <div class="container py-lg-5 py-md-4 py-2">
         <div class="row">
             <div class="col-lg-4 mb-lg-0 mb-5">
@@ -144,14 +144,13 @@ Author URL: http://w3layouts.com
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- //home block1 -->
 <!-- our products -->
-<section class="w3l-products py-5" id="services">
+<!-- <section class="w3l-products py-5" id="services">
     <div class="container py-lg-5 py-md-4 py-2">
         <div class="row">
             <div class="col-lg-12 mx-auto">
-                <!--Horizontal Tab-->
                 <div id="parentHorizontalTab">
                     <ul class="resp-tabs-list hor_1">
                         <li>Residential</li>
@@ -228,7 +227,7 @@ Author URL: http://w3layouts.com
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- //our products -->
 <!-- home block3 -->
 <section class="wthree-row py-5 about-main" id="">
@@ -252,7 +251,7 @@ Author URL: http://w3layouts.com
 </section>
 <!-- //home block3 -->
 <!-- services page block 2 -->
-<section class="w3l-features py-5" id="features">
+<!-- <section class="w3l-features py-5" id="features">
     <div class="call-w3 py-lg-5 py-md-4 py-2">
         <div class="container">
             <div class="row main-cont-wthree-2">
@@ -296,9 +295,9 @@ Author URL: http://w3layouts.com
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- //services page block 2 -->
-<section class="w3l-servicesblock py-5" id="expect">
+<!-- <section class="w3l-features py-5" id="features">
     <div class="container py-lg-5 py-md-4 py-2">
         <div class="row">
             <div class="col-lg-6 about-right-faq align-self">
@@ -336,9 +335,9 @@ Author URL: http://w3layouts.com
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- middle -->
-<div class="middle py-5">
+<!-- <div class="middle py-5">
     <div class="container py-lg-5 py-md-4">
         <div class="welcome-left text-center py-4">
             <h3 class="title-big mx-auto">Need Commercial or
@@ -348,10 +347,10 @@ Author URL: http://w3layouts.com
             <a href="contact.html" class="btn btn-style btn-primary mt-sm-5 mt-4">Contact Us</a>
         </div>
     </div>
-</div>
+</div> -->
 <!-- //middle -->
 
-<section class="w3l-clients" id="testimonials">
+<!-- <section class="w3l-clients" id="testimonials">
     <div class="midd-w3 py-5">
         <div class="container py-lg-5 py-md-4 py-2">
             <div class="row mt-lg-0 mt-md-5">
@@ -462,7 +461,7 @@ Author URL: http://w3layouts.com
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!--  News section -->
 <div class="w3l-news" id="news">
     <section id="grids5-block" class="py-5">
@@ -517,7 +516,7 @@ Author URL: http://w3layouts.com
     </section>
 </div>
 
-<section class="w3l-logos py-5">
+<!-- <section class="w3l-logos py-5">
     <div class="container py-lg-4 py-2">
         <h3 class="title-big mx-0 text-center mb-md-5 mb-4"> Supplies & Partners</h3>
         <div class="row">
@@ -541,7 +540,7 @@ Author URL: http://w3layouts.com
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- footer -->
 <footer class="py-5">
   <div class="container py-lg-4 py-2">

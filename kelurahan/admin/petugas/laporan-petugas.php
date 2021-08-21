@@ -62,6 +62,7 @@ $laporan_petugas = mysqli_query($conn, "SELECT * FROM tb_laporan_petugas WHERE k
                     <th>Petugas</th>
                     <th>Kendaraan</th>
                     <th>Tanggal</th>
+		    <th>Lokasi</th>
                     <th>Berat Sampah</th>
                     <th>Foto</th>
                   </tr>
@@ -92,6 +93,7 @@ $laporan_petugas = mysqli_query($conn, "SELECT * FROM tb_laporan_petugas WHERE k
 
                     ?>
                     <td><?= $dta['crated_at'] ?></td>
+		    <td><?= $dta['alamat_sampah'] ?></td>
                     <td style="text-align: center"><?= $dta['berat_sampah'] ?> Kg</td>
                     <td style="text-align: center">
                       <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-detail-laporan"><i class="fa fa-eye"></i></button> -->

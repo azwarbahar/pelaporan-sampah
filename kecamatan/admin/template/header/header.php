@@ -233,14 +233,14 @@ $nama_header = $get_data_akun['nama_akun_kecamatan'];
 
 
           <li class="nav-header">Kontent</li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="/pelaporan-sampah/kecamatan/admin/edukasi/data.php" class="nav-link">
               <i class="far fa fa-image nav-icon"></i>
               <p>
                 Poster Edukasi
               </p>
             </a>
-          </li>
+          </li> -->
 
           <li class="nav-item">
             <a href="/pelaporan-sampah/kecamatan/admin/berita/data.php" class="nav-link">

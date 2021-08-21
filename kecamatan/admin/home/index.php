@@ -216,7 +216,7 @@ require '../template/header/header.php';
                             $no = 1;
                             $kelurahan_array_tabel = array("Balang Baru", "Barombong", "Bongaya",
                                                   "Bonto Duri", "Jongaya", "Maccini Sombala", "Mangasa",
-                                                  "Mannuruki", "Pabaeng-Baeng", "Parang Tambung", "Tanjung Merdeka");
+                                                  "Manuruki", "Pabaeng-Baeng", "Parang Tambung", "Tanjung Merdeka");
                             foreach ($kelurahan_array_tabel as $dta_kelurahan_array_tabel){
                             // $getPetugas_tabel = mysqli_query($conn,"SELECT * FROM tb_pekerja WHERE kelurahan_pekerja = '$kelurahan_header' ");
                             // foreach ($getPetugas_tabel as $dta_getPetugas_tabel){
@@ -462,7 +462,7 @@ require '../template/header/header.php';
 	            <?php
               $kelurahan_array = array("Balang Baru", "Barombong", "Bongaya",
                                        "Bonto Duri", "Jongaya", "Maccini Sombala", "Mangasa",
-                                       "Mannuruki", "Pabaeng-Baeng", "Parang Tambung", "Tanjung Merdeka");
+                                       "Manuruki", "Pabaeng-Baeng", "Parang Tambung", "Tanjung Merdeka");
               foreach ($kelurahan_array as $dta_kelurahan_array){
                 $result= mysqli_query($conn,"SELECT SUM(berat_sampah) AS total_berat FROM tb_laporan_petugas WHERE kelurahan = '$dta_kelurahan_array' ");
                 $row = mysqli_fetch_assoc($result)

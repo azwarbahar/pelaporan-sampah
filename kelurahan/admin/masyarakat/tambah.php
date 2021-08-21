@@ -80,7 +80,7 @@ require_once '../template/header/header.php';
                   <option value="Jongaya">Jongaya</option>
                   <option value="Maccini Sombala">Maccini Sombala</option>
                   <option value="Mangasa">Mangasa</option>
-                  <option value="Mannuruki">Mannuruki</option>
+                  <option value="Manuruki">Manuruki</option>
                   <option value="Pabaeng-Baeng">Pabaeng-Baeng</option>
                   <option value="Parang Tambung">Parang Tambung</option>
                   <option value="Tanjung Merdeka">Tanjung Merdeka</option>
