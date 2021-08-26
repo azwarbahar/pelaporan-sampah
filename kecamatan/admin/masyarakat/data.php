@@ -14,7 +14,7 @@ $masyarakat = mysqli_query($conn, "SELECT * FROM tb_masyarakat");
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/pelaporan-sampah/kelurahan/admin/">Home</a></li>
+              <li class="breadcrumb-item"><a href="../">Home</a></li>
               <li class="breadcrumb-item active">Data Masyarakat</li>
             </ol>
           </div><!-- /.col -->

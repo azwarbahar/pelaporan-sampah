@@ -16,30 +16,30 @@ $nama_header = $get_data_akun['nama_akun_kecamatan'];
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Tamalate | Pelaporan Sampah</title>
-  <link rel="icon" href="/pelaporan-sampah/assets/dist/img/AdminLTELogo.png">
+  <link rel="icon" href="../../../assets/dist/img/AdminLTELogo.png">
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="/pelaporan-sampah/assets/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../../../assets/plugins/fontawesome-free/css/all.min.css">
   <!-- summernote -->
-  <link rel="stylesheet" href="/pelaporan-sampah/assets/plugins/summernote/summernote-bs4.css">
+  <link rel="stylesheet" href="../../../assets/plugins/summernote/summernote-bs4.css">
   <!-- Ekko Lightbox -->
-  <link rel="stylesheet" href="/pelaporan-sampah/assets/plugins/ekko-lightbox/ekko-lightbox.css">
+  <link rel="stylesheet" href="../../../assets/plugins/ekko-lightbox/ekko-lightbox.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bbootstrap 4 -->
-  <link rel="stylesheet" href="/pelaporan-sampah/assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <link rel="stylesheet" href="../../../assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
   <!-- DataTables -->
-  <link rel="stylesheet" href="/pelaporan-sampah/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="/pelaporan-sampah/assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../../assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../../assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
 
 <!-- bootstrap-switch-button -->
   <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/css/bootstrap-switch-button.min.css" rel="stylesheet">
 
   <!-- Theme style -->
-  <link rel="stylesheet" href="/pelaporan-sampah/assets/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../../../assets/dist/css/adminlte.min.css">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="/pelaporan-sampah/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="../../../assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -54,7 +54,7 @@ $nama_header = $get_data_akun['nama_akun_kecamatan'];
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/pelaporan-sampah/kecamatan/admin/index.php" class="nav-link">Home</a>
+        <a href="../index.php" class="nav-link">Home</a>
       </li>
     </ul>
 
@@ -109,8 +109,8 @@ $nama_header = $get_data_akun['nama_akun_kecamatan'];
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-orange elevation-5">
     <!-- Brand Logo -->
-    <a href="/pelaporan-sampah/kecamatan/admin/index.php" class="brand-link">
-      <img src="/pelaporan-sampah/assets/dist/img/AdminLTELogo.png" alt="Logo Kabupaten Soppeng" class="brand-image img-circle elevation-3"
+    <a href="../index.php" class="brand-link">
+      <img src="../../../assets/dist/img/AdminLTELogo.png" alt="Logo Kabupaten Soppeng" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">Kec Tamalate</span>
     </a>
@@ -120,7 +120,7 @@ $nama_header = $get_data_akun['nama_akun_kecamatan'];
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="/pelaporan-sampah/assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="../../../assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block"><?= $nama_header ?></a>
@@ -135,7 +135,7 @@ $nama_header = $get_data_akun['nama_akun_kecamatan'];
                with font-awesome or any other icon font library -->
 
           <li class="nav-item has-treeview menu-open">
-            <a href="/pelaporan-sampah/kecamatan/admin/" class="nav-link active">
+            <a href="../" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -149,7 +149,7 @@ $nama_header = $get_data_akun['nama_akun_kecamatan'];
           <li class="nav-header">Master Data</li>
 
           <li class="nav-item">
-            <a href="/pelaporan-sampah/kecamatan/admin/masyarakat/data.php" class="nav-link">
+            <a href="../masyarakat/data.php" class="nav-link">
               <i class="nav-icon fa fa-user-plus"></i>
               <p>
                 Data Masyarakat
@@ -158,7 +158,7 @@ $nama_header = $get_data_akun['nama_akun_kecamatan'];
           </li>
 
           <li class="nav-item">
-            <a href="/pelaporan-sampah/kecamatan/admin/admin-kelurahan/data.php" class="nav-link">
+            <a href="../admin-kelurahan/data.php" class="nav-link">
               <i class="nav-icon fa fa-address-card"></i>
               <p>
                 Admin kecamatan
@@ -167,7 +167,7 @@ $nama_header = $get_data_akun['nama_akun_kecamatan'];
           </li>
 
           <li class="nav-item">
-            <a href="/pelaporan-sampah/kecamatan/admin/kendaraan/data.php" class="nav-link">
+            <a href="../kendaraan/data.php" class="nav-link">
               <i class="nav-icon fa fa-truck"></i>
               <p>
                 Data Kendaraan
@@ -185,13 +185,13 @@ $nama_header = $get_data_akun['nama_akun_kecamatan'];
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/pelaporan-sampah/kecamatan/admin/petugas/data.php" class="nav-link">
+                <a href="../petugas/data.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/pelaporan-sampah/kecamatan/admin/petugas/laporan-petugas.php" class="nav-link">
+                <a href="../petugas/laporan-petugas.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Laporan Petugas</p>
                 </a>
@@ -214,7 +214,7 @@ $nama_header = $get_data_akun['nama_akun_kecamatan'];
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/pelaporan-sampah/kecamatan/admin/laporan/terbaru.php" class="nav-link">
+                <a href="../laporan/terbaru.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Terbaru
                 <span class="badge badge-danger"><?= $row_laporan_final ?></span>
@@ -222,7 +222,7 @@ $nama_header = $get_data_akun['nama_akun_kecamatan'];
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/pelaporan-sampah/kecamatan/admin/laporan/data.php" class="nav-link">
+                <a href="../laporan/data.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Semua</p>
                 </a>
@@ -234,7 +234,7 @@ $nama_header = $get_data_akun['nama_akun_kecamatan'];
 
           <li class="nav-header">Kontent</li>
           <!-- <li class="nav-item">
-            <a href="/pelaporan-sampah/kecamatan/admin/edukasi/data.php" class="nav-link">
+            <a href="../edukasi/data.php" class="nav-link">
               <i class="far fa fa-image nav-icon"></i>
               <p>
                 Poster Edukasi
@@ -243,7 +243,7 @@ $nama_header = $get_data_akun['nama_akun_kecamatan'];
           </li> -->
 
           <li class="nav-item">
-            <a href="/pelaporan-sampah/kecamatan/admin/berita/data.php" class="nav-link">
+            <a href="../berita/data.php" class="nav-link">
               <i class="far fa fa-newspaper nav-icon"></i>
               <p>
                 Berita
@@ -255,7 +255,7 @@ $nama_header = $get_data_akun['nama_akun_kecamatan'];
 
           <li class="nav-header">Pengaturan</li>
           <li class="nav-item">
-            <a href="/pelaporan-sampah/kecamatan/admin/user/data.php" class="nav-link">
+            <a href="../user/data.php" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>
                 Admin

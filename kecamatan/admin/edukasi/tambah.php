@@ -13,8 +13,8 @@ require_once '../template/header/header.php';
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/pelaporan-sampah/keccamatan/admin/">Home</a></li>
-              <li class="breadcrumb-item"><a href="/pelaporan-sampah/keccamatan/admin/edukasi/data.php">Data Edukasi</a></li>
+              <li class="breadcrumb-item"><a href="../">Home</a></li>
+              <li class="breadcrumb-item"><a href="../edukasi/data.php">Data Edukasi</a></li>
               <li class="breadcrumb-item active">Tambah</li>
             </ol>
           </div><!-- /.col -->

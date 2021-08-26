@@ -21,8 +21,8 @@ $dta = mysqli_fetch_assoc($result);
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/pelaporan-sampah/kelurahan/admin/">Home</a></li>
-              <li class="breadcrumb-item"><a href="/pelaporan-sampah/kelurahan/admin/masyarakat/data.php">Data Masyarakat</a></li>
+              <li class="breadcrumb-item"><a href="../">Home</a></li>
+              <li class="breadcrumb-item"><a href="../masyarakat/data.php">Data Masyarakat</a></li>
               <li class="breadcrumb-item active">Edit</li>
             </ol>
           </div><!-- /.col -->
@@ -124,7 +124,7 @@ $dta = mysqli_fetch_assoc($result);
               <input type="hidden" name="id_masyarakat" value="<?= $dta['id_masyarakat'] ?>">
               <input type="hidden" name="foto_now" value="<?= $dta['foto_masyarakat'] ?>">
               <button type="submit" name="edit_masyarakat" id="edit_masyarakat" disabled="" class="btn btn-success float-right" style="margin-top: 3% ; margin-left: 2%;">Simpan</button>
-              <a href="/pelaporan-sampah/kelurahan/admin/masyarakat/data.php" class="btn btn-secondary float-right" style="margin-top: 3% ;">Batal</a>
+              <a href="../masyarakat/data.php" class="btn btn-secondary float-right" style="margin-top: 3% ;">Batal</a>
             </div>
             </form>
             </div>

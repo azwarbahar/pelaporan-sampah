@@ -14,7 +14,7 @@ $kendaraan = mysqli_query($conn, "SELECT * FROM tb_kendaraan");
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/pelaporan-sampah/kecamatan/admin/">Home</a></li>
+              <li class="breadcrumb-item"><a href="../">Home</a></li>
               <li class="breadcrumb-item active">Data Kendaraan</li>
             </ol>
           </div><!-- /.col -->
@@ -51,7 +51,7 @@ $kendaraan = mysqli_query($conn, "SELECT * FROM tb_kendaraan");
                   <?php $i = 1; foreach($kendaraan as $dta) { ?>
                   <tr>
                     <td><?= $dta['kode_kendaraan'] ?></td>
-                    <td style="text-align:center"><img src="/pelaporan-sampah/kelurahan/admin/kendaraan/foto/<?php echo $dta['foto_kendaraan'] ?>" alt="" border=3 height=60 width=60></img></td>
+                    <td style="text-align:center"><img src="../../../kelurahan/admin/kendaraan/foto/<?php echo $dta['foto_kendaraan'] ?>" alt="" border=3 height=60 width=60></img></td>
                     <td><?= $dta['type_kendaraan'] ?></td>
                     <td><?= $dta['nama_kendaraan'] ?></td>
                     <td><?= $dta['nomor_kendaraan'] ?></td>

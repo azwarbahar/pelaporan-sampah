@@ -14,7 +14,7 @@ $area = mysqli_query($conn, "SELECT * FROM tb_area WHERE kelurahan_area = '$kelu
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/pelaporan-sampah/kelurahan/admin/">Home</a></li>
+              <li class="breadcrumb-item"><a href="../">Home</a></li>
               <li class="breadcrumb-item active">Data Area Kerja</li>
             </ol>
           </div><!-- /.col -->

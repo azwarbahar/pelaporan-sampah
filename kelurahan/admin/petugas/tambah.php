@@ -13,8 +13,8 @@ require_once '../template/header/header.php';
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/pelaporan-sampah/kelurahan/admin/">Home</a></li>
-              <li class="breadcrumb-item"><a href="/pelaporan-sampah/kelurahan/admin/petugas/data.php">Data Petugas</a></li>
+              <li class="breadcrumb-item"><a href="../">Home</a></li>
+              <li class="breadcrumb-item"><a href="../petugas/data.php">Data Petugas</a></li>
               <li class="breadcrumb-item active">Tambah</li>
             </ol>
           </div><!-- /.col -->
@@ -109,12 +109,12 @@ require_once '../template/header/header.php';
                       </div>
                     </div>
                     <br>
-                    <img style="max-width:180px; max-height:180px;" id="blah" src="/pelaporan-sampah/assets/dist/img/default-150x150.png" alt="your image" />
+                    <img style="max-width:180px; max-height:180px;" id="blah" src="../../../assets/dist/img/default-150x150.png" alt="your image" />
 
                 <div class="col-12">
                   <input type="hidden" value="<?= $kelurahan_header ?>" name="kelurahan_pekerja">
                 <button type="submit" name="submit_pekerja" class="btn btn-success float-right" style="margin-top: 3% ; margin-left: 2%;">Simpan</button>
-                <a href="/pelaporan-sampah/kelurahan/admin/petugas/data.php" class="btn btn-secondary float-right" style="margin-top: 3% ;">Batal</a>
+                <a href="../petugas/data.php" class="btn btn-secondary float-right" style="margin-top: 3% ;">Batal</a>
               </div>
             </form>
             </div>

@@ -1,10 +1,10 @@
 <?php
 
 function plugins() { ?>
-	<link rel="stylesheet" href="/pelaporan-sampah/assets/plugins/bootstrap-more/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/pelaporan-sampah/assets/dist/css2/components.css">
-	<script src="/pelaporan-sampah/assets/dist/jquery.min.js"></script>
-	<script src="/pelaporan-sampah/assets/dist/sweetalert/sweetalert.min.js"></script>
+	<link rel="stylesheet" href="../../../assets/plugins/bootstrap-more/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../../assets/dist/css2/components.css">
+	<script src="../../../assets/dist/jquery.min.js"></script>
+	<script src="../../../assets/dist/sweetalert/sweetalert.min.js"></script>
 <?php }
 require('../../../koneksi.php');
 

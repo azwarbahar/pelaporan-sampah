@@ -13,8 +13,8 @@ require_once '../template/header/header.php';
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/pelaporan-sampah/kelurahan/admin/">Home</a></li>
-              <li class="breadcrumb-item"><a href="/pelaporan-sampah/kelurahan/admin/masyarakat/data.php">Data Masyarakat</a></li>
+              <li class="breadcrumb-item"><a href="../">Home</a></li>
+              <li class="breadcrumb-item"><a href="../masyarakat/data.php">Data Masyarakat</a></li>
               <li class="breadcrumb-item active">Tambah</li>
             </ol>
           </div><!-- /.col -->
@@ -109,7 +109,7 @@ require_once '../template/header/header.php';
 
               <div class="col-12">
               <button type="submit" name="submit_masyarakat" class="btn btn-success float-right" style="margin-top: 3% ; margin-left: 2%;">Simpan</button>
-              <a href="/pelaporan-sampah/kelurahan/admin/masyarakat/data.php" class="btn btn-secondary float-right" style="margin-top: 3% ;">Batal</a>
+              <a href="../masyarakat/data.php" class="btn btn-secondary float-right" style="margin-top: 3% ;">Batal</a>
             </div>
             </form>
             </div>

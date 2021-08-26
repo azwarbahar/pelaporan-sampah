@@ -16,49 +16,49 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="/pelaporan-sampah/assets/plugins/jquery/jquery.min.js"></script>
+<script src="../../../assets/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="/pelaporan-sampah/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="../../../assets/plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
 
 <!-- bs-custom-file-input -->
-<script src="/pelaporan-sampah/assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<script src="../../../assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="/pelaporan-sampah/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- DataTables -->
-<script src="/pelaporan-sampah/assets/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="/pelaporan-sampah/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="/pelaporan-sampah/assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="/pelaporan-sampah/assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../../../assets/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../../assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../../../assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../../assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 
 <!-- jQuery Knob Chart -->
-<script src="/pelaporan-sampah/assets/plugins/jquery-knob/jquery.knob.min.js"></script>
+<script src="../../../assets/plugins/jquery-knob/jquery.knob.min.js"></script>
 <!-- ChartJS -->
-<script src="/pelaporan-sampah/assets/plugins/chart.js/Chart.min.js"></script>
+<script src="../../../assets/plugins/chart.js/Chart.min.js"></script>
 <!-- Ekko Lightbox -->
-<script src="/pelaporan-sampah/assets/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
+<script src="../../../assets/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
 <!-- Tempusdominus Bootstrap 4 -->
-<script src="/pelaporan-sampah/assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<script src="../../../assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 <!-- Bootstrap Switch -->
-<script src="/pelaporan-sampah/assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+<script src="../../../assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
 <!-- Summernote -->
-<script src="/pelaporan-sampah/assets/plugins/summernote/summernote-bs4.min.js"></script>
+<script src="../../../assets/plugins/summernote/summernote-bs4.min.js"></script>
 <!-- overlayScrollbars -->
-<script src="/pelaporan-sampah/assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<script src="../../../assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
-<script src="/pelaporan-sampah/assets/dist/js/adminlte.js"></script>
+<script src="../../../assets/dist/js/adminlte.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="/pelaporan-sampah/assets/dist/js/pages/dashboard.js"></script>
+<script src="../../../assets/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="/pelaporan-sampah/assets/dist/js/demo.js"></script>
+<script src="../../../assets/dist/js/demo.js"></script>
 <!-- bootstrap-switch-button -->
 <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/dist/bootstrap-switch-button.min.js"></script>
 
 <!-- Summernote -->
-<script src="/pelaporan-sampah/assets/plugins/summernote/summernote-bs4.min.js"></script>
+<script src="../../../assets/plugins/summernote/summernote-bs4.min.js"></script>
 <!-- page script -->
 <script>
   $(function () {

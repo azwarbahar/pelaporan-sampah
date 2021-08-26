@@ -17,7 +17,7 @@ $dta_edukasi = mysqli_fetch_assoc($edukasi);
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/pelaporan-sampah/kecamatan/admin/">Home</a></li>
+              <li class="breadcrumb-item"><a href="../">Home</a></li>
               <li class="breadcrumb-item active">Data Edukasi</li>
             </ol>
           </div><!-- /.col -->

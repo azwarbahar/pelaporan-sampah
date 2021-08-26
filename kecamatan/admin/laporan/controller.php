@@ -1,10 +1,10 @@
 <?php
 
 function plugins() { ?>
-	<link rel="stylesheet" href="/reses-dprd/assets/plugins/bootstrap-more/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/reses-dprd/assets/dist/css2/components.css">
-	<script src="/reses-dprd/assets/dist/jquery.min.js"></script>
-	<script src="/reses-dprd/assets/dist/sweetalert/sweetalert.min.js"></script>
+	<link rel="stylesheet" href="../../../assets/plugins/bootstrap-more/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../../assets/dist/css2/components.css">
+	<script src="../../../assets/dist/jquery.min.js"></script>
+	<script src="../../../assets/dist/sweetalert/sweetalert.min.js"></script>
 <?php }
 require('../../koneksi.php');
 

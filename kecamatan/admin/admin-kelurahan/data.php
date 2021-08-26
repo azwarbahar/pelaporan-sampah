@@ -14,7 +14,7 @@ $akun_kelurahan = mysqli_query($conn, "SELECT * FROM tb_akun_kelurahan");
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/pelaporan-sampah/kecamatan/admin/">Home</a></li>
+              <li class="breadcrumb-item"><a href="../">Home</a></li>
               <li class="breadcrumb-item active">Admin Kelurahan</li>
             </ol>
           </div><!-- /.col -->
@@ -68,7 +68,7 @@ $akun_kelurahan = mysqli_query($conn, "SELECT * FROM tb_akun_kelurahan");
                   <?php $i = 1; foreach($akun_kelurahan as $dta) { ?>
                   <tr>
                     <td style="text-align:center"><?= $i ?></td>
-                    <td style="text-align:center"><img src="/pelaporan-sampah/kelurahan/admin/user/foto/<?php echo $dta['foto_akun_kelurahan'] ?>" alt="" border=3 height=60 width=60></img></td>
+                    <td style="text-align:center"><img src="../../../kelurahan/admin/user/foto/<?php echo $dta['foto_akun_kelurahan'] ?>" alt="" border=3 height=60 width=60></img></td>
                     <td><?= $dta['nama_akun_kelurahan'] ?></td>
                     <td><?= $dta['kelurahan_akun_kelurahan'] ?></td>
                     <?php

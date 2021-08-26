@@ -17,8 +17,8 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/pelaporan-sampah/kelurahan/admin/">Home</a></li>
-              <li class="breadcrumb-item"><a href="/pelaporan-sampah/kelurahan/admin/laporan/data.php">Laporan</a></li>
+              <li class="breadcrumb-item"><a href="../">Home</a></li>
+              <li class="breadcrumb-item"><a href="../laporan/data.php">Laporan</a></li>
               <li class="breadcrumb-item active">Detail</li>
             </ol>
           </div><!-- /.col -->
@@ -36,7 +36,7 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan
               <!-- <h3 class="d-inline-block d-sm-none">LOWA Men’s Renegade GTX Mid Hiking Boots Review</h3> -->
               <div class="col-12">
                 <h5>Foto Bukti Laporan</h>
-                <img src="/pelaporan-sampah/assets/dist/img/prod-1.jpg" class="product-image" alt="Product Image">
+                <img src="../../../assets/dist/img/prod-1.jpg" class="product-image" alt="Product Image">
               </div>
             </div>
             <div class="col-12 col-sm-7">
@@ -85,7 +85,7 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan
                         </div>
                         <div class="tab-pane fade" id="custom-tabs-one-profile" role="tabpanel" aria-labelledby="custom-tabs-one-profile-tab">
                           <div class="row">
-                            <img src="/pelaporan-sampah/assets/dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                            <img src="../../../assets/dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
                             <div class="col-12">
                               <a href="../masyarakat/detail.php?id_masyarakat=<?= $dta['masyarakat_id'] ?>"><h5>Hildayanti</h5></a> 
                             </div>
@@ -107,7 +107,7 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan
                         </div>
                         <div class="tab-pane fade" id="custom-tabs-one-messages" role="tabpanel" aria-labelledby="custom-tabs-one-messages-tab">
                         <div class="row">
-                            <img src="/pelaporan-sampah/assets/dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                            <img src="../../../assets/dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
                             <div class="col-12">
                               <a href="../petugas/detail.php?id_masyarakat=<?= $dta['masyarakat_id'] ?>"><h5>Hildayanti</h5></a> 
                             </div>
