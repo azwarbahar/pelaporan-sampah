@@ -545,11 +545,9 @@ Author URL: http://w3layouts.com
           <h3>Kontak</h3>
         </div>
         <div class="footer-text mt-4">
-          <p><strong>Alamat :</strong> SKantor Walikota Makassar
-                                        Jalan Ahmad Yani No. 2
-                                        Kel. Bulogading, Kec. Ujung Pandang
-                                        Kota Makassar, Provinsi Sulawesi Selatan.</p>
-          <p class="my-2"><strong>Telpon :</strong> <a href="#">08888888888</a></p>
+          <p><strong>Alamat :</strong> Jl. Danau Tj. Bunga No.181, Tj. Merdeka, Tamalate, 
+          Kota Makassar, Sulawesi Selatan 90224, Indonesia</p>
+          <p class="my-2"><strong>Telpon :</strong> <a href="#">(0411) 879249</a></p>
           <p><strong>Email :</strong> <a href="#">mtrtamalate@makassar.go.id</a></p>
           <!-- social icons -->
           <ul class="top-right-info mt-4">
