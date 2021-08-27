@@ -50,7 +50,7 @@ if (isset($_POST['login'])) {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Tamalate | Pelaporan Sampah</title>
+  <title>MTR Tamalate</title>
   <link rel="icon" href="/pelaporan-sampah/assets/dist/img/AdminLTELogo.png">
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">

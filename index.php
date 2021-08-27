@@ -9,7 +9,8 @@ Author URL: http://w3layouts.com
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Sanitize - Cleaning services category Bootstrap Responsive Web Template | Home : W3layouts</title>
+    <title>MTR Tamalate</title>
+  <link rel="icon" href="/pelaporan-sampah/assets/dist/img/AdminLTELogo.png">
     
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 
@@ -34,15 +35,6 @@ Author URL: http://w3layouts.com
                   <ul class="navbar-nav">
                       <li class="nav-item active">
                           <a class="nav-link" href="index.html">Home </a>
-                      </li>
-                      <li class="nav-item @@about__active">
-                          <a class="nav-link" href="about.html">Tentang</a>
-                      </li>
-                      <li class="nav-item @@services__active">
-                          <a class="nav-link" href="services.html">Layanan</a>
-                      </li>
-                      <li class="nav-item @@contact__active">
-                          <a class="nav-link" href="contact.html">Kontak</a>
                       </li>
                   </ul>
                   <ul class="navbar-nav search-right mt-lg-0 mt-2">
@@ -103,8 +95,8 @@ Author URL: http://w3layouts.com
                                 <div class="banner-info-bg">
                                     <h5> </h5>
                                     <p class="mt-md-4 mt-3"> </p>
-                                    <a class="btn btn-style btn-primary mt-sm-5 mt-4 mr-2" href="about.html"> Learn
-                                        More</a>
+                                    <!-- <a class="btn btn-style btn-primary mt-sm-5 mt-4 mr-2" href="about.html"> Learn
+                                        More</a> -->
                                 </div>
                             </div>
                         </div>
@@ -234,16 +226,17 @@ Author URL: http://w3layouts.com
     <div class="container py-lg-5 py-md-4 py-2">
         <div class="row">
             <div class="col-lg-6 mb-lg-0 mb-sm-5 mb-4">
-                <h3 class="title-small mb-2">Protecting Our Environment</h3>
-                <h3 class="title-big">Scientifically Proven Effective Against </h3>
-                <p class="pt-4">Aliquam ac est vel nisl init et justo vel ut nibh rhoncusm vel eget
-                    enim. Curabitur mattis orci sed leo mattis, nec maximus nibh faucibus lorem dolor sit. Aliquam ac
-                    est vel nisl init et justo vel ut nibh rhoncusm vel eget enim. Curabitur mattis orci.</p>
-                <a href="about.html" class="btn btn-style btn-primary mt-lg-5 mt-4">Know More</a>
+                <h3 class="title-small mb-2">Melindungi lingkungan kita</h3>
+                <h3 class="title-big">Gerakan MTR atau Makassar Ta’ Tidak Rantasa’</h3>
+                <p class="pt-4">   Gerakan LISA (Lihat Sampah Ambil) bersama gerakan-gerakan lainnya
+                     seperti MABASA, MABELLO, AKU DAN SEKOLAHKU TIDAK RANTASA’ merupakan gerakan 
+                     inisiasi masyarakat yang diprakarsai dan dipimpin langsung oleh Walikota 
+                     Makassar dan berhasil membuat Kota Makassar masuk menjadi kota terbersih di Indonesia..</p>
+                <a href="#" class="btn btn-style btn-primary mt-lg-5 mt-4">Baca lainnya</a>
             </div>
             <div class="col-lg-6 text-center">
                 <div class="agileits-banner-info4">
-                    <img src="assets/images/image1.jpg" alt="image" class="img-fluid radius-image" />
+                    <img src="assets/images/motor_sampah.jpg" alt="image" class="img-fluid radius-image" />
                 </div>
             </div>
         </div>
@@ -466,51 +459,41 @@ Author URL: http://w3layouts.com
 <div class="w3l-news" id="news">
     <section id="grids5-block" class="py-5">
         <div class="container py-lg-5 py-md-4 py-2">
-            <span class="title-small mb-2">News and Events</span>
-            <h3 class="title-big">Latest blog posts</h3>
+            <span class="title-small mb-2">Berita dan Acara</span>
+            <h3 class="title-big">Postingan Blog Terbaru</h3>
             <div class="row mt-sm-5 mt-4">
+                <?php
+                    require 'koneksi.php';
+                    $berita = mysqli_query($conn, "SELECT * FROM tb_berita ORDER BY id_berita DESC");
+                    $i = 1; 
+                    foreach($berita as $dta) {
+                        if ($i == 4) {
+                            break;
+                        } else {
+                            if( strlen( $dta['isi_berita'] ) > 90 ) {
+                            $dta['isi_berita'] = substr( $dta['isi_berita'], 0, 90 ) . '...';
+                            }
+                ?>
                 <div class="col-lg-4 col-md-6">
                     <div class="grids5-info">
-                        <a href="#blog-single" class="d-block zoom"><img src="assets/images/blog1.jpg" alt=""
+                        <a href="#blog-single" class="d-block zoom"><img src="kecamatan/admin/berita/foto/<?= $dta['foto_berita'] ?>" alt=""
                                 class="img-fluid news-image" /></a>
                         <div class="blog-info">
-                            <p class="date"><span class="fa fa-calendar mr-2"></span> September 12, 2020</p>
-                            <h4><a href="#blog-single">Benefits of Professional Antiviral Sanitisation</a></h4>
-                            <p>Lorem ipsum dolor sit nostrum ed amet libero fugiat ullam ipsam...</p>
-                            <a href="#url" class=" link-style p-0 mt-4">Read More
+                            <p class="date"><span class="fa fa-calendar mr-2"></span><?= date(' d F Y', strtotime($dta['created_at'])) ?></p>
+                            <h4><a href="#blog-single"><?= $dta['judul_berita'] ?></a></h4>
+                            <p><?= $dta['isi_berita'] ?></p>
+                            <a href="#url" class=" link-style p-0 mt-4">Baca Selengkapnya
                                 <span class="fa fa-chevron-right"></span>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
-                    <div class="grids5-info">
-                        <a href="#blog-single" class="d-block zoom"><img src="assets/images/blog2.jpg" alt=""
-                                class="img-fluid news-image" /></a>
-                        <div class="blog-info">
-                            <p class="date"><span class="fa fa-calendar mr-2"></span> September 12, 2020</p>
-                            <h4><a href="#blog-single">Cleaning, Disinfecting, and Sanitizing</a></h4>
-                            <p>Lorem ipsum dolor sit nostrum ed amet libero fugiat ullam ipsam...</p>
-                            <a href="#url" class=" link-style p-0 mt-4">Get a Quote
-                                <span class="fa fa-chevron-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
-                    <div class="grids5-info">
-                        <a href="#blog-single" class="d-block zoom"><img src="assets/images/blog3.jpg" alt=""
-                                class="img-fluid news-image" /></a>
-                        <div class="blog-info">
-                            <p class="date"><span class="fa fa-calendar mr-2"></span> September 12, 2020</p>
-                            <h4><a href="#blog-single">Germs Thrive the Office!Your Health Risk?</a></h4>
-                            <p>Lorem ipsum dolor sit nostrum ed amet libero fugiat ullam ipsam...</p>
-                            <a href="#url" class=" link-style p-0 mt-4">Get a Quote
-                                <span class="fa fa-chevron-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                        }
+                        $i++;
+                    }
+                ?>
+
             </div>
         </div>
     </section>
@@ -547,24 +530,27 @@ Author URL: http://w3layouts.com
     <div class="row footer-top">
       <div class="col-lg-4 footer-grid_section_1its footer-text">
         <div class="footer-title">
-          <h3>About Us</h3>
+          <h3>Tentang Kami</h3>
         </div>
-        <p class="mt-lg-4 mt-3 mb-4 pb-lg-2">We are dedicated to the safety of our guests and employees and have updated
-          our safety measures. We believe in Simple, Creative, Modern and Flexible Design Standards with a Retina and
-          Responsive Approach.</p>
-          <a href="#url" class=" link-style p-0">Get a Quote
+        <p class="mt-lg-4 mt-3 mb-4 pb-lg-2">MABASA, MABELLO, AKU DAN SEKOLAHKU TIDAK RANTASA’
+             merupakan gerakan inisiasi masyarakat yang diprakarsai dan dipimpin langsung 
+             oleh Walikota Makassar dan berhasil membuat Kota Makassar masuk menjadi kota
+              terbersih di Indonesia.</p>
+          <a href="#url" class=" link-style p-0">Baca Selengkapnya
             <span class="fa fa-chevron-right"></span>
         </a>
       </div>
       <div class="col-lg-4 col-md-6 footer-grid_section_1its mt-lg-0 mt-5">
         <div class="footer-title">
-          <h3>Contact Us</h3>
+          <h3>Kontak</h3>
         </div>
         <div class="footer-text mt-4">
-          <p><strong>Address :</strong> Sanitize company, #208KLH Reld Trainer Avenue street, Corner
-            Market, NY - 62617.</p>
-          <p class="my-2"><strong>Phone :</strong> <a href="tel:+12 534894364">+12 534894364</a></p>
-          <p><strong>Email :</strong> <a href="mailto:info@example.com">info@example.com</a></p>
+          <p><strong>Alamat :</strong> SKantor Walikota Makassar
+                                        Jalan Ahmad Yani No. 2
+                                        Kel. Bulogading, Kec. Ujung Pandang
+                                        Kota Makassar, Provinsi Sulawesi Selatan.</p>
+          <p class="my-2"><strong>Telpon :</strong> <a href="#">08888888888</a></p>
+          <p><strong>Email :</strong> <a href="#">mtrtamalate@makassar.go.id</a></p>
           <!-- social icons -->
           <ul class="top-right-info mt-4">
             <li class="facebook-w3">
@@ -593,10 +579,10 @@ Author URL: http://w3layouts.com
       </div>
       <div class="col-lg-4 col-md-6 footer-grid_section_1its footer-text mt-lg-0 mt-5">
         <div class="footer-title">
-          <h3>Subscribe Newsletter</h3>
+          <h3>Ikuti Pembaharuan</h3>
         </div>
         <div class="info-form-right mt-4 p-0">
-          <p class="mb-4">Enter your email and receive the latest news, updates and special offers from us.</p>
+          <p class="mb-4">Masukkan email Anda dan dapatkan berita terbaru, pembaruan, dan penawaran khusus dari kami.</p>
           <form action="#" method="post">
             <div class="form-group mb-2">
               <input type="email" class="form-control" name="Email" placeholder="Email" required="">
@@ -611,7 +597,7 @@ Author URL: http://w3layouts.com
 <!-- //footer -->
 <!-- copyright -->
 <div class="cpy-right text-center py-4">
-  <p>© 2020 Sanitize. All rights reserved | Design by <a href="http://w3layouts.com"> W3layouts.</a> </p>
+  <p>© 2021 MTR Tamalate. All rights reserved | by <a href="#"> Hildayanti.</a> </p>
 </div>
 <!-- //copyright -->
 
