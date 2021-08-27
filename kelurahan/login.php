@@ -1,6 +1,7 @@
 
 <?php
 require '../koneksi.php';
+session_start();
 
 if (isset($_COOKIE['login_admin_kelurahan'])) $_SESSION['login_admin_kelurahan'] = $_COOKIE['login_admin_kelurahan'];
 
