@@ -36,6 +36,9 @@ Author URL: http://w3layouts.com
                       <li class="nav-item active">
                           <a class="nav-link" href="index.html">Home </a>
                       </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">Download Apk </a>
+                      </li>
                   </ul>
                   <ul class="navbar-nav search-right mt-lg-0 mt-2">
                       <!-- <li class="nav-item mr-2" title="Search"><a href="#search" class="btn search-search">

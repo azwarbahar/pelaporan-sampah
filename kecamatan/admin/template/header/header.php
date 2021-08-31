@@ -97,7 +97,7 @@ $nama_header = $get_data_akun['nama_akun_kecamatan'];
     </div>
     <div class="modal-footer justify-content-between">
       <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Batal</button>
-      <a href="/pelaporan-sampah/kecamatan/logout.php?logout=true&for=login_admin_kecamatan" type="button" class="btn btn-outline-dark">Keluar</a>
+      <a href="../../logout.php?logout=true&for=login_admin_kecamatan" type="button" class="btn btn-outline-dark">Keluar</a>
     </div>
   </div>
   <!-- /.modal-content -->

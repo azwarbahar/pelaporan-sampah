@@ -9,7 +9,7 @@
     $kelurahan_laporan = $_POST['kelurahan_laporan'];
     $area_laporan = $_POST['area_laporan'];
     $masyarakat_id = $_POST['masyarakat_id'];
-    $staus_laporan = "Proccess";
+    $staus_laporan = "New";
 
     // $callPetugas = mysqli_query($conn, "SELECT * FROM tb_pekerja WHERE kelurahan_pekerja = '$kelurahan_laporan' AND area_pekerja = '$area_laporan' AND status_pekerja = 'Aktif'");
     // $petugasData = mysqli_fetch_assoc($callPetugas);
