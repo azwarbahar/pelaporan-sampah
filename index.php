@@ -75,7 +75,6 @@ Author URL: http://w3layouts.com
                           <label class="theme-switch" for="checkbox">
                               <input type="checkbox" id="checkbox">
                               <div class="mode-container">
-                                  <i class="gg-moon"></i>
                                   <i class="gg-sun"></i>
                               </div>
                           </label>

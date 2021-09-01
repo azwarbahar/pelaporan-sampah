@@ -199,7 +199,7 @@ $kelurahan_header = $get_data_akun['kelurahan_akun_kelurahan'];
 
           <li class="nav-item">
           <?php
-            $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan = '$get_data_akun[kelurahan_akun_kelurahan]' AND staus_laporan = 'Proccess'");
+            $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan = '$get_data_akun[kelurahan_akun_kelurahan]' AND staus_laporan = 'New'");
             $row_laporan = mysqli_num_rows($laporan);
             $row_laporan_final = $row_laporan;
           ?>
