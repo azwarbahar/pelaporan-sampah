@@ -1,6 +1,6 @@
 <?php
 require '../template/header/header.php';
-$laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE staus_laporan = 'Proccess'");
+$laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE staus_laporan = 'New'");
 // $dta_jadwal = mysqli_fetch_assoc($jadwal);
 // $aspirasi = mysqli_query($conn, "SELECT * FROM tb_aspirasi WHERE status_aspirasi='Approve' AND id_jadwal='$dta_jadwal[id_jadwal]'");
 
@@ -59,6 +59,7 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE staus_laporan = '
                     <tr>
                     <th>No</th>
                     <th>NIK</th>
+                    <th>Kelurahan</th>
                     <th>Tanggal</th>
                     <th>Keterangan</th>
                     <th>Status</th>
@@ -76,6 +77,7 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE staus_laporan = '
                       // $area = mysqli_query($conn, "SELECT * FROM tb_area WHERE id_area = '$dta[area_laporan]'");
                       // $dta_area = mysqli_fetch_assoc($area);
                     ?>
+                    <td><?= $dta['kelurahan_laporan'] ?></td>
                     <td><?= $dta['created_at'] ?></td>
                     <td><?= $dta['keterangan_laporan'] ?></td>
                     <?php
@@ -83,8 +85,10 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE staus_laporan = '
                         echo " <td><span class='badge bg-success'>Selesai</span></td>";
                       } else if ($dta['staus_laporan']=="Cancel"){
                         echo " <td><span class='badge bg-danger'>Batal</span></td>";
-                      } else {
+                      } else if ($dta['staus_laporan']=="Proccess") {
                         echo " <td><span class='badge bg-secondary'>Proses</span></td>";
+                      } else {
+                        echo " <td><span class='badge bg-info'>Terbaru</span></td>";
                       }
                     ?>
                     <td style="text-align:center">
@@ -125,8 +129,10 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE staus_laporan = '
                                                 echo " <strong>STATUS : </strong> <span class='badge bg-success'>Selesai</span> <br><br>";
                                               } else if ($dta['staus_laporan']=="Cancel"){
                                                 echo " <strong>STATUS : </strong> <span class='badge bg-danger'>Batal</span> <br><br>";
-                                              } else {
+                                              } else if ($dta['staus_laporan']=="Proccess") {
                                                 echo " <strong>STATUS : </strong> <span class='badge bg-secondary'>Proses</span> <br><br>";
+                                              } else {
+                                                  echo " <strong>STATUS : </strong> <span class='badge bg-info'>Terbaru</span> <br><br>";
                                               }
 
                                               ?>

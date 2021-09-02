@@ -201,7 +201,7 @@ $nama_header = $get_data_akun['nama_akun_kecamatan'];
 
           <li class="nav-item">
           <?php
-            $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE staus_laporan = 'Proccess'");
+            $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE staus_laporan = 'New'");
             $row_laporan = mysqli_num_rows($laporan);
             $row_laporan_final = $row_laporan;
           ?>
