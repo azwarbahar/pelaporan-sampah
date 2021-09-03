@@ -780,6 +780,17 @@ Author URL: http://w3layouts.com
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3369309221001917"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="fluid"
+     data-ad-layout-key="-5i+ct-g-li+151"
+     data-ad-client="ca-pub-3369309221001917"
+     data-ad-slot="7734382843"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 </body>
 
