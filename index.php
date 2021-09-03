@@ -767,7 +767,8 @@ Author URL: http://w3layouts.com
   });
 </script>
 <!--//MENU-JS-->
-
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3369309221001917"
+     crossorigin="anonymous"></script>
 <script src="assets/js/bootstrap.min.js"></script><!-- //bootstrap js -->
 
 </body>
