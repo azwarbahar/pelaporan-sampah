@@ -245,6 +245,13 @@ Author URL: http://w3layouts.com
         </div>
     </div>
 </section>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3369309221001917"
+     data-ad-slot="4206201377"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
 <!-- //home block3 -->
 <!-- services page block 2 -->
 <!-- <section class="w3l-features py-5" id="features">
@@ -771,12 +778,6 @@ Author URL: http://w3layouts.com
      crossorigin="anonymous"></script>
 <script src="assets/js/bootstrap.min.js"></script><!-- //bootstrap js -->
 <!-- Iklan Kontent -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-3369309221001917"
-     data-ad-slot="4206201377"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
