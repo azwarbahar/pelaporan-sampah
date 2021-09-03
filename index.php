@@ -770,6 +770,18 @@ Author URL: http://w3layouts.com
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3369309221001917"
      crossorigin="anonymous"></script>
 <script src="assets/js/bootstrap.min.js"></script><!-- //bootstrap js -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3369309221001917"
+     crossorigin="anonymous"></script>
+<!-- Iklan Kontent -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3369309221001917"
+     data-ad-slot="4206201377"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 </body>
 
