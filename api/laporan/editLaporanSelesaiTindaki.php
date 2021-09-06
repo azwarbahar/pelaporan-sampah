@@ -44,11 +44,4 @@
         }
     }
 
-
-
-
-
- $exeQuery =  mysqli_query($conn, $query);
- echo ($exeQuery) ? json_encode(array('kode' =>1, 'pesan' => 'Berhasil Mengubah Data'
- )) : json_encode(array('kode' => 2, 'pesan' => 'Proses gagal'));
 ?>
