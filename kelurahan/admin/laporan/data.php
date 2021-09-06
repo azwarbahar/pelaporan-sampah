@@ -136,7 +136,8 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan
                                               }
 
                                               if ($dta['staus_laporan']=="Done") {
-
+                                                if ($dta['foto_tindakan_laporan'] =="-") {
+                                                } else {
                                               ?>
                                               <strong>Bukti Tindakan : </strong> 
                                                 <a href='../../../assets/dist/img/laporan/bukti_tindakan/<?= $dta['foto_tindakan_laporan']?>' data-toggle='lightbox' data-title='Nama : Gambar Bukti Tindakan' data-gallery='gallery'>
@@ -144,6 +145,7 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan
                                                 </a>
                                                 <br><br>
                                                 <?php
+                                                }
                                               }
                                                 ?>
                                             </div>
