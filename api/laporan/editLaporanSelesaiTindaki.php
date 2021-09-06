@@ -15,8 +15,6 @@
         mysqli_close($conn);
 
     } else {
-
-        $id = mysqli_insert_id($conn);
         $path = "../../assets/dist/img/laporan/bukti_tindakan/image_".time().".png";
         $finalPath = "image_".time().".png";
         $insert_picture = "UPDATE tb_laporan SET petugas_id = '$petugas_id',
