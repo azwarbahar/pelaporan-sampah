@@ -124,7 +124,13 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan
                                               <strong>ALAMAT : </strong> <?= $dta['alamat_laporan'] ?> <br><br>
                                               <?php
                                               if ($dta['staus_laporan']=="Done"){
-                                                echo " <strong>STATUS : </strong> <span class='badge bg-success'>Selesai</span> <br><br>";
+                                                echo " <strong>STATUS : </strong> <span class='badge bg-success'>Selesai</span> <br><br>
+                                                <strong>Bukti Tindakan : </strong> 
+                                                <a href='../../../assets/dist/img/laporan/bukti_tindakan/".$dta['foto_tindakan_laporan']."' data-toggle='lightbox' data-title='Nama : Gambar Bukti Tindakan' data-gallery='gallery'>
+                                                  <img src='../../../assets/dist/img/laporan/bukti_tindakan/".$dta['foto_tindakan_laporan']."' border=3 height=60 width=60 class='img-fluid mb-2' alt='red sample'/>
+                                                </a>
+                                                <br><br>
+                                                ";
                                               } else if ($dta['staus_laporan']=="Cancel"){
                                                 echo " <strong>STATUS : </strong> <span class='badge bg-danger'>Batal</span> <br><br>";
                                               } else if ($dta['staus_laporan']=="Proccess") {

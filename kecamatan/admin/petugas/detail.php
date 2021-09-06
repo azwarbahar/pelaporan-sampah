@@ -211,12 +211,20 @@ $laporan_petugas = mysqli_query($conn, "SELECT * FROM tb_laporan_petugas WHERE i
                                               <strong>NAMA : </strong> <?= $dta_masyarakat_laporan['nama_masyarakat'] ?> <br><br>
                                               <strong>ALAMAT : </strong> <?= $dta_laporan['alamat_laporan'] ?> <br><br>
                                               <?php
-                                              if ($dta_laporan['staus_laporan']=="Done"){
-                                                echo " <strong>STATUS : </strong> <span class='badge bg-success'>Selesai</span> <br><br>";
-                                              } else if ($dta_laporan['staus_laporan']=="Cancel"){
+                                              if ($dta['staus_laporan']=="Done"){
+                                                echo " <strong>STATUS : </strong> <span class='badge bg-success'>Selesai</span> <br><br>
+                                                <strong>Bukti Tindakan : </strong> 
+                                                <a href='../../../assets/dist/img/laporan/bukti_tindakan/".$dta['foto_tindakan_laporan']."' data-toggle='lightbox' data-title='Nama : Gambar Bukti Tindakan' data-gallery='gallery'>
+                                                  <img src='../../../assets/dist/img/laporan/bukti_tindakan/".$dta['foto_tindakan_laporan']."' border=3 height=60 width=60 class='img-fluid mb-2' alt='red sample'/>
+                                                </a>
+                                                <br><br>
+                                                ";
+                                              } else if ($dta['staus_laporan']=="Cancel"){
                                                 echo " <strong>STATUS : </strong> <span class='badge bg-danger'>Batal</span> <br><br>";
-                                              } else {
+                                              } else if ($dta['staus_laporan']=="Proccess") {
                                                 echo " <strong>STATUS : </strong> <span class='badge bg-secondary'>Proses</span> <br><br>";
+                                              } else {
+                                                  echo " <strong>STATUS : </strong> <span class='badge bg-info'>Terbaru</span> <br><br>";
                                               }
 
                                               ?>
