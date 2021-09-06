@@ -128,7 +128,13 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan ORDER BY id_laporan DES
                                               <strong>ALAMAT : </strong> <?= $dta['alamat_laporan'] ?> <br><br>
                                               <?php
                                               if ($dta['staus_laporan']=="Done"){
-                                                echo " <strong>STATUS : </strong> <span class='badge bg-success'>Selesai</span> <br><br>";
+                                                echo " <strong>STATUS : </strong> <span class='badge bg-success'>Selesai</span> <br><br>
+                                                <strong>Bukti Tindakan : </strong> 
+                                                <a href='../../../assets/dist/img/laporan/bukti_tindakan/".$dta['foto_tindakan_laporan']."' data-toggle='lightbox' data-title='Nama : Gambar Bukti Tindakan' data-gallery='gallery'>
+                                                  <img src='../../../assets/dist/img/laporan/bukti_tindakan/".$dta['foto_tindakan_laporan']."' border=3 height=60 width=60 class='img-fluid mb-2' alt='red sample'/>
+                                                </a>
+                                                <br><br>
+                                                ";
                                               } else if ($dta['staus_laporan']=="Cancel"){
                                                 echo " <strong>STATUS : </strong> <span class='badge bg-danger'>Batal</span> <br><br>";
                                               } else if ($dta['staus_laporan']=="Proccess") {
@@ -169,7 +175,7 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan ORDER BY id_laporan DES
                                             <?= $dta['keterangan_laporan'] ?>
                                           </div>
                                           <hr>
-                                          <h6><strong>Bukti Foto</strong></h6>
+                                          <h6><strong>Foto Laporan</strong></h6>
                                           <br>
                                           <div>
                                             <a href="../../../assets/dist/img/laporan/<?=$dta['foto_laporan'] ?>" target="_blank">

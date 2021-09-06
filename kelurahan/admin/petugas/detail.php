@@ -247,7 +247,7 @@ $laporan_petugas = mysqli_query($conn, "SELECT * FROM tb_laporan_petugas WHERE i
                                             <?= $dta_laporan['keterangan_laporan'] ?>
                                           </div>
                                           <hr>
-                                          <h6><strong>Bukti Foto</strong></h6>
+                                          <h6><strong>Foto Laporan</strong></h6>
                                           <br>
                                           <div>
                                             <a href="../../../assets/dist/img/laporan/<?=$dta_laporan['foto_laporan'] ?>" target="_blank">

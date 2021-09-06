@@ -169,7 +169,7 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE staus_laporan = '
                                             <?= $dta['keterangan_laporan'] ?>
                                           </div>
                                           <hr>
-                                          <h6><strong>Bukti Foto</strong></h6>
+                                          <h6><strong>Foto Laporan</strong></h6>
                                           <br>
                                           <div>
                                             <a href="../../../assets/dist/img/laporan/<?=$dta['foto_laporan'] ?>" target="_blank">
