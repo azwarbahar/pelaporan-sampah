@@ -135,7 +135,7 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan
                                                   echo " <strong>STATUS : </strong> <span class='badge bg-info'>Terbaru</span> <br><br>";
                                               }
 
-                                              if ($dta['status_laporan']=="Done") {
+                                              if ($dta['staus_laporan']=="Done") {
 
                                               ?>
                                               <strong>Bukti Tindakan : </strong> 
