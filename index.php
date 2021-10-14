@@ -37,7 +37,7 @@ Author URL: http://w3layouts.com
                           <a class="nav-link" href="index.html">Home </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="https://drive.google.com/uc?export=download&id=149PS1CR46XCDgtuYQGNxHwSHpymJvtdA">Download Apk </a>
+                          <a class="nav-link" href="https://drive.google.com/file/d/14sE6CksTvgRfPqh_As2Ke7h6X4UGDW1q/view?usp=sharing">Download Apk </a>
                       </li>
                   </ul>
                   <ul class="navbar-nav search-right mt-lg-0 mt-2">
