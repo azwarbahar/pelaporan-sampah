@@ -450,7 +450,7 @@ require '../template/header/header.php';
 	            text: 'Grafik Perangkingan '
 	         },
 	         xAxis: {
-	            categories: ['Mahasiswa']
+	            categories: ['Kelurahan']
 	         },
 	         yAxis: {
 	            title: {

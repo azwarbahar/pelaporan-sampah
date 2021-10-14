@@ -161,7 +161,7 @@ $nama_header = $get_data_akun['nama_akun_kecamatan'];
             <a href="../admin-kelurahan/data.php" class="nav-link">
               <i class="nav-icon fa fa-address-card"></i>
               <p>
-                Admin kecamatan
+                Admin Kelurahan
               </p>
             </a>
           </li>
