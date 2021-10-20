@@ -98,7 +98,7 @@ $kelurahan_header = $get_data_akun['kelurahan_akun_kelurahan'];
             </div>
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Batal</button>
-              <a href="/pelaporan-sampah/kelurahan/logout.php?logout=true&for=login_admin_kelurahan" type="button" class="btn btn-outline-dark">Keluar</a>
+              <a href="../../logout.php?logout=true&for=login_admin_kelurahan" type="button" class="btn btn-outline-dark">Keluar</a>
             </div>
           </div>
           <!-- /.modal-content -->
