@@ -36,6 +36,9 @@ $laporan = mysqli_query($conn, "SELECT * FROM tb_laporan WHERE kelurahan_laporan
               <div class="card-header">
               <h4 style="text-align: center;"><b>DAFTAR LAPORAN DARI MASYARAKAT</b></h4>
               <h4 style="text-align: center;"><b>MENGGUNAKAN APLIKASI MTR TAMALATE</b></h4>
+              <div class="col-12">
+                  <a href="print-laporan.php" target="_blank" class="btn btn-info float-right"><i class="fas fa-print"></i> Print</a>
+                  </div>
                 <!-- <a href="tambah.php" type="button" class="btn btn-primary"><i class="fa fa-plus-square"></i>&nbsp Tambah Laporan</a> -->
                 <!-- <div class="col-3">
                     <div class="form-group">

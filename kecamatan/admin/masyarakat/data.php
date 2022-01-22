@@ -51,7 +51,7 @@ $masyarakat = mysqli_query($conn, "SELECT * FROM tb_masyarakat");
                   </div>
 
                   <div class="col-8">
-                  <a href="invoice-print.html" target="_blank" class="btn btn-info float-right"><i class="fas fa-print"></i> Print</a>
+                  <a href="print-masyarakat.php" target="_blank" class="btn btn-info float-right"><i class="fas fa-print"></i> Print</a>
                   </div>
 
                 </div>

@@ -32,6 +32,9 @@ $kendaraan = mysqli_query($conn, "SELECT * FROM tb_kendaraan WHERE kelurahan_ken
             <div class="card">
               <div class="card-header">
                 <a href="tambah.php" type="button" class="btn btn-primary"><i class="fa fa-plus-square"></i>&nbsp Tambah Kendaraan</a>
+                <div class="col-12">
+                  <a href="print-kendaraan.php" target="_blank" class="btn btn-info float-right"><i class="fas fa-print"></i> Print</a>
+                  </div>
               </div>
               <!-- /.card-header -->
               <div class="card-body">

@@ -33,6 +33,9 @@ $area = mysqli_query($conn, "SELECT * FROM tb_area WHERE kelurahan_area = '$kelu
               <div class="card-header">
               <button data-toggle="modal" data-target="#modal-xl" type="button" class="btn btn-primary"><i class="fa fa-plus-square"></i>&nbsp Tambah Area Kerja</button>
                 <!-- <a href="tambah.php" type="button" class="btn btn-primary"><i class="fa fa-plus-square"></i>&nbsp Tambah Area Kerja</a> -->
+              <div class="col-12">
+                  <a href="print-area-kerja.php" target="_blank" class="btn btn-info float-right"><i class="fas fa-print"></i> Print</a>
+                  </div>
               </div>
 
               <!-- Modal Tambah AREA -->

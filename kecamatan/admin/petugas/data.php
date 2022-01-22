@@ -31,6 +31,9 @@ $pekerja = mysqli_query($conn, "SELECT * FROM tb_pekerja");
 
             <div class="card">
               <div class="card-header">
+                  <div class="col-12">
+                  <a href="print-petugas.php" target="_blank" class="btn btn-info float-right"><i class="fas fa-print"></i> Print</a>
+                  </div>
                 <!-- <a href="tambah.php" type="button" class="btn btn-primary"><i class="fa fa-plus-square"></i>&nbsp Tambah Petugas</a> -->
                 <!-- <a href="tambah-koordinator.php" type="button" class="btn btn-info"><i class="fa fa-plus-square"></i>&nbsp Tambah Koordinator</a> -->
               </div>
