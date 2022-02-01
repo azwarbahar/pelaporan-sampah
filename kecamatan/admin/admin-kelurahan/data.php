@@ -31,7 +31,7 @@ $akun_kelurahan = mysqli_query($conn, "SELECT * FROM tb_akun_kelurahan");
 
             <div class="card">
               <div class="card-header">
-                <label for="inputName">Kelurahan</label>
+                <!-- <label for="inputName">Kelurahan</label>
                 <div class="row">
                   <div class="col-4">
                     <select class="form-control select2" style="width: 100%;" name="kelurahan_masyarakat" id="kelurahan_masyarakat">
@@ -49,9 +49,9 @@ $akun_kelurahan = mysqli_query($conn, "SELECT * FROM tb_akun_kelurahan");
                       <option value="Tanjung Merdeka">Tanjung Merdeka</option>
                     </select>
                   </div>
-                </div>
+                </div> -->
                 <!-- <a href="tambah.php" type="button" class="btn btn-primary"><i class="fa fa-plus-square"></i>&nbsp Tambah Admin</a> -->
-              </div>
+              <!-- </div> -->
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">

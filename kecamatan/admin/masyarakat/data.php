@@ -31,9 +31,9 @@ $masyarakat = mysqli_query($conn, "SELECT * FROM tb_masyarakat");
 
             <div class="card">
               <div class="card-header">
-                <label for="inputName">Kelurahan</label>
-                <div class="row">
-                  <div class="col-4">
+                <!-- <label for="inputName">Kelurahan</label> -->
+                <!-- <div class="row"> -->
+                  <!-- <div class="col-4">
                     <select class="form-control select2" style="width: 100%;" name="kelurahan_masyarakat" id="kelurahan_masyarakat">
                       <option selected="selected" value="-">- Semua -</option>
                       <option value="Balang Baru">Balang Baru</option>
@@ -48,13 +48,13 @@ $masyarakat = mysqli_query($conn, "SELECT * FROM tb_masyarakat");
                       <option value="Parang Tambung">Parang Tambung</option>
                       <option value="Tanjung Merdeka">Tanjung Merdeka</option>
                     </select>
-                  </div>
+                  </div> -->
 
-                  <div class="col-8">
+                  <div class="col-12">
                   <a href="print-masyarakat.php" target="_blank" class="btn btn-info float-right"><i class="fas fa-print"></i> Print</a>
                   </div>
 
-                </div>
+                <!-- </div> -->
                 <!-- <a href="tambah.php" type="button" class="btn btn-primary"><i class="fa fa-plus-square"></i>&nbsp Tambah Masyarakat</a> -->
               </div>
               <!-- /.card-header -->
